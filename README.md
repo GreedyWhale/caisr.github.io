@@ -1,24 +1,4 @@
-# yorozuya
+# caisr.github.io
+总之先冷静下来找时光机器
 
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+个人技术博客，之前都在掘金上面写，但是那边由于一些不可抗力变得十分恶心，会在不通知你的情况下删除你的文章，所以现在迁移到这边写
