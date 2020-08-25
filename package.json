@@ -2,6 +2,18 @@
   "name": "yorozuya",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "caisr",
+    "email": "madaocai@gmail.com"
+  },
+  "bugs": {
+    "email": "madaocai@gmail.com",
+    "url": "https://github.com/GreedyWhale/caisr.github.io/issues"
+  },
+  "repository": {
+    "url": "https://github.com/GreedyWhale/caisr.github.io",
+    "type": "git"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
