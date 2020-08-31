@@ -1,13 +1,19 @@
 <template>
   <div class="home">
+    home
+    <VueComponent />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, reactive } from 'vue'
+import { VueComponent } from '../docs/index.md'
 
 export default defineComponent({
   name: 'Home',
+  components: {
+    VueComponent
+  },
   setup () {
     const data = reactive({
       name: 'fuck'
