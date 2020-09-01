@@ -1,3 +1,10 @@
+/*
+ * @Author: MADAO
+ * @Date: 2020-08-31 16:14:44
+ * @LastEditors: MADAO
+ * @LastEditTime: 2020-09-01 14:45:08
+ * @Description: eslint config
+ */
 module.exports = {
   env: {
     browser: true,
@@ -18,6 +25,12 @@ module.exports = {
   ],
   rules: {
     'vue/valid-template-root': 'off',
-    indent: ['error', 2]
+    'import/no-absolute-path': 'off',
+    indent: ['error', 2],
+    '@typescript-eslint/no-unused-vars': ['error', { vars: 'all', args: 'after-used', ignoreRestSiblings: false }],
+    'no-unused-vars': 'off'
+  },
+  globals: {
+    GLOBAL_ARTICLES: 'readonly'
   }
 }
