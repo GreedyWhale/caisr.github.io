@@ -1,8 +1,9 @@
 ---
-title: JavaScript学习笔记 - 作用域
-description: 你一定会对下面这些知识点感到熟悉，因为网络上有很多相似的文章，没错，这些知识都是从《你不知道的 JavaScript（上卷）》中获取的，为啥还要写一遍，因为我记性不好，算是一个读书笔记吧。
-time: 2020-8-31 17:32:17
-bg: /@/assets/images/bg1.jpg
+title: 'JavaScript学习笔记 - 作用域'
+description: '你一定会对下面这些知识点感到熟悉，因为网络上有很多相似的文章，没错，这些知识都是从《你不知道的 JavaScript（上卷）》中获取的，为啥还要写一遍，因为我记性不好，算是一个读书笔记吧。'
+time: '2018年09月06日'
+author: 'MADAO是不会开花的'
+componentName: 'Scope'
 tags:
   - "JavaScript"
   - "作用域"
@@ -169,7 +170,7 @@ useEval();
 ```
 
 node.js 中：
-![屏幕快照 2018-06-27 下午4.49.31.png](https://user-gold-cdn.xitu.io/2018/9/6/165adb29277a2ac3?w=294&h=120&f=png&s=13626)
+![截图]('/assets/images/articles/scope/image.png')
 
 chrome 浏览器控制台中：
 ![屏幕快照 2018-06-27 下午4.50.00.png](https://user-gold-cdn.xitu.io/2018/9/6/165adb29279a3cf8?w=482&h=166&f=png&s=4857)

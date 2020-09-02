@@ -1,0 +1,17 @@
+@mixin ellipsis($width) {
+  width: $width;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+@mixin multipleEllipsis($num) {
+  display: -webkit-box;
+  -webkit-line-clamp: $num;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@mixin randomColor {
+  background-color: rgb(random(255),random(255),random(255));
+}

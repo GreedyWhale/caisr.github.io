@@ -2,14 +2,18 @@
  * @Author: MADAO
  * @Date: 2020-09-01 14:05:05
  * @LastEditors: MADAO
- * @LastEditTime: 2020-09-01 16:14:59
+ * @LastEditTime: 2020-09-02 16:36:51
  * @Description: 获取首页文章列表
  */
 import { ref, Ref, onMounted } from 'vue'
 import { useStore } from 'vuex'
 import { Articles } from '/@/types/articles'
 
-export default function articlesTool (): {
+const formatTime = (timeStr: string): string => {
+  const reg = /[年月日]+/g
+  return timeStr.replace(reg, '-').slice(0, -1)
+}
+export default function articleListMethods (): {
   articleList: Ref<Articles>,
   getArticles: () => Promise<Articles>
   } {
@@ -28,7 +32,7 @@ export default function articlesTool (): {
     })
     return new Promise(resolve => {
       Promise.all(promiseList).then(() => {
-        result.sort((a, b) => new Date(b.description).getTime() - new Date(a.description).getTime())
+        result.sort((a, b) => new Date(formatTime(b.time)).getTime() - new Date(formatTime(a.time)).getTime())
         articleList.value = result
         resolve(result)
       })

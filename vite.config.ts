@@ -2,7 +2,7 @@
  * @Author: MADAO
  * @Date: 2020-08-31 14:35:32
  * @LastEditors: MADAO
- * @LastEditTime: 2020-09-01 10:15:18
+ * @LastEditTime: 2020-09-02 17:47:38
  * @Description: vite 配置
  */
 const mdPlugin = require('vite-plugin-markdown')
