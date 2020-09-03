@@ -155,14 +155,13 @@ export default defineComponent({
       overflow: hidden;
       > li {
         flex: 0 0 32%;
-        min-width: 250px;
         border: 2px solid rgb(40, 40, 40);
         border-radius: 8px;
         padding: 20px;
         color: #fff;
         cursor: pointer;
         margin-bottom: 25px;
-        height: 280px;
+        min-height: 280px;
         font-size: 14px;
         display: flex;
         flex-direction: column;
