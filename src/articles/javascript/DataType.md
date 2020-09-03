@@ -3,7 +3,8 @@ title: 'JavaScript学习笔记 - 数据类型'
 description: '一些JavaScript中有关数据类型的知识点'
 time: '2018年09月17日'
 author: 'MADAO是不会开花的'
-componentName: 'DataType'
+articleType: 'javascript'
+name: 'DataType'
 tags:
   - "JavaScript"
   - "数据类型"

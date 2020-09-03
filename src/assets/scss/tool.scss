@@ -15,3 +15,22 @@
 @mixin randomColor {
   background-color: rgb(random(255),random(255),random(255));
 }
+
+@mixin scrollBar($width: 10px, $trackBg: rgb(26,26,28), $thumbBg: rgb(195, 8, 63), $thumbHover: lighten($color: rgb(195, 8, 63), $amount: 10%)) {
+  /* width */
+  &::-webkit-scrollbar {
+    width: $width;
+  }
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: $trackBg;
+  }
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: $thumbBg;
+  }
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: $thumbHover;
+  }
+}

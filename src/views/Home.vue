@@ -1,22 +1,22 @@
 <template>
   <div class="home">
-    <div class="top-article" v-if="articleList[0]">
+    <div class="top-article" v-if="articlesAttributes[0]">
       <ul class="top-article__labels">
-        <li v-for="item in articleList[0].tags" :key="item">
+        <li v-for="item in articlesAttributes[0].tags" :key="item">
           {{ item }}
         </li>
       </ul>
       <div>
-        <h1 class="top-article__title">{{ articleList[0].title }}</h1>
-        <p class="top-article__desc">{{ articleList[0].description }}</p>
-        <p>发布时间：{{ articleList[0].time }}</p>
-        <p>作者：{{ articleList[0].author }}</p>
-        <button @click="toArticleDetail(articleList[0])">查看详情</button>
+        <h1 class="top-article__title">{{ articlesAttributes[0].title }}</h1>
+        <p class="top-article__desc">{{ articlesAttributes[0].description }}</p>
+        <p>发布时间：{{ articlesAttributes[0].time }}</p>
+        <p>作者：{{ articlesAttributes[0].author }}</p>
+        <button @click="toArticleDetail(articlesAttributes[0].name)">查看详情</button>
       </div>
     </div>
     <div class="article-list">
       <ul v-if="articlesExceptFirst.length">
-        <li v-for="item in articlesExceptFirst" :key="item.title" @click="toArticleDetail(item)">
+        <li v-for="item in articlesExceptFirst" :key="item.title" @click="toArticleDetail(item.name)">
           <div>
             <div class="article-list__icon" :data-type="item.articleType"></div>
             <h2 class="article-list__title">{{ item.title }}</h2>
@@ -34,29 +34,23 @@
 
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
-import { useStore } from 'vuex'
-import articlesTool from '/@/composables/home/articleListMethods'
+import { getArticlesAttributes } from '/@/composables/articleMethods'
 import { useRouter } from 'vue-router'
-import { Article } from '/@/types/articles'
-
 export default defineComponent({
   name: 'Home',
   setup () {
-    const store = useStore()
     const router = useRouter()
-    const { state: { articleType } } = store
-    const { articleList, getArticles } = articlesTool()
-    const articlesExceptFirst = computed(() => articleList.value.slice(1))
-    const toArticleDetail = (article: Article) => {
-      store.commit('updateCurrentArticle', article)
-      router.push('/article')
+
+    const articlesAttributes = getArticlesAttributes()
+    const articlesExceptFirst = computed(() => articlesAttributes.value.slice(1))
+
+    const toArticleDetail = (name: string) => {
+      router.push(`/article/${name}`)
     }
     return {
-      articleList,
-      getArticles,
-      articlesExceptFirst,
-      articleType,
-      toArticleDetail
+      articlesAttributes,
+      toArticleDetail,
+      articlesExceptFirst
     }
   }
 })
@@ -152,22 +146,7 @@ export default defineComponent({
     min-width: 580px;
     height: 100%;
     flex: 1;
-    /* width */
-    &::-webkit-scrollbar {
-      width: 10px;
-    }
-    /* Track */
-    &::-webkit-scrollbar-track {
-      background: rgb(26,26,28);
-    }
-    /* Handle */
-    &::-webkit-scrollbar-thumb {
-      background: rgb(195, 8, 63);
-    }
-    /* Handle on hover */
-    &::-webkit-scrollbar-thumb:hover {
-      background: lighten($color: rgb(195, 8, 63), $amount: 10%);
-    }
+    @include scrollBar;
     > ul {
       padding: 20px 40px;
       display: flex;

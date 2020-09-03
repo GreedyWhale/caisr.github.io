@@ -13,6 +13,7 @@
 
 <style lang="scss" scoped>
 .aside {
+  flex: none;
   width: 150px;
   height: 100%;
   background: rgb(22,22,22);

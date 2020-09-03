@@ -3,7 +3,8 @@ title: 'JavaScript学习笔记 - 对象'
 description: '这是一篇关于JavaScript中对象的学习笔记'
 time: '2018年09月06日'
 author: 'MADAO是不会开花的'
-componentName: 'Object'
+articleType: 'javascript'
+name: 'Object'
 tags:
   - "JavaScript"
   - "对象"

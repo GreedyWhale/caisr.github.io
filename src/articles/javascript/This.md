@@ -3,7 +3,8 @@ title: 'JavaScript学习笔记 - this'
 description: 'this是一个比较难理解的关键字，它在不同情况下的指向不同，而且它字面意思也很容易让人误解，因为它并不指向函数本身。'
 time: '2018年09月06日'
 author: 'MADAO是不会开花的'
-componentName: 'This'
+articleType: 'javascript'
+name: 'This'
 tags:
   - "JavaScript"
   - "this"

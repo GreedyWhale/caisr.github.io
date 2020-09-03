@@ -3,7 +3,8 @@ title: 'JavaScript学习笔记 - 闭包'
 description: '我觉得在理解闭包之前，先要理解有两点：1. 作用域、2. JavaScript的垃圾回收机制'
 time: '2018年09月06日'
 author: 'MADAO是不会开花的'
-componentName: 'Closure'
+articleType: 'javascript'
+name: 'Closure'
 tags:
   - "JavaScript"
   - "闭包"
