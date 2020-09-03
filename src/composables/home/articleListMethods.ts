@@ -2,12 +2,13 @@
  * @Author: MADAO
  * @Date: 2020-09-01 14:05:05
  * @LastEditors: MADAO
- * @LastEditTime: 2020-09-02 16:36:51
+ * @LastEditTime: 2020-09-03 10:52:36
  * @Description: 获取首页文章列表
  */
 import { ref, Ref, onMounted } from 'vue'
 import { useStore } from 'vuex'
 import { Articles } from '/@/types/articles'
+import { Vuex } from '/@/types/vuex'
 
 const formatTime = (timeStr: string): string => {
   const reg = /[年月日]+/g
@@ -17,16 +18,23 @@ export default function articleListMethods (): {
   articleList: Ref<Articles>,
   getArticles: () => Promise<Articles>
   } {
-  const store = useStore()
+  const store = useStore<Vuex.State>()
   const { state: { articleType, articles } } = store
   const articleList = ref<Articles>([])
   const getArticles = (): Promise<Articles> => {
     const result: Articles = []
-    const promiseList = articles[articleType].map((value: string) => {
+    let currentArticles = articles
+    if (articleType) {
+      currentArticles = articles.filter((value) => value.articleType === articleType)
+    }
+    const promiseList = currentArticles.map((value) => {
       const fn = async () => {
-        const attributes = await import(`/@/articles/${articleType}/${value}`)
+        const attributes = await import(value.path)
           .then(res => res.attributes)
-        result.push(attributes)
+        result.push({
+          ...value,
+          ...attributes
+        })
       }
       return fn()
     })

@@ -11,69 +11,52 @@
         <p class="top-article__desc">{{ articleList[0].description }}</p>
         <p>发布时间：{{ articleList[0].time }}</p>
         <p>作者：{{ articleList[0].author }}</p>
-        <router-link :to="`/article/${articleList[0].componentName}`">查看详情</router-link>
+        <button @click="toArticleDetail(articleList[0])">查看详情</button>
       </div>
     </div>
     <div class="article-list">
       <ul v-if="articlesExceptFirst.length">
-        <router-link
-          custom
-          v-slot="{ navigate, isActive, isExactActive }"
-          v-for="item in articlesExceptFirst"
-          :key="item.title"
-          :to="`/article/${item.componentName}`">
-          <li role="link" @click="navigate" :class="{ active: isActive, 'exact-active': isExactActive }">
-            <div>
-              <div class="article-list__icon" :data-type="articleType"></div>
-              <h2 class="article-list__title">{{ item.title }}</h2>
-              <p class="article-list__desc">{{ item.description }}</p>
-            </div>
-            <div class="article-list__meta">
-              <p>发布时间：{{ item.time }}</p>
-              <p>作者：{{ item.author }}</p>
-            </div>
-          </li>
-        </router-link>
+        <li v-for="item in articlesExceptFirst" :key="item.title" @click="toArticleDetail(item)">
+          <div>
+            <div class="article-list__icon" :data-type="item.articleType"></div>
+            <h2 class="article-list__title">{{ item.title }}</h2>
+            <p class="article-list__desc">{{ item.description }}</p>
+          </div>
+          <div class="article-list__meta">
+            <p>发布时间：{{ item.time }}</p>
+            <p>作者：{{ item.author }}</p>
+          </div>
+        </li>
       </ul>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, onMounted } from 'vue'
+import { defineComponent, computed } from 'vue'
 import { useStore } from 'vuex'
 import articlesTool from '/@/composables/home/articleListMethods'
+import { useRouter } from 'vue-router'
+import { Article } from '/@/types/articles'
 
 export default defineComponent({
   name: 'Home',
   setup () {
-    const { state: { articleType } } = useStore()
+    const store = useStore()
+    const router = useRouter()
+    const { state: { articleType } } = store
     const { articleList, getArticles } = articlesTool()
     const articlesExceptFirst = computed(() => articleList.value.slice(1))
-    // const { articles } = await getArticles()
-    // console.log(articles)
-    // console.log(1)
-    // // data
-    // const state = reactive({
-    //   path: `../articles/javascript/${window.GLOBAL_ARTICLES.javascript[0]}`
-    // })
-    // // methods
-    // const getComponent = computed(() => {
-    //   const component = defineAsyncComponent(() => {
-    //     // warn non-props https://v3.vuejs.org/guide/component-attrs.html#disabling-attribute-inheritance
-    //     return import(state.path).then(res => res.VueComponent)
-    //   })
-    //   console.log(component)
-    //   return component
-    // })
-    onMounted(() => {
-      // console.log(articlesExceptFirst)
-    })
+    const toArticleDetail = (article: Article) => {
+      store.commit('updateCurrentArticle', article)
+      router.push('/article')
+    }
     return {
       articleList,
       getArticles,
       articlesExceptFirst,
-      articleType
+      articleType,
+      toArticleDetail
     }
   }
 })
@@ -119,6 +102,7 @@ export default defineComponent({
       > li {
         padding: 10px 1em;
         margin-right: 1em;
+        margin-bottom: 1em;
         border-radius: 8px;
         @for $i from 1 through 8 {
           &:nth-child(n + #{$i}) {
@@ -147,7 +131,7 @@ export default defineComponent({
       @include multipleEllipsis(2);
     }
     $router-color: rgb(195, 8, 63);
-    a {
+    button {
       display: block;
       width: 150px;
       height: 40px;
@@ -192,7 +176,7 @@ export default defineComponent({
       overflow: hidden;
       > li {
         flex: 0 0 32%;
-        min-width: 120px;
+        min-width: 250px;
         border: 2px solid rgb(40, 40, 40);
         border-radius: 8px;
         padding: 20px;

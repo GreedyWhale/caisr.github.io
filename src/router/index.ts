@@ -2,7 +2,7 @@
  * @Author: MADAO
  * @Date: 2020-08-26 09:52:35
  * @LastEditors: MADAO
- * @LastEditTime: 2020-09-02 16:11:33
+ * @LastEditTime: 2020-09-03 10:45:41
  * @Description: 路由配置
  */
 import { createRouter, createWebHashHistory } from 'vue-router'
@@ -13,7 +13,7 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes: [
     { path: '/', name: 'Home', component: Home },
-    { path: '/article/:id', name: 'Article', component: Article }
+    { path: '/article/', name: 'Article', component: Article }
   ]
 })
 
