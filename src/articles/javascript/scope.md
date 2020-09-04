@@ -1,10 +1,10 @@
 ---
-title: 'JavaScript学习笔记 - 作用域'
-description: '你一定会对下面这些知识点感到熟悉，因为网络上有很多相似的文章，没错，这些知识都是从《你不知道的 JavaScript（上卷）》中获取的，为啥还要写一遍，因为我记性不好，算是一个读书笔记吧。'
-time: '2018年09月06日'
-author: 'MADAO是不会开花的'
-articleType: 'javascript'
-name: 'Scope'
+title: "JavaScript学习笔记 - 作用域"
+description: "你一定会对下面这些知识点感到熟悉，因为网络上有很多相似的文章，没错，这些知识都是从《你不知道的 JavaScript（上卷）》中获取的，为啥还要写一遍，因为我记性不好，算是一个读书笔记吧。"
+time: "2018年09月06日"
+author: "MADAO是不会开花的"
+articleType: "javascript"
+name: "Scope"
 tags:
   - "JavaScript"
   - "作用域"
@@ -37,17 +37,29 @@ tags:
 例子：
 
 ```
+
 var a = 1
+
 function foo() {
+
     var a = 2;
+
     bar();
+
 }
+
+
 
 function bar() {
+
     console.log(a);
+
 }
 
+
+
 foo();  // 1
+
 ```
 
 ### 四. 全局作用域 & 函数作用域 & 块级作用域
@@ -55,61 +67,100 @@ foo();  // 1
 - #### 全局作用域
   全局作用域中的变量在整个 JavaScript 代码中的任何地方都可以访问和修改，全局作用域中的变量都是在**全局对象**的属性，如果 JavaScript 代码是运行在浏览器的环境中，那么这个全局对象就是 window，如果是在 node.js 中那么这个全局对象就是 global，例子：
   ```
+
   var bar = 1;
+
   function foo() {
+
     console.log(bar);
+
   }
+
   foo();  // 1
+
   window.foo(); // 1
+
   window.bar;  // 1
+
   ```
   这里要注意一下，如果使用 let 和 const 在全局作用域中声明一个变量，这个变量仍然是全局变量，但不是全局对象的属性，例子
   ```
+
   let a = 1;
+
   window.a;  // undefined
+
   function foo() {
+
     console.log(a);
+
   }
+
   foo(); // 1
+
   ```
 - #### 函数作用域
 
   函数作用域中的变量只能在该函数中访问和修改，在函数之外无法访问和修改，通过闭包可以使函数之外的作用域访问和修改函数作用域中的变量。例子：
 
   ```
+
   function foo() {
+
     var bar = 1;
+
   }
+
   foo();
+
   console.log(bar); // Uncaught ReferenceError: bar is not defined
+
   ```
 
   注意：如果不使用任何关键字直接声明一个变量，这个变量为全局变量。例子：
 
   ```
+
   function foo() {
+
       bar = 1
+
   }
+
   foo();
+
   console.log(bar); // 1
+
   ```
 
 - #### 块级作用域
   块级作用域在 es6 之前就已经存在了，就是 try...catch..语句，例子：
   ```
+
   try{
+
     throw 1;
+
   } catch(a) {
+
     console.log(a);   // 1
+
   }
+
   console.log(a); // a is not defined
+
   ```
   在 es6 的语法中，用 let 和 const 关键字声明的变量只能在当前代码块中访问和修改。例子：
   ```
+
   { let foo = 1; }
+
   { const bar = 2; }
+
   console.log(foo);  // foo is not defined
+
   console.log(bar);  // bar is not defined
+
   ```
 
 ### 五. 欺骗词法作用域
@@ -121,111 +172,167 @@ foo();  // 1
 3. eval 会有安全性问题
 4. with 有可能声明一些意料之外的变量
 
-先来看下怎么欺骗：
+例子：
 
 ```
+
 // eval
+
 function foo(str, a) {
-    eval(str);
-    console.log(a, b);
+
+   eval(str);
+
+   console.log(a, b);
+
 }
+
 var b = 2;
-foo('var b = 3', 1);   // 1, 3，
+
+foo('var b = 3', 1);   // 1, 3
 
 // with
+
 function bar() {
-  var c = 2;
-  with(window) {
-     console.log(c);
-  }
+
+ var c = 2;
+
+ with(window) {
+
+   console.log(c);
+
+ }
+
 }
+
 var c = 1;
+
 bar();   // 1
-```
 
-- 测试性能
+// 测试性能 - eval
 
-```
-// eval
 let a = 0;
+
 let b = 0;
 
 function useEval() {
-  console.time('useEval');
-  for(let i = 0; i < 10000; i += 1) {
-    a = eval(`${a} + ${i}`);
-  }
-  console.timeEnd('useEval');
+
+ console.time('useEval');
+
+ for(let i = 0; i < 10000; i += 1) {
+
+   a = eval(`${a} + ${i}`);
+
+ }
+
+ console.timeEnd('useEval');
+
 }
 
 function noEval() {
-  console.time('noEval');
-  for(let i = 0; i < 10000; i += 1) {
-    b += i;
-  }
-  console.timeEnd('noEval');
+
+ console.time('noEval');
+
+ for(let i = 0; i < 10000; i += 1) {
+
+   b += i;
+
+ }
+
+ console.timeEnd('noEval');
+
 }
 
 noEval();
+
 useEval();
-```
 
-node.js 中：
-![截图]('/assets/images/articles/scope/image.png')
+// 测试性能 - with
 
-chrome 浏览器控制台中：
-![屏幕快照 2018-06-27 下午4.50.00.png](https://user-gold-cdn.xitu.io/2018/9/6/165adb29279a3cf8?w=482&h=166&f=png&s=4857)
-
-```
-// with
 let obj = {
-  a: 0,
-  b: 1
+
+ a: 0,
+
+ b: 1
+
 };
+
 function useWith() {
-  console.time('useWith');
-  with(obj) {
-    for(let i = 0; i < 10000; i += 1) {
-      a = a + i;
-    }
-  }
-  console.timeEnd('useWith');
+
+ console.time('useWith');
+
+ with(obj) {
+
+   for(let i = 0; i < 10000; i += 1) {
+
+     a = a + i;
+
+   }
+
+ }
+
+ console.timeEnd('useWith');
+
 }
 
 function noWith() {
-  console.time('noWith');
-  for(let i = 0; i < 10000; i += 1) {
-    obj.b = obj.b + i;
-  }
-  console.timeEnd('noWith');
+
+ console.time('noWith');
+
+ for(let i = 0; i < 10000; i += 1) {
+
+   obj.b = obj.b + i;
+
+ }
+
+ console.timeEnd('noWith');
+
 }
+
 useWith();
+
 noWith();
+
 ```
 
 node.js 中：
-![测试](https://user-gold-cdn.xitu.io/2018/9/6/165adb2927684d3d?w=306&h=112&f=png&s=12068)
+![截图](/articlesImages/scope/image.png)
 
 chrome 浏览器控制台中：
-![测试](https://user-gold-cdn.xitu.io/2018/9/6/165adb29277d6371?w=452&h=80&f=png&s=3469)
+![截图](/articlesImages/scope/image1.png)
+
+node.js 中：
+![截图](/articlesImages/scope/image2.png)
+
+chrome 浏览器控制台中：
+![截图](/articlesImages/scope/image3.png)
 
 - 补充说明
 
 1. 关于 with 有可能声明一些意料之外的变量这一点，直接举个例子说明，因为我感觉用我的表达能力，只会让人感到越来越迷惑：
 
-```
-let obj = {
-  a: 1
-}
-with(obj) {
-  a = 3
-  b = 2
-}
-console.log(obj);  //  {a: 3}
-console.log(b);  // 2
-```
+    ```
 
-为啥会这样可以去看下这篇文章[12 种不宜使用的 Javascript 语法](http://www.ruanyifeng.com/blog/2010/01/12_javascript_syntax_structures_you_should_not_use.html)
+    let obj = {
+
+      a: 1
+
+    }
+
+    with(obj) {
+
+      a = 3
+
+      b = 2
+
+    }
+
+    console.log(obj);  //  {a: 3}
+
+    console.log(b);  // 2
+
+    ```
+
+    为啥会这样可以去看下这篇文章[12 种不宜使用的 Javascript 语法](http://www.ruanyifeng.com/blog/2010/01/12_javascript_syntax_structures_you_should_not_use.html)
 
 2. 使用 with 和 eval 变慢的原因，书中有解释，概括下就是引擎在编译的时候会对作用域查找进行优化，以便于在代码运行时快速找到对应的作用域，但是使用的 with 和 eval 的代码，引擎无法明确的知道使用 with 和 eval 的代码的会对作用域做什么修改，所以只能不优化。
 
@@ -234,21 +341,37 @@ console.log(b);  // 2
 作用域之间是可以嵌套的，比如：
 
 ```
+
 {
+
    let a = 1;
+
    {
+
      let b = 2;
+
    }
+
 }
 
+
+
 function foo() {
+
    let c = 3;
+
    function bar() {
+
      let d = 4;
+
    }
+
    bar();
+
    console.log(d);
+
 }
+
 ```
 
 如果执行函数 foo，那么会得到`d is not defined`报错信息，原因就是作用域的查找规则：

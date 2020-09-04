@@ -1,0 +1,38 @@
+@mixin markdown {
+  &::v-deep ul {
+    padding-left: 2em;
+    > li {
+        list-style: circle;
+    }
+  }
+  &::v-deep h3 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+  &::v-deep h4 {
+    margin: 10px 0;
+  }
+  &::v-deep p {
+    margin-bottom: 10px;
+  }
+  &::v-deep p,
+  &::v-deep li {
+    line-height: 1.5;
+  }
+  &::v-deep blockquote {
+    padding: 1em 2em;
+    border-left: 4px solid #cbcbcb;
+    background: #f8f8f8;
+    margin-left: 0;
+    > p {
+      margin: 0;
+    }
+  }
+  &::v-deep img {
+    display: block;
+    margin: 1em 0;
+  }
+  &::v-deep a {
+    color: #0269c8;
+  }
+}
