@@ -68,3 +68,10 @@ export default defineComponent({
   @include markdown;
 }
 </style>
+<style lang="scss">
+code {
+  color: #ff502c;
+  background: #fff5f5;
+  padding: 0.6em 0.4em;
+}
+</style>

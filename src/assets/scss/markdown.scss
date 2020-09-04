@@ -12,12 +12,10 @@
   &::v-deep h4 {
     margin: 10px 0;
   }
-  &::v-deep p {
-    margin-bottom: 10px;
-  }
   &::v-deep p,
   &::v-deep li {
     line-height: 1.5;
+    margin-bottom: 1em;
   }
   &::v-deep blockquote {
     padding: 1em 2em;
@@ -34,5 +32,9 @@
   }
   &::v-deep a {
     color: #0269c8;
+  }
+  &::v-deep ul,
+  &::v-deep ol {
+    margin: 2em 0;
   }
 }
