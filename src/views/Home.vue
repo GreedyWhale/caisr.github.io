@@ -197,14 +197,11 @@ export default defineComponent({
       background-repeat: no-repeat;
       background-size: 100%;
       background-position: center;
-      &[data-type="javascript"] {
-        background-image: url('../assets/images/JavaScript.png');
-      }
-      &[data-type="css"] {
-        background-image: url('../assets/images/css.png');
-      }
-      &[data-type="miniprogram"] {
-        background-image: url('../assets/images/mini_program.png');
+      $types: 'javascript', 'css', 'miniprogram', 'vue';
+      @each $type in $types {
+        &[data-type="#{$type}"] {
+          background-image: url('../assets/images/#{$type}.png');
+        }
       }
     }
     &__meta > p {

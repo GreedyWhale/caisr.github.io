@@ -4,7 +4,7 @@ description: "今天总结下如何使用Gulp构建微信小程序项目。"
 time: "2018年10月06日"
 author: "MADAO是不会开花的"
 articleType: "miniprogram"
-name: "gulp"
+name: "Gulp"
 tags:
   - "Gulp"
   - "微信小程序"
