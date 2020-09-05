@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="article-list">
-      <ul v-if="articlesExceptFirst.length">
+      <ul v-if="articlesExceptFirst.length" :data-has-remainder="articlesExceptFirst.length % 3 !== 0">
         <li v-for="item in articlesExceptFirst" :key="item.title" @click="toArticleDetail(item.name)">
           <div>
             <div class="article-list__icon" :data-type="item.articleType"></div>
@@ -170,6 +170,12 @@ export default defineComponent({
           opacity: 0.8;
         }
       }
+      &[data-has-remainder="true"] {
+        &::after {
+          content: '';
+          flex: 0 0 32%;
+        }
+      }
     }
     &__title {
       font-size: 18px;
@@ -188,8 +194,14 @@ export default defineComponent({
       width: 48px;
       height: 48px;
       margin-bottom: 10px;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center;
       &[data-type="javascript"] {
-        background: url('../assets/images/JavaScript.png') no-repeat center / 100%;
+        background-image: url('../assets/images/JavaScript.png');
+      }
+      &[data-type="css"] {
+        background-image: url('../assets/images/css.png');
       }
     }
     &__meta > p {

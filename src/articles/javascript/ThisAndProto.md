@@ -89,11 +89,11 @@ tags:
 
   如图：
 
-  ![](/articlesImages/thisAndProto/image.png)
+  ![](/articlesImages/javascript/thisAndProto/image.png)
 
   在 JavaScript 中，Object.prototype 就是存放所有对象共有属性的的对象。
 
-  ![](/articlesImages/thisAndProto/image1.png)
+  ![](/articlesImages/javascript/thisAndProto/image1.png)
 
   `Object.prototype.__proto__` === null ，因为它不再需要引用其他共有属性了，它自己就是为了存放所有对象的共有属性。
 
@@ -119,13 +119,13 @@ tags:
 
   JavaScript 中除了有 Object 以外，还有 Array（注意首字母都是大写），它们都是函数，用于创建对象和数组（函数也是对象），那么只需要将所有数组的共有属性写在 Array.prototype 中，然后让`被创建的数组.__proto__`指向 Array.prototype，然后`Array.prototype.__proto__` 指向 Object.prototype 就可以让被创建的数组既可以用数组的共有属性，也可以用对象的共有属性了。
 
-  ![](/articlesImages/thisAndProto/image2.png)
+  ![](/articlesImages/javascript/thisAndProto/image2.png)
 
-  ![](/articlesImages/thisAndProto/image3.png)
+  ![](/articlesImages/javascript/thisAndProto/image3.png)
 
   它们的关系是：
 
-  ![](/articlesImages/thisAndProto/image4.png)
+  ![](/articlesImages/javascript/thisAndProto/image4.png)
 
   对象的`__proto__`就是对象的原型（可以理解为共有属性），当查找一个对象中的属性的时候，JavaScript 会先查找对象自有属性，没有就去共有属性里找，共有属性里还没有就在**共有属性的共有属性**里继续找，直到 Object.prototype。那么这个过程可以看成
 
@@ -197,7 +197,7 @@ tags:
 
   ```
 
-  ![](/articlesImages/thisAndProto/image5.png)
+  ![](/articlesImages/javascript/thisAndProto/image5.png)
 
   那来看这种情况：
 
@@ -305,7 +305,7 @@ tags:
 
   ```
 
-  ![](/articlesImages/thisAndProto/image6.png)
+  ![](/articlesImages/javascript/thisAndProto/image6.png)
 
   看两道题：
 
@@ -379,24 +379,24 @@ tags:
      传入的 undefined 被自动的指向了 window，全局用 var 声明一个变量，相当于
      给全局对象增加一个属性。所以 this.name === window.name
   3. 因为我们无法确定 button.onclick 转换成 call 传入的参数，所以只能去看文档，
-     ![](/articlesImages/thisAndProto/image7.png)
+     ![](/articlesImages/javascript/thisAndProto/image7.png)
      根据文档确定 this 指的就是 button，但这只是一般的情况，
      如果`button.onclick.call({xxx: '', yyy: ''})`这样调用，
      那 this 就不是 button 了。
 
   _知识点_：只有 var 在全局作用域声明的变量会变成全局对象的属性，let 和 const 不会。
 
-  ![](/articlesImages/thisAndProto/image8.png)
+  ![](/articlesImages/javascript/thisAndProto/image8.png)
 
   构造函数也是一样的，如图：
 
-  ![](/articlesImages/thisAndProto/image9.png)
+  ![](/articlesImages/javascript/thisAndProto/image9.png)
 
   基本上 this 的值我们可以通过 call 的第一个参数确定，但是 ES6 出现了一种新语法**箭头函数**
 
   **箭头函数**又是另一种情况了
 
-  ![](/articlesImages/thisAndProto/image10.png)
+  ![](/articlesImages/javascript/thisAndProto/image10.png)
 
   前面说 this 通过函数 call 的第一个参数确定，所以说 this 是一个函数的参数，箭头函数的 this 也可以用这个套路确定吗？
 
@@ -416,7 +416,7 @@ tags:
 
   ```
 
-  ![](/articlesImages/thisAndProto/image11.png)
+  ![](/articlesImages/javascript/thisAndProto/image11.png)
 
   我们用 call 方法调用 foo，并传入了一个对象作为 this，但是 foo 不要，它不要我们传入的 this。
 
@@ -426,7 +426,7 @@ tags:
 
   上面例子说明， `var foo = () => { console.log(this.name) };`foo 定义在全局作用域中，它外面的 this 是什么。
 
-  ![](/articlesImages/thisAndProto/image12.png)
+  ![](/articlesImages/javascript/thisAndProto/image12.png)
 
   再来看几个例子：
 
@@ -962,7 +962,7 @@ for(let i = 0; i < 10; i++) {
 
   ```
 
-  ![](/articlesImages/thisAndProto/image13.png)
+  ![](/articlesImages/javascript/thisAndProto/image13.png)
 
   ```
 
@@ -1018,7 +1018,7 @@ for(let i = 0; i < 10; i++) {
 
   ```
 
-  ![](/articlesImages/thisAndProto/image14.png)
+  ![](/articlesImages/javascript/thisAndProto/image14.png)
 
   这下就完美解决了，这就是 JavaScript 中实现继承的过程。
 
@@ -1160,4 +1160,4 @@ for(let i = 0; i < 10; i++) {
 
   画一张图对比下：
 
-  ![](/articlesImages/thisAndProto/image15.png)
+  ![](/articlesImages/javascript/thisAndProto/image15.png)
