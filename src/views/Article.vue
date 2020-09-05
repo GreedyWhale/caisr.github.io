@@ -23,6 +23,7 @@ export default defineComponent({
       VueComponent: articleComponent,
       attributes: articleAttributes
     } = getCurrentArticle((name as string))
+
     // 初始化hljs
     const rootElement = ref(null)
     const initHighLight = () => {

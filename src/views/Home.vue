@@ -203,6 +203,9 @@ export default defineComponent({
       &[data-type="css"] {
         background-image: url('../assets/images/css.png');
       }
+      &[data-type="miniprogram"] {
+        background-image: url('../assets/images/mini_program.png');
+      }
     }
     &__meta > p {
       color: #909090;

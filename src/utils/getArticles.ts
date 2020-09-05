@@ -2,7 +2,7 @@
  * @Author: MADAO
  * @Date: 2020-09-03 11:34:49
  * @LastEditors: MADAO
- * @LastEditTime: 2020-09-05 14:11:03
+ * @LastEditTime: 2020-09-05 14:51:58
  * @Description: 所有文章组件
  */
 import * as Closure from '/@/articles/javascript/Closure.md'
@@ -19,6 +19,8 @@ import * as JSArray from '/@/articles/javascript/Array.md'
 
 import * as CSSREMScope from '/@/articles/css/RemAndScope.md'
 
+import * as MINAGulp from '/@/articles/miniprogram/gulp.md'
+
 const formatTime = (timeStr: string): string => {
   const reg = /[年月日]+/g
   return timeStr.replace(reg, '-').slice(0, -1)
@@ -28,7 +30,8 @@ const articles = [
   Closure, Currying, DataType,
   JSFunction, Hoisting, JSObject,
   Prototype, Scope, This, ThisAndProto,
-  JSArray, CSSREMScope
+  JSArray, CSSREMScope,
+  MINAGulp
 ]
 articles.sort((a, b) => {
   return new Date(formatTime(b.attributes.time)).getTime() - new Date(formatTime(a.attributes.time)).getTime()
