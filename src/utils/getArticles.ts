@@ -2,7 +2,7 @@
  * @Author: MADAO
  * @Date: 2020-09-03 11:34:49
  * @LastEditors: MADAO
- * @LastEditTime: 2020-09-08 15:36:11
+ * @LastEditTime: 2020-09-08 16:49:25
  * @Description: 所有文章组件
  */
 import * as JSClosure from '/@/articles/javascript/Closure.md'
@@ -32,6 +32,7 @@ import * as PythonVariable from '/@/articles/python/Variable.md'
 import * as PythonStringAndNumber from '/@/articles/python/StringAndNumber.md'
 import * as PythonList from '/@/articles/python/list.md'
 import * as PythonIf from '/@/articles/python/If.md'
+import * as PythonInputAndWhile from '/@/articles/python/InputAndWhile.md'
 
 const formatTime = (timeStr: string): string => {
   const reg = /[年月日]+/g
@@ -61,6 +62,7 @@ const articles = [
   PythonStringAndNumber,
   PythonList,
   PythonIf,
+  PythonInputAndWhile,
   JSArray
 ]
 
