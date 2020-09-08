@@ -2,7 +2,7 @@
  * @Author: MADAO
  * @Date: 2020-09-03 11:34:49
  * @LastEditors: MADAO
- * @LastEditTime: 2020-09-08 14:32:17
+ * @LastEditTime: 2020-09-08 15:00:34
  * @Description: 所有文章组件
  */
 import * as JSClosure from '/@/articles/javascript/Closure.md'
@@ -29,6 +29,7 @@ import * as Calendar from '/@/articles/gadgets/Calendar.md'
 
 import * as PythonSetup from '/@/articles/python/Setup.md'
 import * as PythonVariable from '/@/articles/python/Variable.md'
+import * as PythonStringAndNumber from '/@/articles/python/StringAndNumber.md'
 
 const formatTime = (timeStr: string): string => {
   const reg = /[年月日]+/g
@@ -55,6 +56,7 @@ const articles = [
   Calendar,
   PythonSetup,
   PythonVariable,
+  PythonStringAndNumber,
   JSArray
 ]
 
