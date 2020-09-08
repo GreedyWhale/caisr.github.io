@@ -2,7 +2,7 @@
  * @Author: MADAO
  * @Date: 2020-09-03 11:34:49
  * @LastEditors: MADAO
- * @LastEditTime: 2020-09-05 15:17:03
+ * @LastEditTime: 2020-09-07 10:34:40
  * @Description: 所有文章组件
  */
 import * as Closure from '/@/articles/javascript/Closure.md'
@@ -23,6 +23,8 @@ import * as MINAGulp from '/@/articles/miniprogram/Gulp.md'
 
 import * as Nuxt from '/@/articles/vue/Nuxt.md'
 
+import * as Calendar from '/@/articles/gadgets/Calendar.md'
+
 const formatTime = (timeStr: string): string => {
   const reg = /[年月日]+/g
   return timeStr.replace(reg, '-').slice(0, -1)
@@ -42,7 +44,8 @@ const articles = [
   JSArray,
   CSSREMScope,
   MINAGulp,
-  Nuxt
+  Nuxt,
+  Calendar
 ]
 articles.sort((a, b) => {
   return new Date(formatTime(b.attributes.time)).getTime() - new Date(formatTime(a.attributes.time)).getTime()
