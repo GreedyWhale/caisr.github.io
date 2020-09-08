@@ -1,5 +1,5 @@
 ---
-title: "Python学习日记 - 数据存储"
+title: "Python学习笔记 - 数据存储"
 description: "这里介绍一下，Python中使用JSON格式存储数据。"
 time: "2018年12月21日 14:55"
 author: "MADAO是不会开花的"
