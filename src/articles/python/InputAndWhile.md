@@ -1,6 +1,6 @@
 ---
 title: "Python学习笔记 - input()和while循环"
-description: "Python中的条件判断"
+description: "Python中的input方法和while循环"
 time: "2018年12月14日 15:20"
 author: "MADAO是不会开花的"
 articleType: "python"
