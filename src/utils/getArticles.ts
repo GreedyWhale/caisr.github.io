@@ -2,7 +2,7 @@
  * @Author: MADAO
  * @Date: 2020-09-03 11:34:49
  * @LastEditors: MADAO
- * @LastEditTime: 2020-09-08 10:49:40
+ * @LastEditTime: 2020-09-08 11:09:05
  * @Description: 所有文章组件
  */
 import * as Closure from '/@/articles/javascript/Closure.md'
@@ -23,6 +23,7 @@ import * as MINAGulp from '/@/articles/miniprogram/Gulp.md'
 
 import * as VueCli from '/@/articles/vue/VueCli.md'
 import * as Nuxt from '/@/articles/vue/Nuxt.md'
+import * as ComponentTest from '/@/articles/vue/ComponentTest.md'
 
 import * as Calendar from '/@/articles/gadgets/Calendar.md'
 
@@ -47,6 +48,7 @@ const articles = [
   MINAGulp,
   Nuxt,
   VueCli,
+  ComponentTest,
   Calendar
 ]
 
