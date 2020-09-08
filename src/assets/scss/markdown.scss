@@ -1,23 +1,23 @@
 @mixin markdown {
-  &::v-deep ul {
+  ::v-deep() ul {
     padding-left: 2em;
     > li {
         list-style: circle;
     }
   }
-  &::v-deep h3 {
+  ::v-deep() h3 {
     margin-top: 30px;
     margin-bottom: 15px;
   }
-  &::v-deep h4 {
+  ::v-deep() h4 {
     margin: 10px 0;
   }
-  &::v-deep p,
-  &::v-deep li {
+  ::v-deep() p,
+  ::v-deep() li {
     line-height: 1.5;
     margin-bottom: 1em;
   }
-  &::v-deep blockquote {
+  ::v-deep() blockquote {
     padding: 1em 2em;
     border-left: 4px solid #cbcbcb;
     background: #f8f8f8;
@@ -26,15 +26,15 @@
       margin: 0;
     }
   }
-  &::v-deep img {
+  ::v-deep() img {
     display: block;
     margin: 1em 0;
   }
-  &::v-deep a {
+  ::v-deep() a {
     color: #0269c8;
   }
-  &::v-deep ul,
-  &::v-deep ol {
+  ::v-deep() ul,
+  ::v-deep() ol {
     margin: 2em 0;
   }
 }
