@@ -1,7 +1,7 @@
 ---
 title: "JavaScript 学习笔记 - 多维数组变为一维数组"
 description: "总结下多维数组转一维数组的方法"
-time: "2019年03月29日"
+time: "2019年03月29日 9:10"
 author: "MADAO是不会开花的"
 articleType: "javascript"
 name: "Array"

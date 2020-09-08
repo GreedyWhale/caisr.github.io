@@ -1,7 +1,7 @@
 ---
 title: "JavaScript学习笔记 - 柯里化"
 description: "今天开始学习饥人谷方方老师的JS深入浅出，总结下之前不知道的知识点。"
-time: "2018年10月02日"
+time: "2018年10月02日 17:15"
 author: "MADAO是不会开花的"
 articleType: "javascript"
 name: "Currying"

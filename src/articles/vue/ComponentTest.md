@@ -1,7 +1,7 @@
 ---
 title: "Vue学习笔记 - Vue组件测试"
 description: "测试这块我完全是一片空白，最近在学习饥人谷的使用Vue造轮子课程，课程里有讲到测试这块，所以写写，作为备忘："
-time: "2018年09月06日"
+time: "2018年09月06日 14:00"
 author: "MADAO是不会开花的"
 articleType: "vue"
 name: "ComponentTest"

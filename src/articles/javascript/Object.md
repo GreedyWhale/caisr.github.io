@@ -1,7 +1,7 @@
 ---
 title: "JavaScript学习笔记 - 对象"
 description: "这是一篇关于JavaScript中对象的学习笔记"
-time: "2018年09月06日"
+time: "2018年09月06日 16:40"
 author: "MADAO是不会开花的"
 articleType: "javascript"
 name: "Object"

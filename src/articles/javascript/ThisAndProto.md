@@ -1,7 +1,7 @@
 ---
 title: "JavaScript学习笔记 - 重谈原型链，this，构造函数"
 description: "之前写过一篇文章，总结过new，this，构造函数及原型。今天看完饥人谷方方老师的讲的课，有点颠覆我对这些东西的理解。重新总结下："
-time: "2018年10月04日"
+time: "2018年10月04日 11:13"
 author: "MADAO是不会开花的"
 articleType: "javascript"
 name: "ThisAndProto"

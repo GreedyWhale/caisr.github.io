@@ -1,7 +1,7 @@
 ---
 title: "JavaScript学习笔记 - 原生函数"
 description: "在JavaScript中有一些原生函数，有时候也叫内置函数"
-time: "2018年09月29日"
+time: "2018年09月29日 15:17"
 author: "MADAO是不会开花的"
 articleType: "javascript"
 name: "Function"

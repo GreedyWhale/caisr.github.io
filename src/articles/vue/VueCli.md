@@ -1,7 +1,7 @@
 ---
 title: "Vue 学习笔记 - Vue CLI"
 description: "在使用 webpack 搭建项目失败了之后，还是选择了 Vue CLI 来搭建。下面就把使用 Vue CLI 搭建项目的步骤记录一下："
-time: "2018年09月06日"
+time: "2018年09月06日 11:00"
 author: "MADAO是不会开花的"
 articleType: "vue"
 name: "VueCli"

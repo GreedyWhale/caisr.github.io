@@ -1,7 +1,7 @@
 ---
 title: "Vue学习笔记 - Nuxt.js"
 description: "最近工作中有用到服务端渲染，一边学一边写了一个小demo，这里记录下过程，服务端渲染的好处就不多说了，网上有很多，直接开始吧！"
-time: "2018年10月17日"
+time: "2018年10月17日 10:45"
 author: "MADAO是不会开花的"
 articleType: "vue"
 name: "Nuxt"
