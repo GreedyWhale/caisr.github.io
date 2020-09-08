@@ -37,6 +37,7 @@ import * as PythonFunction from '/@/articles/python/Function.md'
 import * as PythonClass from '/@/articles/python/Class.md'
 import * as PythonFileAndError from '/@/articles/python/FileAndError.md'
 import * as PythonDecodeAndEncode from '/@/articles/python/DecodeAndEncode.md'
+import * as PythonDataStore from '/@/articles/python/DataStore.md'
 
 const formatTime = (timeStr: string): string => {
   const reg = /[年月日]+/g
@@ -71,6 +72,7 @@ const articles = [
   PythonClass,
   PythonFileAndError,
   PythonDecodeAndEncode,
+  PythonDataStore,
   JSArray
 ]
 
