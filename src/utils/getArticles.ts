@@ -2,7 +2,7 @@
  * @Author: MADAO
  * @Date: 2020-09-03 11:34:49
  * @LastEditors: MADAO
- * @LastEditTime: 2020-09-09 17:33:50
+ * @LastEditTime: 2020-09-09 17:45:53
  * @Description: 所有文章组件
  */
 import * as JSClosure from '/@/articles/javascript/Closure.md'
@@ -25,6 +25,7 @@ import * as VueCli from '/@/articles/vue/VueCli.md'
 import * as VueNuxt from '/@/articles/vue/Nuxt.md'
 import * as VueComponentTest from '/@/articles/vue/ComponentTest.md'
 import * as VueAndTSOne from '/@/articles/vue/VueAndTSOne.md'
+import * as VueAndTSTwo from '/@/articles/vue/VueAndTSTwo.md'
 
 import * as Calendar from '/@/articles/gadgets/Calendar.md'
 
@@ -109,6 +110,7 @@ const articles = [
   PythonAsyncio,
   PythonAiohttp,
   VueAndTSOne,
+  VueAndTSTwo,
   JSArray
 ]
 
