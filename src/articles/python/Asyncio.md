@@ -4,7 +4,7 @@ description: "Python中的协程"
 time: "2019年01月29日 17:10"
 author: "MADAO是不会开花的"
 articleType: "python"
-name: "Asyncio"
+name: "PythonAsyncio"
 tags:
   - "Python"
   - "asyncio"

@@ -4,7 +4,7 @@ description: "你一定会对下面这些知识点感到熟悉，因为网络上
 time: "2018年09月06日 10:00"
 author: "MADAO是不会开花的"
 articleType: "javascript"
-name: "Scope"
+name: "JSScope"
 tags:
   - "JavaScript"
   - "作用域"

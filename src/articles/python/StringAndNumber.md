@@ -4,7 +4,7 @@ description: "Python中的字符串和数字类型"
 time: "2018年12月11日 9:30"
 author: "MADAO是不会开花的"
 articleType: "python"
-name: "StringAndNumber"
+name: "PythonStringAndNumber"
 tags:
   - "Python"
   - "String"

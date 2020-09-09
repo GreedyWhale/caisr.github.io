@@ -1,14 +1,20 @@
 <template>
   <div class="article" ref="rootElement">
     <article>
-      <h1 class="article-title">{{ articleAttributes.title }}</h1>
-      <component :is="articleComponent"></component>
+      <h1 class="article-title">{{ article.articleAttributes.title }}</h1>
+      <component :is="article.articleComponent"></component>
     </article>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref } from 'vue'
+import {
+  defineComponent,
+  onMounted,
+  onUpdated,
+  ref,
+  computed
+} from 'vue'
 import { useRoute } from 'vue-router'
 import { getCurrentArticle } from '/@/composables/articleMethods'
 import hljs from 'highlight.js'
@@ -17,12 +23,16 @@ import 'highlight.js/styles/shades-of-purple.css'
 export default defineComponent({
   name: 'Article',
   setup () {
-    // 获取文章组件
-    const { params: { name } } = useRoute()
-    const {
-      VueComponent: articleComponent,
-      attributes: articleAttributes
-    } = getCurrentArticle((name as string))
+    const article = computed(() => {
+      // 获取文章组件
+      const { params: { name } } = useRoute()
+      const {
+        VueComponent: articleComponent,
+        attributes: articleAttributes
+      } = getCurrentArticle((name as string))
+
+      return { articleComponent, articleAttributes }
+    })
 
     // 初始化hljs
     const rootElement = ref(null)
@@ -36,10 +46,13 @@ export default defineComponent({
     onMounted(() => {
       initHighLight()
     })
+    onUpdated(() => {
+      initHighLight()
+    })
+
     return {
       rootElement,
-      articleComponent,
-      articleAttributes
+      article
     }
   }
 })

@@ -2,7 +2,7 @@
  * @Author: MADAO
  * @Date: 2020-09-03 11:34:49
  * @LastEditors: MADAO
- * @LastEditTime: 2020-09-09 15:56:53
+ * @LastEditTime: 2020-09-09 17:25:58
  * @Description: 所有文章组件
  */
 import * as JSClosure from '/@/articles/javascript/Closure.md'
@@ -54,6 +54,7 @@ import * as PythonTime from '/@/articles/python/Time.md'
 import * as PythonDownloadImages from '/@/articles/python/DownloadImages.md'
 import * as PythonMultiprocessing from '/@/articles/python/Multiprocessing.md'
 import * as PythonAsyncio from '/@/articles/python/Asyncio.md'
+import * as PythonAiohttp from '/@/articles/python/Aiohttp.md'
 
 const formatTime = (timeStr: string): string => {
   const reg = /[年月日]+/g
@@ -105,6 +106,7 @@ const articles = [
   PythonDownloadImages,
   PythonMultiprocessing,
   PythonAsyncio,
+  PythonAiohttp,
   JSArray
 ]
 

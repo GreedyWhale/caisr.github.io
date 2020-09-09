@@ -4,7 +4,7 @@ description: "Python中有关队列的一些知识点"
 time: "2019年01月15日 10:28"
 author: "MADAO是不会开花的"
 articleType: "python"
-name: "Queue"
+name: "PythonQueue"
 tags:
   - "Python"
   - "Queue"

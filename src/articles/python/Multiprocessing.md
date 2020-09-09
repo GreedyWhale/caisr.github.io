@@ -4,7 +4,7 @@ description: "Python中的多进程"
 time: "2019年01月22日 09:10"
 author: "MADAO是不会开花的"
 articleType: "python"
-name: "Multiprocessing"
+name: "PythonMultiprocessing"
 tags:
   - "Python"
   - "多进程"

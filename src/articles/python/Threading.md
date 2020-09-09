@@ -4,7 +4,7 @@ description: "Python中的多线程"
 time: "2019年01月11日 09:00"
 author: "MADAO是不会开花的"
 articleType: "python"
-name: "Threading"
+name: "PythonThreading"
 tags:
   - "Python"
   - "threading"

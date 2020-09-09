@@ -2,7 +2,7 @@
  * @Author: MADAO
  * @Date: 2020-09-01 14:05:05
  * @LastEditors: MADAO
- * @LastEditTime: 2020-09-03 17:04:57
+ * @LastEditTime: 2020-09-09 17:08:12
  * @Description: 获取首页文章列表
  */
 import { ref } from 'vue'
@@ -45,5 +45,6 @@ export function getCurrentArticle (name: string): {
     }
     return false
   })
+
   return result
 }

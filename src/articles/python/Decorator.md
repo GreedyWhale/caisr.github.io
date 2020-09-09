@@ -4,7 +4,7 @@ description: "有时候我们希望给一个函数新增一些功能，但是又
 time: "2019年01月08日 23:00"
 author: "MADAO是不会开花的"
 articleType: "python"
-name: "Decorator"
+name: "PythonDecorator"
 tags:
   - "Python"
   - "装饰器"

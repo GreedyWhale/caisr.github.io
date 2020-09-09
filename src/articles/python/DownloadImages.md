@@ -4,7 +4,7 @@ description: "记录下使用Python下载图片的过程"
 time: "2019年01月19日 10:30"
 author: "MADAO是不会开花的"
 articleType: "python"
-name: "DownloadImages"
+name: "PythonDownloadImages"
 tags:
   - "Python"
   - "爬虫"

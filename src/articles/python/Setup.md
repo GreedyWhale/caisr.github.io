@@ -4,7 +4,7 @@ description: "开始学习python啦！！！"
 time: "2018年12月10日 19:40"
 author: "MADAO是不会开花的"
 articleType: "python"
-name: "Setup"
+name: "PythonSetup"
 tags:
   - "Python"
   - "环境搭建"

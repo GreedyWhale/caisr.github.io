@@ -4,7 +4,7 @@ description: "这次来说说JavaScript中的构造函数，原型，原型链"
 time: "2018年09月13日 09:00"
 author: "MADAO是不会开花的"
 articleType: "javascript"
-name: "Prototype"
+name: "JSPrototype"
 tags:
   - "JavaScript"
   - "构造函数"

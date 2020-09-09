@@ -4,7 +4,7 @@ description: "Python中正则表达式相关的都在re模块中。简单整理�
 time: "2019年01月17日 09:00"
 author: "MADAO是不会开花的"
 articleType: "python"
-name: "Time"
+name: "PythonTime"
 tags:
   - "Python"
   - "time"

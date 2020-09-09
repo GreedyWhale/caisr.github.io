@@ -4,7 +4,7 @@ description: "Python的闭包和JavaScript中的闭包很像，形式都是一�
 time: "2019年01月08日 21:19"
 author: "MADAO是不会开花的"
 articleType: "python"
-name: "Closure"
+name: "PythonClosure"
 tags:
   - "Python"
   - "闭包"

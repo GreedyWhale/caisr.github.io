@@ -4,7 +4,7 @@ description: "电子邮件的传输协议是SMTP，Python内置了对SMTP协议�
 time: "2018年12月29日 16:50"
 author: "MADAO是不会开花的"
 articleType: "python"
-name: "SendEmail"
+name: "PythonSendEmail"
 tags:
   - "Python"
   - "发送邮件"

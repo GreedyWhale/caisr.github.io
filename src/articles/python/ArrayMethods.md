@@ -4,7 +4,7 @@ description: "Python中列表的一些方法"
 time: "2019年01月07日 15:33"
 author: "MADAO是不会开花的"
 articleType: "python"
-name: "ArrayMethods"
+name: "PythonArrayMethods"
 tags:
   - "Python"
   - "filter"

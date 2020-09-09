@@ -4,7 +4,7 @@ description: "Python有局部作用域和全局作用域。"
 time: "2019年01月03日 10:32"
 author: "MADAO是不会开花的"
 articleType: "python"
-name: "Scope"
+name: "PythonScope"
 tags:
   - "Python"
   - "作用域"

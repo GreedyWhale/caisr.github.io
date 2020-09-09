@@ -4,7 +4,7 @@ description: "今天学习Python中的文件操作和异常处理"
 time: "2018年12月19日 9:23"
 author: "MADAO是不会开花的"
 articleType: "python"
-name: "FileAndError"
+name: "PythonFileAndError"
 tags:
   - "Python"
   - "File"

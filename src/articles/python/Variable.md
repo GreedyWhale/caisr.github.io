@@ -4,7 +4,7 @@ description: "在Python中，如果希望程序记住某个值，以便以后使
 time: "2018年12月10日 21:30"
 author: "MADAO是不会开花的"
 articleType: "python"
-name: "Variable"
+name: "PythonVariable"
 tags:
   - "Python"
   - "变量"

@@ -4,7 +4,7 @@ description: "函数可以理解为带名字的代码块，用于完成具体的
 time: "2018年12月17日 18:05"
 author: "MADAO是不会开花的"
 articleType: "python"
-name: "Function"
+name: "PythonFunction"
 tags:
   - "Python"
   - "Function"

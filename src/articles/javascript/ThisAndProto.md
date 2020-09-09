@@ -4,7 +4,7 @@ description: "之前写过一篇文章，总结过new，this，构造函数及�
 time: "2018年10月04日 11:13"
 author: "MADAO是不会开花的"
 articleType: "javascript"
-name: "ThisAndProto"
+name: "JSThisAndProto"
 tags:
   - "JavaScript"
   - "this"
