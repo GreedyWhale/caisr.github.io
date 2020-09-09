@@ -2,7 +2,7 @@
  * @Author: MADAO
  * @Date: 2020-09-03 11:34:49
  * @LastEditors: MADAO
- * @LastEditTime: 2020-09-09 11:08:19
+ * @LastEditTime: 2020-09-09 11:39:43
  * @Description: 所有文章组件
  */
 import * as JSClosure from '/@/articles/javascript/Closure.md'
@@ -44,6 +44,7 @@ import * as PythonCrawler from '/@/articles/python/Crawler.md'
 import * as PythonSendEmail from '/@/articles/python/SendEmail.md'
 import * as PythonScope from '/@/articles/python/Scope.md'
 import * as PythonLambda from '/@/articles/python/Lambda.md'
+import * as PythonArrayMethods from '/@/articles/python/ArrayMethods.md'
 
 const formatTime = (timeStr: string): string => {
   const reg = /[年月日]+/g
@@ -85,6 +86,7 @@ const articles = [
   PythonSendEmail,
   PythonScope,
   PythonLambda,
+  PythonArrayMethods,
   JSArray
 ]
 
