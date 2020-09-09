@@ -378,11 +378,6 @@ print('sub的__name__是：%s' % (sub.__name__))
     from functools import wraps
 
 
-
-
-
-    from functools import wraps
-
     def decorator_wrapper(*args, **wkargs):
 
         def decorator(func):
