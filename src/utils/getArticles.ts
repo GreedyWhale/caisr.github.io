@@ -2,7 +2,7 @@
  * @Author: MADAO
  * @Date: 2020-09-03 11:34:49
  * @LastEditors: MADAO
- * @LastEditTime: 2020-09-09 17:25:58
+ * @LastEditTime: 2020-09-09 17:33:50
  * @Description: 所有文章组件
  */
 import * as JSClosure from '/@/articles/javascript/Closure.md'
@@ -22,8 +22,9 @@ import * as CSSREMScope from '/@/articles/css/RemAndScope.md'
 import * as MINAGulp from '/@/articles/miniprogram/Gulp.md'
 
 import * as VueCli from '/@/articles/vue/VueCli.md'
-import * as Nuxt from '/@/articles/vue/Nuxt.md'
+import * as VueNuxt from '/@/articles/vue/Nuxt.md'
 import * as VueComponentTest from '/@/articles/vue/ComponentTest.md'
+import * as VueAndTSOne from '/@/articles/vue/VueAndTSOne.md'
 
 import * as Calendar from '/@/articles/gadgets/Calendar.md'
 
@@ -77,7 +78,7 @@ const articles = [
   JSCurrying,
   JSThisAndProto,
   MINAGulp,
-  Nuxt,
+  VueNuxt,
   Calendar,
   PythonSetup,
   PythonVariable,
@@ -107,6 +108,7 @@ const articles = [
   PythonMultiprocessing,
   PythonAsyncio,
   PythonAiohttp,
+  VueAndTSOne,
   JSArray
 ]
 

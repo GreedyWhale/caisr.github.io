@@ -4,7 +4,7 @@ description: "测试这块我完全是一片空白，最近在学习饥人谷的
 time: "2018年09月06日 14:00"
 author: "MADAO是不会开花的"
 articleType: "vue"
-name: "ComponentTest"
+name: "VueComponentTest"
 tags:
   - "chai"
   - "karma"
