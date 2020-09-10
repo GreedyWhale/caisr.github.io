@@ -2,7 +2,7 @@
  * @Author: MADAO
  * @Date: 2020-09-03 11:34:49
  * @LastEditors: MADAO
- * @LastEditTime: 2020-09-10 09:54:37
+ * @LastEditTime: 2020-09-10 10:12:33
  * @Description: 所有文章组件
  */
 import * as JSClosure from '/@/articles/javascript/Closure.md'
@@ -30,6 +30,7 @@ import * as Vuex from '/@/articles/vue/Vuex.md'
 import * as VueTransitions from '/@/articles/vue/VueTransitions.md'
 
 import * as Calendar from '/@/articles/gadgets/Calendar.md'
+import * as WebServer from '/@/articles/gadgets/WebServer.md'
 
 import * as PythonSetup from '/@/articles/python/Setup.md'
 import * as PythonVariable from '/@/articles/python/Variable.md'
@@ -115,7 +116,8 @@ const articles = [
   VueAndTSTwo,
   Vuex,
   VueTransitions,
-  JSArray
+  JSArray,
+  WebServer
 ]
 
 articles.sort((a, b) => {
