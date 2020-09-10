@@ -2,7 +2,7 @@
  * @Author: MADAO
  * @Date: 2020-09-03 11:34:49
  * @LastEditors: MADAO
- * @LastEditTime: 2020-09-09 17:51:16
+ * @LastEditTime: 2020-09-10 09:54:37
  * @Description: 所有文章组件
  */
 import * as JSClosure from '/@/articles/javascript/Closure.md'
@@ -27,6 +27,7 @@ import * as VueComponentTest from '/@/articles/vue/ComponentTest.md'
 import * as VueAndTSOne from '/@/articles/vue/VueAndTSOne.md'
 import * as VueAndTSTwo from '/@/articles/vue/VueAndTSTwo.md'
 import * as Vuex from '/@/articles/vue/Vuex.md'
+import * as VueTransitions from '/@/articles/vue/VueTransitions.md'
 
 import * as Calendar from '/@/articles/gadgets/Calendar.md'
 
@@ -113,6 +114,7 @@ const articles = [
   VueAndTSOne,
   VueAndTSTwo,
   Vuex,
+  VueTransitions,
   JSArray
 ]
 
