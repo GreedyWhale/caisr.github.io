@@ -2,7 +2,7 @@
  * @Author: MADAO
  * @Date: 2020-09-03 11:34:49
  * @LastEditors: MADAO
- * @LastEditTime: 2020-09-11 16:41:24
+ * @LastEditTime: 2020-09-11 17:10:46
  * @Description: 所有文章组件
  */
 import * as JSClosure from '/@/articles/javascript/Closure.md'
@@ -76,6 +76,7 @@ import * as WebpackStaticAssets from '/@/articles/webpack/StaticAssets.md'
 import * as WebpackES6 from '/@/articles/webpack/ES6.md'
 import * as WebpackTreeShaking from '/@/articles/webpack/TreeShaking.md'
 import * as WebpackCodeSplitting from '/@/articles/webpack/CodeSplitting.md'
+import * as WebpackPreload from '/@/articles/webpack/Preload.md'
 
 const formatTime = (timeStr: string): string => {
   const reg = /[年月日]+/g
@@ -144,7 +145,8 @@ const articles = [
   WebpackStaticAssets,
   WebpackES6,
   WebpackTreeShaking,
-  WebpackCodeSplitting
+  WebpackCodeSplitting,
+  WebpackPreload
 ]
 
 articles.sort((a, b) => {
