@@ -2,7 +2,7 @@
  * @Author: MADAO
  * @Date: 2020-09-03 11:34:49
  * @LastEditors: MADAO
- * @LastEditTime: 2020-09-11 15:36:52
+ * @LastEditTime: 2020-09-11 15:53:43
  * @Description: 所有文章组件
  */
 import * as JSClosure from '/@/articles/javascript/Closure.md'
@@ -70,6 +70,8 @@ import * as NodeExpress from '/@/articles/node/Express.md'
 import * as ThreejsTriangle from '/@/articles/threejs/Triangle.md'
 import * as ThreejsLightAndShadow from '/@/articles/threejs/LightAndShadow.md'
 
+import * as OtherImplicitConversion from '/@/articles/other/ImplicitConversion.md'
+
 const formatTime = (timeStr: string): string => {
   const reg = /[年月日]+/g
   const date = timeStr.split(' ')
@@ -132,7 +134,8 @@ const articles = [
   NodeHttp,
   NodeExpress,
   ThreejsTriangle,
-  ThreejsLightAndShadow
+  ThreejsLightAndShadow,
+  OtherImplicitConversion
 ]
 
 articles.sort((a, b) => {
