@@ -7,7 +7,7 @@ articleType: "typescript"
 name: "TypeScriptInterface"
 tags:
   - "TypeScript"
-  - "数据类型"
+  - "接口"
 ---
 
 接口：用来描述对象拥有什么属性或方法，TypeScript 接口用 interface 来定义，例子：
