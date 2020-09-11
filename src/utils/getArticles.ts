@@ -2,7 +2,7 @@
  * @Author: MADAO
  * @Date: 2020-09-03 11:34:49
  * @LastEditors: MADAO
- * @LastEditTime: 2020-09-11 17:30:37
+ * @LastEditTime: 2020-09-11 17:44:40
  * @Description: 所有文章组件
  */
 import * as JSClosure from '/@/articles/javascript/Closure.md'
@@ -82,6 +82,8 @@ import * as TSType from '/@/articles/typescript/Type.md'
 import * as TSInterface from '/@/articles/typescript/Interface.md'
 import * as TSGeneric from '/@/articles/typescript/Generic.md'
 
+import * as GoogleHelloExtensions from '/@/articles/google/HelloExtensions.md'
+import * as GoogleGettingStartedExample from '/@/articles/google/GettingStartedExample.md'
 
 const formatTime = (timeStr: string): string => {
   const reg = /[年月日]+/g
@@ -154,7 +156,9 @@ const articles = [
   WebpackPreload,
   TSType,
   TSInterface,
-  TSGeneric
+  TSGeneric,
+  GoogleHelloExtensions,
+  GoogleGettingStartedExample
 ]
 
 articles.sort((a, b) => {
