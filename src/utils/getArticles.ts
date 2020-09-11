@@ -2,7 +2,7 @@
  * @Author: MADAO
  * @Date: 2020-09-03 11:34:49
  * @LastEditors: MADAO
- * @LastEditTime: 2020-09-10 10:12:33
+ * @LastEditTime: 2020-09-11 11:18:56
  * @Description: 所有文章组件
  */
 import * as JSClosure from '/@/articles/javascript/Closure.md'
@@ -20,6 +20,7 @@ import * as JSArray from '/@/articles/javascript/Array.md'
 import * as CSSREMScope from '/@/articles/css/RemAndScope.md'
 
 import * as MINAGulp from '/@/articles/miniprogram/Gulp.md'
+import * as ThirdPartyComponents from '/@/articles/miniprogram/ThirdPartyComponents.md'
 
 import * as VueCli from '/@/articles/vue/VueCli.md'
 import * as VueNuxt from '/@/articles/vue/Nuxt.md'
@@ -117,7 +118,8 @@ const articles = [
   Vuex,
   VueTransitions,
   JSArray,
-  WebServer
+  WebServer,
+  ThirdPartyComponents
 ]
 
 articles.sort((a, b) => {

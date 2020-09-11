@@ -5,6 +5,7 @@
         list-style: circle;
     }
   }
+  ::v-deep() h2,
   ::v-deep() h3 {
     margin-top: 30px;
     margin-bottom: 15px;
