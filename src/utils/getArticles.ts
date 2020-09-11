@@ -2,7 +2,7 @@
  * @Author: MADAO
  * @Date: 2020-09-03 11:34:49
  * @LastEditors: MADAO
- * @LastEditTime: 2020-09-11 11:18:56
+ * @LastEditTime: 2020-09-11 14:08:48
  * @Description: 所有文章组件
  */
 import * as JSClosure from '/@/articles/javascript/Closure.md'
@@ -32,6 +32,8 @@ import * as VueTransitions from '/@/articles/vue/VueTransitions.md'
 
 import * as Calendar from '/@/articles/gadgets/Calendar.md'
 import * as WebServer from '/@/articles/gadgets/WebServer.md'
+
+import * as WebGLTriangle from '/@/articles/webgl/Triangle.md'
 
 import * as PythonSetup from '/@/articles/python/Setup.md'
 import * as PythonVariable from '/@/articles/python/Variable.md'
@@ -119,7 +121,8 @@ const articles = [
   VueTransitions,
   JSArray,
   WebServer,
-  ThirdPartyComponents
+  ThirdPartyComponents,
+  WebGLTriangle
 ]
 
 articles.sort((a, b) => {
