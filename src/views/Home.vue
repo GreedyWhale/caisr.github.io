@@ -197,7 +197,7 @@ export default defineComponent({
       background-repeat: no-repeat;
       background-size: 100%;
       background-position: center;
-      $types: 'javascript', 'css', 'miniprogram', 'vue', 'gadgets', 'python', 'webgl';
+      $types: 'javascript', 'css', 'miniprogram', 'vue', 'gadgets', 'python', 'webgl', 'node';
       @each $type in $types {
         &[data-type="#{$type}"] {
           background-image: url('../assets/images/#{$type}.png');

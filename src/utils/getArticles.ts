@@ -2,7 +2,7 @@
  * @Author: MADAO
  * @Date: 2020-09-03 11:34:49
  * @LastEditors: MADAO
- * @LastEditTime: 2020-09-11 15:01:10
+ * @LastEditTime: 2020-09-11 15:19:59
  * @Description: 所有文章组件
  */
 import * as JSClosure from '/@/articles/javascript/Closure.md'
@@ -67,6 +67,8 @@ import * as PythonAiohttp from '/@/articles/python/Aiohttp.md'
 import * as NodeHttp from '/@/articles/node/Http.md'
 import * as NodeExpress from '/@/articles/node/Express.md'
 
+import * as ThreejsTriangle from '/@/articles/threejs/Triangle.md'
+
 const formatTime = (timeStr: string): string => {
   const reg = /[年月日]+/g
   const date = timeStr.split(' ')
@@ -127,7 +129,8 @@ const articles = [
   ThirdPartyComponents,
   WebGLTriangle,
   NodeHttp,
-  NodeExpress
+  NodeExpress,
+  ThreejsTriangle
 ]
 
 articles.sort((a, b) => {

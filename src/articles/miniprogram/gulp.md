@@ -103,8 +103,8 @@ tags:
         node.js中的环境变量，可以手动修改
 
       */
-
-      const environment = process.env.NODE_ENV;
+      // 故意加上空格的，其实没有，不加vite（1.0.0-rc.1）在打包的时候会报错
+      const environment = process. env. NODE_ENV;
 
       const config = {};
 
