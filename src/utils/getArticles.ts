@@ -2,7 +2,7 @@
  * @Author: MADAO
  * @Date: 2020-09-03 11:34:49
  * @LastEditors: MADAO
- * @LastEditTime: 2020-09-11 17:21:59
+ * @LastEditTime: 2020-09-11 17:25:27
  * @Description: 所有文章组件
  */
 import * as JSClosure from '/@/articles/javascript/Closure.md'
@@ -79,6 +79,7 @@ import * as WebpackCodeSplitting from '/@/articles/webpack/CodeSplitting.md'
 import * as WebpackPreload from '/@/articles/webpack/Preload.md'
 
 import * as TSType from '/@/articles/typescript/Type.md'
+import * as TSInterface from '/@/articles/typescript/Interface.md'
 
 const formatTime = (timeStr: string): string => {
   const reg = /[年月日]+/g
@@ -149,7 +150,8 @@ const articles = [
   WebpackTreeShaking,
   WebpackCodeSplitting,
   WebpackPreload,
-  TSType
+  TSType,
+  TSInterface
 ]
 
 articles.sort((a, b) => {
