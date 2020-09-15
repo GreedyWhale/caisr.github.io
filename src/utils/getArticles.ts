@@ -2,7 +2,7 @@
  * @Author: MADAO
  * @Date: 2020-09-03 11:34:49
  * @LastEditors: MADAO
- * @LastEditTime: 2020-09-11 17:44:40
+ * @LastEditTime: 2020-09-15 09:36:21
  * @Description: 所有文章组件
  */
 import * as JSClosure from '/@/articles/javascript/Closure.md'
@@ -32,6 +32,7 @@ import * as VueTransitions from '/@/articles/vue/VueTransitions.md'
 
 import * as Calendar from '/@/articles/gadgets/Calendar.md'
 import * as WebServer from '/@/articles/gadgets/WebServer.md'
+import * as CanvasMap from '/@/articles/gadgets/CanvasMap.md'
 
 import * as WebGLTriangle from '/@/articles/webgl/Triangle.md'
 
@@ -158,7 +159,8 @@ const articles = [
   TSInterface,
   TSGeneric,
   GoogleHelloExtensions,
-  GoogleGettingStartedExample
+  GoogleGettingStartedExample,
+  CanvasMap
 ]
 
 articles.sort((a, b) => {
