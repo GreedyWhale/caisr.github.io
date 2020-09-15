@@ -2,25 +2,27 @@
  * @Author: MADAO
  * @Date: 2020-09-01 14:05:05
  * @LastEditors: MADAO
- * @LastEditTime: 2020-09-09 17:08:12
+ * @LastEditTime: 2020-09-15 11:21:55
  * @Description: 获取首页文章列表
  */
 import { ref } from 'vue'
 import { articles } from '/@/utils'
 import { useStore } from 'vuex'
+import { Vuex } from './../types/vuex.d'
 
 export function getArticlesAttributes () {
+  const { state: { mode } } = useStore<Vuex.State>()
   const articlesAttributes = ref<{[key: string]: string;}[]>([])
-  articlesAttributes.value = articles.map(value => value.attributes)
+  articlesAttributes.value = articles[mode].map(value => value.attributes)
 
   return articlesAttributes
 }
 
 export function getCurrentArticleList () {
-  const { state: { articleType } } = useStore()
-  const articleList = ref<any[]>(articles)
+  const { state: { articleType, mode } } = useStore<Vuex.State>()
+  const articleList = ref<any[]>(articles[mode])
   if (articleType) {
-    articleList.value = articles.filter(value => {
+    articleList.value = articles[mode].filter(value => {
       return value.attributes.articleType === articleType
     })
   }

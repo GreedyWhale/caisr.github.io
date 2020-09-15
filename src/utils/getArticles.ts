@@ -2,89 +2,11 @@
  * @Author: MADAO
  * @Date: 2020-09-03 11:34:49
  * @LastEditors: MADAO
- * @LastEditTime: 2020-09-15 09:36:21
+ * @LastEditTime: 2020-09-15 11:15:30
  * @Description: 所有文章组件
  */
-import * as JSClosure from '/@/articles/javascript/Closure.md'
-import * as JSCurrying from '/@/articles/javascript/Currying.md'
-import * as JSDataType from '/@/articles/javascript/DataType.md'
-import * as JSFunction from '/@/articles/javascript/Function.md'
-import * as JSHoisting from '/@/articles/javascript/Hoisting.md'
-import * as JSObject from '/@/articles/javascript/Object.md'
-import * as JSPrototype from '/@/articles/javascript/Prototype.md'
-import * as JSScope from '/@/articles/javascript/Scope.md'
-import * as JSThis from '/@/articles/javascript/This.md'
-import * as JSThisAndProto from '/@/articles/javascript/ThisAndProto.md'
-import * as JSArray from '/@/articles/javascript/Array.md'
 
-import * as CSSREMScope from '/@/articles/css/RemAndScope.md'
-
-import * as MINAGulp from '/@/articles/miniprogram/Gulp.md'
-import * as ThirdPartyComponents from '/@/articles/miniprogram/ThirdPartyComponents.md'
-
-import * as VueCli from '/@/articles/vue/VueCli.md'
-import * as VueNuxt from '/@/articles/vue/Nuxt.md'
-import * as VueComponentTest from '/@/articles/vue/ComponentTest.md'
-import * as VueAndTSOne from '/@/articles/vue/VueAndTSOne.md'
-import * as VueAndTSTwo from '/@/articles/vue/VueAndTSTwo.md'
-import * as Vuex from '/@/articles/vue/Vuex.md'
-import * as VueTransitions from '/@/articles/vue/VueTransitions.md'
-
-import * as Calendar from '/@/articles/gadgets/Calendar.md'
-import * as WebServer from '/@/articles/gadgets/WebServer.md'
-import * as CanvasMap from '/@/articles/gadgets/CanvasMap.md'
-
-import * as WebGLTriangle from '/@/articles/webgl/Triangle.md'
-
-import * as PythonSetup from '/@/articles/python/Setup.md'
-import * as PythonVariable from '/@/articles/python/Variable.md'
-import * as PythonStringAndNumber from '/@/articles/python/StringAndNumber.md'
-import * as PythonList from '/@/articles/python/list.md'
-import * as PythonIf from '/@/articles/python/If.md'
-import * as PythonInputAndWhile from '/@/articles/python/InputAndWhile.md'
-import * as PythonFunction from '/@/articles/python/Function.md'
-import * as PythonClass from '/@/articles/python/Class.md'
-import * as PythonFileAndError from '/@/articles/python/FileAndError.md'
-import * as PythonDecodeAndEncode from '/@/articles/python/DecodeAndEncode.md'
-import * as PythonDataStore from '/@/articles/python/DataStore.md'
-import * as PythonTestCode from '/@/articles/python/TestCode.md'
-import * as PythonPipenv from '/@/articles/python/Pipenv.md'
-import * as PythonCrawler from '/@/articles/python/Crawler.md'
-import * as PythonSendEmail from '/@/articles/python/SendEmail.md'
-import * as PythonScope from '/@/articles/python/Scope.md'
-import * as PythonLambda from '/@/articles/python/Lambda.md'
-import * as PythonArrayMethods from '/@/articles/python/ArrayMethods.md'
-import * as PythonClosure from '/@/articles/python/Closure.md'
-import * as PythonDecorator from '/@/articles/python/Decorator.md'
-import * as PythonThreading from '/@/articles/python/Threading.md'
-import * as PythonQueue from '/@/articles/python/Queue.md'
-import * as PythonRegexp from '/@/articles/python/Regexp.md'
-import * as PythonTime from '/@/articles/python/Time.md'
-import * as PythonDownloadImages from '/@/articles/python/DownloadImages.md'
-import * as PythonMultiprocessing from '/@/articles/python/Multiprocessing.md'
-import * as PythonAsyncio from '/@/articles/python/Asyncio.md'
-import * as PythonAiohttp from '/@/articles/python/Aiohttp.md'
-
-import * as NodeHttp from '/@/articles/node/Http.md'
-import * as NodeExpress from '/@/articles/node/Express.md'
-
-import * as ThreejsTriangle from '/@/articles/threejs/Triangle.md'
-import * as ThreejsLightAndShadow from '/@/articles/threejs/LightAndShadow.md'
-
-import * as OtherImplicitConversion from '/@/articles/other/ImplicitConversion.md'
-
-import * as WebpackStaticAssets from '/@/articles/webpack/StaticAssets.md'
-import * as WebpackES6 from '/@/articles/webpack/ES6.md'
-import * as WebpackTreeShaking from '/@/articles/webpack/TreeShaking.md'
-import * as WebpackCodeSplitting from '/@/articles/webpack/CodeSplitting.md'
-import * as WebpackPreload from '/@/articles/webpack/Preload.md'
-
-import * as TSType from '/@/articles/typescript/Type.md'
-import * as TSInterface from '/@/articles/typescript/Interface.md'
-import * as TSGeneric from '/@/articles/typescript/Generic.md'
-
-import * as GoogleHelloExtensions from '/@/articles/google/HelloExtensions.md'
-import * as GoogleGettingStartedExample from '/@/articles/google/GettingStartedExample.md'
+import blogs from './blogs'
 
 const formatTime = (timeStr: string): string => {
   const reg = /[年月日]+/g
@@ -92,79 +14,14 @@ const formatTime = (timeStr: string): string => {
   return `${date[0].replace(reg, '-').slice(0, -1)} ${date[1]}`
 }
 
-const articles = [
-  CSSREMScope,
-  JSScope,
-  VueCli,
-  VueComponentTest,
-  JSHoisting,
-  JSClosure,
-  JSThis,
-  JSObject,
-  JSPrototype,
-  JSDataType,
-  JSFunction,
-  JSCurrying,
-  JSThisAndProto,
-  MINAGulp,
-  VueNuxt,
-  Calendar,
-  PythonSetup,
-  PythonVariable,
-  PythonStringAndNumber,
-  PythonList,
-  PythonIf,
-  PythonInputAndWhile,
-  PythonFunction,
-  PythonClass,
-  PythonFileAndError,
-  PythonDecodeAndEncode,
-  PythonDataStore,
-  PythonTestCode,
-  PythonPipenv,
-  PythonCrawler,
-  PythonSendEmail,
-  PythonScope,
-  PythonLambda,
-  PythonArrayMethods,
-  PythonClosure,
-  PythonDecorator,
-  PythonThreading,
-  PythonQueue,
-  PythonRegexp,
-  PythonTime,
-  PythonDownloadImages,
-  PythonMultiprocessing,
-  PythonAsyncio,
-  PythonAiohttp,
-  VueAndTSOne,
-  VueAndTSTwo,
-  Vuex,
-  VueTransitions,
-  JSArray,
-  WebServer,
-  ThirdPartyComponents,
-  WebGLTriangle,
-  NodeHttp,
-  NodeExpress,
-  ThreejsTriangle,
-  ThreejsLightAndShadow,
-  OtherImplicitConversion,
-  WebpackStaticAssets,
-  WebpackES6,
-  WebpackTreeShaking,
-  WebpackCodeSplitting,
-  WebpackPreload,
-  TSType,
-  TSInterface,
-  TSGeneric,
-  GoogleHelloExtensions,
-  GoogleGettingStartedExample,
-  CanvasMap
-]
-
-articles.sort((a, b) => {
+const sortHandler = (a: any, b: any) => {
   return new Date(formatTime(b.attributes.time)).getTime() - new Date(formatTime(a.attributes.time)).getTime()
-})
+}
+blogs.sort(sortHandler)
+
+const articles = {
+  blogs,
+  notes: blogs
+}
 
 export default articles
