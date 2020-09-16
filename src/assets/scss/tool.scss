@@ -34,3 +34,18 @@
     background: $thumbHover;
   }
 }
+
+@mixin fontFace($name, $path) {
+  $newPath: '#{$path}/#{$name}/#{$name}';
+  @font-face {
+    font-family: $name;
+    src: url('#{$newPath}.eot');
+    src:
+      url('#{$newPath}.eot?#font-spider') format('embedded-opentype'),
+      url('#{$newPath}.woff2') format('woff2'),
+      url('#{$newPath}.woff') format('woff'),
+      url('#{$newPath}.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+}

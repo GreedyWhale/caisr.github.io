@@ -20,6 +20,8 @@
     "build": "vite build"
   },
   "dependencies": {
+    "axios": "^0.20.0",
+    "date-chinese": "^1.0.7",
     "highlight.js": "^10.1.2",
     "normalize.css": "^8.0.1",
     "vue": "^3.0.0-rc.1",
