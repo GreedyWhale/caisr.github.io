@@ -14,6 +14,7 @@
     "url": "https://github.com/GreedyWhale/caisr.github.io",
     "type": "git"
   },
+  "homepage": "https://github.com/GreedyWhale/caisr.github.io",
   "license": "UNLICENSED",
   "scripts": {
     "dev": "vite",
@@ -22,6 +23,7 @@
   "dependencies": {
     "axios": "^0.20.0",
     "date-chinese": "^1.0.7",
+    "gh-pages": "^3.1.0",
     "highlight.js": "^10.1.2",
     "normalize.css": "^8.0.1",
     "vue": "^3.0.0-rc.1",
