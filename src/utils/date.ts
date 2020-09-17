@@ -2,7 +2,7 @@
  * @Author: MADAO
  * @Date: 2020-09-15 17:07:29
  * @LastEditors: MADAO
- * @LastEditTime: 2020-09-16 17:59:51
+ * @LastEditTime: 2020-09-17 11:02:25
  * @Description: 日期相关方法
  */
 import CalendarChinese from 'date-chinese'
@@ -35,8 +35,10 @@ export const getDaysElapsed = () => {
   const begin = new Date(currentDate.getFullYear(), 1, 1).getTime()
   const days = (new Date(currentDate.getFullYear() + 1, 1, 1).getTime() - begin) / oneDay
   const daysElapsed = (new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, currentDate.getDate()).getTime() - begin) / oneDay
+  const dayRatio = ((daysElapsed / days) * 100).toFixed(2)
   return {
     days,
-    daysElapsed
+    daysElapsed,
+    dayRatio
   }
 }

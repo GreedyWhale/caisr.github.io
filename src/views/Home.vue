@@ -1,41 +1,65 @@
 <template>
   <div class="home">
     <div class="home-pane">
-      <h1 class="home-pane__title">MADAO'S BLOG</h1>
-      <div class="home-pane__top">
-        <div class="home-pane__time">
-          <div class="home-pane__battery">
-            <div><span :style="batteryStyle"></span></div>
-            <p>Life: {{ currentLife }}%</p>
-          </div>
-          <div class="home-pane__next-year">
-            <h3>Next New Year</h3>
-            <p>{{ data.diffForNetNewYear }}</p>
-          </div>
-        </div>
-        <div class="home-pane__weather">
-          <div class="home-pane__weather-lives">
-            <div class="home-pane__weather-city">
-              <p>{{ data.weather.lives.city }}</p>
-              <p>WEATHER</p>
+      <div>
+        <h1 class="home-pane__title">MADAO'S BLOG</h1>
+        <div class="home-pane__top">
+          <div class="home-pane__time">
+            <div class="home-pane__battery">
+              <div><span :style="batteryStyle"></span></div>
+              <p>Life: {{ currentLife }}%</p>
             </div>
-            <img :src="data.weather.lives.icon" alt="weather-icon">
-            <div class="home-pane__weather-temperature">
-              <p>{{ data.weather.lives.temperature }}</p>
-              <p>{{ data.weather.lives.weather }}</p>
+            <div class="home-pane__next-year">
+              <h3>Next New Year</h3>
+              <p>{{ data.diffForNetNewYear }}</p>
             </div>
           </div>
-          <ul class="home-pane__weather-forecast">
-            <li v-for="item in data.weather.forecasts" :key="item.weekEn">
-              <h3>{{ item.weekEn }}</h3>
-              <img :src="item.icon" alt="weather-icon">
-              <p>{{ item.daytemp }}</p>
-              <p>{{ item.nighttemp }}</p>
-            </li>
-          </ul>
+          <div class="home-pane__weather">
+            <div class="home-pane__weather-lives">
+              <div class="home-pane__weather-city">
+                <p>{{ data.weather.lives.city }}</p>
+                <p>{{ data.currentDate.toLocaleDateString() }}</p>
+              </div>
+              <img :src="data.weather.lives.icon" alt="weather-icon">
+              <div class="home-pane__weather-temperature">
+                <p>{{ data.weather.lives.temperature }}</p>
+                <p>{{ data.weather.lives.weather }}</p>
+              </div>
+            </div>
+            <ul class="home-pane__weather-forecast">
+              <li v-for="item in data.weather.forecasts" :key="item.weekEn">
+                <h3>{{ item.weekEn }}</h3>
+                <img :src="item.icon" alt="weather-icon">
+                <p>{{ item.daytemp }}</p>
+                <p>{{ item.nighttemp }}</p>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div class=""></div>
+      <div class="home-pane__progress">
+        <h3>{{ data.currentDate.getFullYear() }}年时间进度</h3>
+        <table>
+          <thead>
+            <tr>
+              <th><p>年份</p></th>
+              <th><p>总视图</p></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ data.currentDate.getFullYear() }}年</td>
+              <td>
+                <ul>
+                  <li v-for="item in days" :key="item" :data-active="item > daysElapsed"></li>
+                </ul>
+                <p>{{ data.currentDate.getFullYear() }}年已过去{{ daysElapsed }}天</p>
+                <p>约占全年的 {{ dayRatio }}%</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
     <div class="article-list">
       <ul v-if="articlesAttributes.length" :data-has-remainder="articlesAttributes.length % 3 !== 0">
@@ -77,7 +101,8 @@ export default defineComponent({
       weather: {
         lives: {},
         forecasts: []
-      }
+      },
+      currentDate: new Date()
     })
     const currentLife = (() => {
       const currentDate = new Date()
@@ -97,6 +122,7 @@ export default defineComponent({
       return style
     })
     const articlesAttributes = getArticlesAttributes()
+    const { days, daysElapsed, dayRatio } = getDaysElapsed()
 
     const getDiffForNetNewYear = () => {
       const currentDate = new Date()
@@ -116,12 +142,9 @@ export default defineComponent({
       data.diffForNetNewYear = `${weeks}w ${days % 7}d ${hours % 24}h ${minutes % 60}m ${seconds % 60}s`
       setTimeout(() => getDiffForNetNewYear(), 1000)
     }
-
     const toArticleDetail = (name: string) => {
       router.push(`/article/${name}`)
     }
-    const { days, daysElapsed } = getDaysElapsed()
-
     const getWeather = (extensions: 'all' | 'base' = 'base') => {
       return new Promise((resolve, reject) => {
         axios.get('https://restapi.amap.com/v3/weather/weatherInfo', {
@@ -165,7 +188,8 @@ export default defineComponent({
       batteryStyle,
       data,
       days,
-      daysElapsed
+      daysElapsed,
+      dayRatio
     }
   }
 })
@@ -188,6 +212,10 @@ export default defineComponent({
     height: 100%;
     padding: 20px;
     color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 40px;
     &__title {
       letter-spacing: 5px;
       font-size: 42px;
@@ -309,6 +337,92 @@ export default defineComponent({
               height: 24px;
             }
           }
+        }
+      }
+    }
+    &__progress {
+      > h3 {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        &::before {
+          content: '';
+          width: 24px;
+          height: 24px;
+          background: url('../assets/images/sandglass.png') no-repeat center / 100%;
+          margin-right: 10px;
+        }
+      }
+      > table {
+        width: 100%;
+        border-spacing: 0;
+        color: #c4bebe;
+        thead th {
+          border-top: 1px solid rgb(95, 95, 95);
+          border-bottom: 1px solid  rgb(95, 95, 95);
+          font-weight: normal;
+          font-size: 16px;
+          > p {
+            display: flex;
+            align-items: center;
+            &::before {
+              content: '';
+              width: 20px;
+              height: 20px;
+              margin-right: 10px;
+            }
+          }
+          &:nth-of-type(1) {
+            width: 30%;
+            border-right: 1px solid rgb(95, 95, 95);
+            > p {
+              &::before {
+                background: url('../assets/images/years.png') no-repeat center / 100%;
+              }
+            }
+          }
+          &:nth-of-type(2) {
+            width: 70%;
+            > p {
+              &::before {
+                background: url('../assets/images/sum.png') no-repeat center / 100%;
+              }
+            }
+          }
+        }
+        tbody td {
+          vertical-align: top;
+          &:nth-of-type(1) {
+            border-right: 1px solid rgb(95, 95, 95);
+            text-decoration: underline;
+          }
+        }
+        td > ul {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          > li {
+            flex: 0 0 auto;
+            width: 10px;
+            height: 10px;
+            background: rgb(59, 69, 97);
+            margin-right: 5px;
+            margin-bottom: 5px;
+            &[data-active="true"] {
+              background: #f2a0a1;
+            }
+          }
+        }
+        td > p {
+          font-size: 14px;
+          line-height: 1.5;
+          &:nth-of-type(1) {
+            margin-top: 30px;
+          }
+        }
+        th, td {
+          text-align: left;
+          padding: 0.5em 5px 0.5em 10px;
         }
       }
     }
