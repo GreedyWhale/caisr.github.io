@@ -13,7 +13,7 @@ name: "WebpackPreload"
 
 还是使用上篇文章的配置，[GitHub](https://github.com/GreedyWhale/webpack_demo/tree/SplitChunksPlugin)。看一下懒加载的效果：
 
-![](/articlesImages/webpack/preload/image.gif)
+![](/caisr.github.io/articlesImages/webpack/preload/image.gif)
 
 当用户点击了按钮，才会去加载 dayjs，然后输出对应的日期，代码如下：
 
@@ -40,15 +40,15 @@ button.onclick = () => {
 
 还是使用上面这段代码，用浏览器打开打包后的 html 文件
 
-![](/articlesImages/webpack/preload/image1.png)
+![](/caisr.github.io/articlesImages/webpack/preload/image1.png)
 
 点击 coverage 呼出对应的界面，然后点击录制按钮，刷新页面
 
-![](/articlesImages/webpack/preload/image2.png)
+![](/caisr.github.io/articlesImages/webpack/preload/image2.png)
 
 这时候就可以看到，页面加载的 js 文件的代码覆盖率
 
-![](/articlesImages/webpack/preload/image3.png)
+![](/caisr.github.io/articlesImages/webpack/preload/image3.png)
 
 可以看到，页面加载的这两个 js 文件呢，都只有一半的覆盖率，什么意思呢？就是页面在加载完成后，有一半的 js 代码是没有执行过的，用户加载了很多不必要的代码。
 
@@ -56,7 +56,7 @@ button.onclick = () => {
 
 使用 webpack-bundle-analyzer 这个插件，看下打包后的代码都是些什么
 
-![](/articlesImages/webpack/preload/image4.png)
+![](/caisr.github.io/articlesImages/webpack/preload/image4.png)
 
 vendors.js 都是一些 babel 的 polyfill，dayjs 就是 dayjs 的源码，main.js 就是业务逻辑。
 
@@ -67,7 +67,7 @@ vendors.js 都是一些 babel 的 polyfill，dayjs 就是 dayjs 的源码，main
 
 首先在 coverage 面板点开 main.js，这是可以看到，左侧有红色标注和和绿色标注的代码：
 
-![](/articlesImages/webpack/preload/image5.png)
+![](/caisr.github.io/articlesImages/webpack/preload/image5.png)
 
 抛开 webpack 自身的一些逻辑，这段代码就是上面例子中的代码了，可以看到 onclick 里面的代码都是红色，那么这些代码就可以使用异步引入模块方式去加载它，提供覆盖率。
 
@@ -101,11 +101,11 @@ vendors.js 都是一些 babel 的 polyfill，dayjs 就是 dayjs 的源码，main
 
 重新打包
 
-![](/articlesImages/webpack/preload/image6.png)
+![](/caisr.github.io/articlesImages/webpack/preload/image6.png)
 
 重新打开页面
 
-![](/articlesImages/webpack/preload/image7.png)
+![](/caisr.github.io/articlesImages/webpack/preload/image7.png)
 
 可以看到未使用率下降了，点击按钮也会加载对应的 js 代码。
 
@@ -144,7 +144,7 @@ import(
 
 中文文档的区别截图过来
 
-![](/articlesImages/webpack/preload/image8.png)
+![](/caisr.github.io/articlesImages/webpack/preload/image8.png)
 
 还有一个要注意的地方是 webpack 4.6.0+ 才支持这些，我自己用 4.35.2 版本测试，prefetch 是支持的，但是 preload 不支持。
 

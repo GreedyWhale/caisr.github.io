@@ -90,7 +90,7 @@ name: "JSObject"
   上面例子中对象的这种赋值就叫做浅拷贝，如果不想让赋值后的对象影响原始对象，那么就要用深拷贝的方法进行赋值。
 
   `JSON.parse(JSON.stringify(obj))`
-  ![image.png](/articlesImages/javascript/object/image.png)
+  ![image.png](/caisr.github.io/articlesImages/javascript/object/image.png)
 
 - ### 对象的属性
 
@@ -129,7 +129,7 @@ name: "JSObject"
 
   可以使用 Object.getOwnPropertyDescriptor 获取对象的某个属性的描述符，也可以用 Object.getOwnPropertyDescriptors 获取对象的所有属性的描述符，例子：
 
-  ![](/articlesImages/javascript/object/image1.png)
+  ![](/caisr.github.io/articlesImages/javascript/object/image1.png)
 
   这些属性描述符可以通过 Object.defineProperty 或 Object.defineProperties 进行修改设置，这两个方法的区别就和上面例子一样，一个是单个配置，一个是批量配置。
 
@@ -376,4 +376,4 @@ name: "JSObject"
   3. 使用 `let obj1 = Object.create(null)` 创建的对象比 `let obj = {}`更空
 
       例子：
-      ![image.png](/articlesImages/javascript/object/image2.png)
+      ![image.png](/caisr.github.io/articlesImages/javascript/object/image2.png)

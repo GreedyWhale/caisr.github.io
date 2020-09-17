@@ -34,7 +34,7 @@ index.js
 
 打包结果：
 
-![](/articlesImages/webpack/tree_shaking_mode/image.png)
+![](/caisr.github.io/articlesImages/webpack/tree_shaking_mode/image.png)
 
 将 add 和 square 都打包进来了，但是实际只用到了 add，那么 square 就是没有用到的代码了。
 
@@ -55,11 +55,11 @@ index.js
 
   配置好之后重新打包：
 
-  ![](/articlesImages/webpack/tree_shaking_mode/image1.png)
+  ![](/caisr.github.io/articlesImages/webpack/tree_shaking_mode/image1.png)
 
   还是存在的，但是会多一个信息：
 
-  ![](/articlesImages/webpack/tree_shaking_mode/image2.png)
+  ![](/caisr.github.io/articlesImages/webpack/tree_shaking_mode/image2.png)
 
   所以在 development 模式下，即使配置了也不会把没有用到的代码剔除，所以真正实现的这个功能需要在 production 模式下。
 
@@ -80,7 +80,7 @@ index.js
 
   现在看看打包结果
 
-  ![](/articlesImages/webpack/tree_shaking_mode/image3.png)
+  ![](/caisr.github.io/articlesImages/webpack/tree_shaking_mode/image3.png)
 
   将所有的 console.log 找到，并没有类似`console.log(a * a)`的代码，那么证明 square 没有被打包进来。
 
@@ -102,7 +102,7 @@ index.js
 
   重新打包：
 
-  ![](/articlesImages/webpack/tree_shaking_mode/image4.png)
+  ![](/caisr.github.io/articlesImages/webpack/tree_shaking_mode/image4.png)
 
   console.log 就剩这一个了，是符合我的预期的。
 
@@ -116,7 +116,7 @@ index.js
 
   重新打包：
 
-  ![](/articlesImages/webpack/tree_shaking_mode/image5.png)
+  ![](/caisr.github.io/articlesImages/webpack/tree_shaking_mode/image5.png)
 
   hello world 没了，同样的如果以这种方式引用 css 资源：
 

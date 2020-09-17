@@ -17,7 +17,7 @@ name: "PythonDecodeAndEncode"
 
   json.load 可以读取 json 文件中的数据：
 
-  ![](/articlesImages/python/data_store/image.png)
+  ![](/caisr.github.io/articlesImages/python/data_store/image.png)
 
   会把 json 格式的数据转换为 dict 类型
 
@@ -38,13 +38,13 @@ name: "PythonDecodeAndEncode"
 
   结果：
 
-  ![](/articlesImages/python/data_store/image1.png)
+  ![](/caisr.github.io/articlesImages/python/data_store/image1.png)
 
 - json.loads
 
   loads 它不是从 json 文件中的读取数据，而是把一个 JSON 编码的字符串转换回一个 Python 数据结构例子：
 
-  ![](/articlesImages/python/data_store/image2.png)
+  ![](/caisr.github.io/articlesImages/python/data_store/image2.png)
 
   注意这里的字符串格式，必须是符合 json 格式的才行。
 
@@ -52,7 +52,7 @@ name: "PythonDecodeAndEncode"
 
   json.dumps 可以将 dict 类型转换成符合 json 格式的字符串，例子：
 
-  ![](/articlesImages/python/data_store/image3.png)
+  ![](/caisr.github.io/articlesImages/python/data_store/image3.png)
 
   同样也可以传入 indent 参数规定字符串的缩进格式
 

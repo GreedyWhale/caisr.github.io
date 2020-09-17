@@ -46,7 +46,7 @@ print(b'abc'.decode('ASCII'))
 
 结果：
 
-![](/articlesImages/python/decode_and_encode/image.png)
+![](/caisr.github.io/articlesImages/python/decode_and_encode/image.png)
 
 编码结果最开始有一个`b`，它表示数据是 bytes（字节）类型
 
@@ -60,4 +60,4 @@ print(b'abc'.decode('ASCII'))
 
 例子：
 
-![](/articlesImages/python/decode_and_encode/image1.png)
+![](/caisr.github.io/articlesImages/python/decode_and_encode/image1.png)

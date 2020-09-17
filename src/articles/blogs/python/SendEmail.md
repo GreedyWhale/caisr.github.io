@@ -35,7 +35,7 @@ name: "PythonSendEmail"
 
    需要传入上面两个参数，因为不知道所以查一下：
 
-   ![](/articlesImages/python/send_email/image.png)
+   ![](/caisr.github.io/articlesImages/python/send_email/image.png)
 
    在 qq 邮箱的帮助中心找到了。
 
@@ -43,7 +43,7 @@ name: "PythonSendEmail"
 
    同样的在 qq 邮箱帮助中心找到，是 SSL 方式加密的。
 
-   ![](/articlesImages/python/send_email/image1.png)
+   ![](/caisr.github.io/articlesImages/python/send_email/image1.png)
 
    smtp 模块的不同的加密写法如下：
 
@@ -123,13 +123,13 @@ name: "PythonSendEmail"
    这是因为你的邮箱没有开启 SMTP 服务。现在去开启：
    在【设置】- 【账户设置】往下拉会看到这个：
 
-   ![](/articlesImages/python/send_email/image2.png)
+   ![](/caisr.github.io/articlesImages/python/send_email/image2.png)
 
    开启它
 
    然后你会得到一个 16 位的授权码，你用 smtplib 登录邮箱的密码就是这个，不再是邮箱原本的密码。
 
-   ![](/articlesImages/python/send_email/image3.png)
+   ![](/caisr.github.io/articlesImages/python/send_email/image3.png)
 
    用户就会收到一封这样的邮件，没有发件人没有主题，连我们输入的邮件内容都没有
 
@@ -271,7 +271,7 @@ name: "PythonSendEmail"
    ```
 
    结果
-   ![](/articlesImages/python/send_email/image4.png)
+   ![](/caisr.github.io/articlesImages/python/send_email/image4.png)
 
    但是收件人的名字并不是代码里写的，而是 qq 的昵称，可能腾讯对这个做了什么限制吧。
 
@@ -311,7 +311,7 @@ name: "PythonSendEmail"
 
   ```
 
-  ![](/articlesImages/python/send_email/image5.png)
+  ![](/caisr.github.io/articlesImages/python/send_email/image5.png)
 
 - 发送图片
 
@@ -369,7 +369,7 @@ name: "PythonSendEmail"
 
   结果：
 
-  ![](/articlesImages/python/send_email/image6.png)
+  ![](/caisr.github.io/articlesImages/python/send_email/image6.png)
 
   完整代码：
 
@@ -499,4 +499,4 @@ name: "PythonSendEmail"
 
   ```
 
-  ![](/articlesImages/python/send_email/image7.png)
+  ![](/caisr.github.io/articlesImages/python/send_email/image7.png)

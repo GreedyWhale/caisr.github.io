@@ -39,7 +39,7 @@ app.listen(3000);
 
 结果：
 
-![](/articlesImages/node/express/image.png)
+![](/caisr.github.io/articlesImages/node/express/image.png)
 
 这一部分来看：
 
@@ -135,11 +135,11 @@ app.listen(3000);
 
 结果:
 
-![](/articlesImages/node/express/image1.png)
+![](/caisr.github.io/articlesImages/node/express/image1.png)
 
 这是 log 出来的信息：
 
-![](/articlesImages/node/express/image2.png)
+![](/caisr.github.io/articlesImages/node/express/image2.png)
 
 可以看出中间件两个特征：
 
@@ -375,7 +375,7 @@ app.listen(3000);
 
   结果：
 
-  ![](/articlesImages/node/express/image3.png)
+  ![](/caisr.github.io/articlesImages/node/express/image3.png)
 
   app 除了 use 方法，还有 get，post 等，use 就是说不管请求是什么方法，都会执行当前的中间件，如果是 get 那么只有请求是 get 方法时，才会执行当前的中间件。
 
@@ -496,11 +496,11 @@ module.exports = router;
 
 结果：
 
-![](/articlesImages/node/express/image4.png)
+![](/caisr.github.io/articlesImages/node/express/image4.png)
 
 log 信息：
 
-![](/articlesImages/node/express/image5.png)
+![](/caisr.github.io/articlesImages/node/express/image5.png)
 
 可以看到 router 的执行顺序也是按照注册顺序来的。专业一点的叫法叫路由级中间件。
 
@@ -584,15 +584,15 @@ module.exports = router;
 
 请求：`http://localhost:3000/hello`，`router.use('/', () => {})`会被执行。
 
-![](/articlesImages/node/express/image6.png)
+![](/caisr.github.io/articlesImages/node/express/image6.png)
 
 请求：`http://localhost:3000/hello/first`，`router.use('/first', () => {})`会被执行。
 
-![](/articlesImages/node/express/image7.png)
+![](/caisr.github.io/articlesImages/node/express/image7.png)
 
 请求：`http://localhost:3000/hello/second`，`router.use('/second', () => {})`会被执行。
 
-![](/articlesImages/node/express/image8.png)
+![](/caisr.github.io/articlesImages/node/express/image8.png)
 
 前面讲的`next('router')`是这样的：
 
@@ -682,7 +682,7 @@ module.exports = router;
 
 请求 http://localhost:3000 的 log 的信息：
 
-![](/articlesImages/node/express/image9.png)
+![](/caisr.github.io/articlesImages/node/express/image9.png)
 
 #### 当使用了 next('router')之后：
 
@@ -732,7 +732,7 @@ module.exports = router;
 
 log 信息：
 
-![](/articlesImages/node/express/image10.png)
+![](/caisr.github.io/articlesImages/node/express/image10.png)
 
 当使用了 next('router')之后，express 会跳过剩下的路由级中间件，直接进入下一个应用级中间件。
 

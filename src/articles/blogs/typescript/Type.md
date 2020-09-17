@@ -48,7 +48,7 @@ console.log(Days.Sun)  // 0
 console.log(Days.Sat) // 6
 ```
 
-![](/articlesImages/typescript/type/image.png)
+![](/caisr.github.io/articlesImages/typescript/type/image.png)
 
 文档的说明：
 
@@ -56,7 +56,7 @@ console.log(Days.Sat) // 6
 
 它默认的值是序号，从 0 开始，也可以给这些“名字”一些值：
 
-![](/articlesImages/typescript/type/image1.png)
+![](/caisr.github.io/articlesImages/typescript/type/image1.png)
 
 给其中一项一个数字，它后面的每一项就会根据这个数字递增，
 
@@ -106,13 +106,13 @@ function sayHi(name): void {
 sayHi('joey')
 ```
 
-![](/articlesImages/typescript/type/image2.png)
+![](/caisr.github.io/articlesImages/typescript/type/image2.png)
 
 ### 四. void
 
 void 表示没有任何类型，比如一个函数执行完没有 return 任何东西，那么就可以使用 void，变量也是可以声明成 void 类型的，一旦声明成 void 类型，那么变量只能被赋值成 undefined 或 null
 
-![](/articlesImages/typescript/type/image3.png)
+![](/caisr.github.io/articlesImages/typescript/type/image3.png)
 
 void 一般用于表示函数没有返回任何值
 
@@ -170,7 +170,7 @@ function fn(params: string | number): string {
 
 如果这样写 TypeScript 会报错：
 
-![](/articlesImages/typescript/type/image4.png)
+![](/caisr.github.io/articlesImages/typescript/type/image4.png)
 
 这时候就可以用类型断言：
 

@@ -21,7 +21,7 @@ const material = new THREE.MeshPhongMaterial({
 
 这时候就渲染结果就是这个样子：
 
-![](/articlesImages/threejs/light_and_shadow/image.png)
+![](/caisr.github.io/articlesImages/threejs/light_and_shadow/image.png)
 
 物体都看不见了，因为没有光
 
@@ -67,7 +67,7 @@ export default scene
 
 效果：
 
-![](/articlesImages/threejs/light_and_shadow/image1.png)
+![](/caisr.github.io/articlesImages/threejs/light_and_shadow/image1.png)
 
 现在物体就可以看见了，由于环境光不能投射阴影，所以需要其他的光，下面试下其他光的效果
 
@@ -93,7 +93,7 @@ export default scene
 
   看下效果：
 
-  ![](/articlesImages/threejs/light_and_shadow/image2.png)
+  ![](/caisr.github.io/articlesImages/threejs/light_and_shadow/image2.png)
 
   因为不加环境光太暗了，所以还是在有环境光的情况下测试，这时候就能看出来物体不同的面受到的光照强度是不同的。
 
@@ -117,7 +117,7 @@ export default scene
 
   效果：
 
-  ![](/articlesImages/threejs/light_and_shadow/image3.png)
+  ![](/caisr.github.io/articlesImages/threejs/light_and_shadow/image3.png)
 
   这篇文章给了详细的例子，可以看看。[地址](https://www.jianshu.com/p/4cfab4e3ec3a)
 
@@ -141,7 +141,7 @@ export default scene
 
   看起来和平行光也很像
 
-  ![](/articlesImages/threejs/light_and_shadow/image4.png)
+  ![](/caisr.github.io/articlesImages/threejs/light_and_shadow/image4.png)
 
   但是这个点光源是有一个衰减值的，就是光源离物体越远，光的强度就越低，平行光不会，距离再远也是相同的光强
 
@@ -173,7 +173,7 @@ export default scene
 
   和平行光的效果差不多
 
-  ![](/articlesImages/threejs/light_and_shadow/image5.png)
+  ![](/caisr.github.io/articlesImages/threejs/light_and_shadow/image5.png)
 
 - #### 聚光灯
 
@@ -266,7 +266,7 @@ export default scene
   在现实生活中接受阴影的物体最常见的就是地面了，这里也是一样，需要给现在的场景添加一个地面
 
   新建 ground.js
-  ![](/articlesImages/threejs/light_and_shadow/image6.png)
+  ![](/caisr.github.io/articlesImages/threejs/light_and_shadow/image6.png)
 
   ```
   const ground = () => {
@@ -285,7 +285,7 @@ export default scene
 
   现在去看看效果：
 
-  ![](/articlesImages/threejs/light_and_shadow/image7.png)
+  ![](/caisr.github.io/articlesImages/threejs/light_and_shadow/image7.png)
 
   这个效果炸了呀。
 
@@ -299,7 +299,7 @@ export default scene
 
   效果：
 
-  !![](/articlesImages/threejs/light_and_shadow/image8.png)
+  !![](/caisr.github.io/articlesImages/threejs/light_and_shadow/image8.png)
 
   现在就和 x 轴在同一平面了，只是有点高，把物体切断了，再往下移一点
 
@@ -309,7 +309,7 @@ export default scene
 
   现在的效果是：
 
-  ![](/articlesImages/threejs/light_and_shadow/image9.png)
+  ![](/caisr.github.io/articlesImages/threejs/light_and_shadow/image9.png)
 
 - ### 添加背景
 
@@ -340,7 +340,7 @@ export default scene
 
   背景应该和相机看到的范围一样大，所以背景的尺寸要用到相机相关的变量 size，这里为了方便维护，把这个变量单独存放：
 
-  ![](/articlesImages/threejs/light_and_shadow/image10.png)
+  ![](/caisr.github.io/articlesImages/threejs/light_and_shadow/image10.png)
 
   camera_config.js
 
@@ -352,7 +352,7 @@ export default scene
 
   新建 background.js
 
-  ![](/articlesImages/threejs/light_and_shadow/image11.png)
+  ![](/caisr.github.io/articlesImages/threejs/light_and_shadow/image11.png)
 
   ```
   import cameraConfig from '../../configs/camera_config'
@@ -439,7 +439,7 @@ export default scene
 
   去开发者工具看看效果：
 
-  ![](/articlesImages/threejs/light_and_shadow/image12.png)
+  ![](/caisr.github.io/articlesImages/threejs/light_and_shadow/image12.png)
 
   现在就比较正常了。
 

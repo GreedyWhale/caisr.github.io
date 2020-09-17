@@ -9,7 +9,7 @@ name: "CanvasMap"
 
 先上最终效果
 
-![](/articlesImages/gadgets/canvas_map/map.gif)
+![](/caisr.github.io/articlesImages/gadgets/canvas_map/map.gif)
 
 [源码](https://github.com/GreedyWhale/canvas_map_effects)
 
@@ -95,7 +95,7 @@ canvas 元素的 with，height 属性`<canvas width=xxx height=xxx>`规定的 ca
 
   目前的效果是这样的（背景图片可自行修改），就是一张地图
 
-  ![](/articlesImages/gadgets/canvas_map/map.png)
+  ![](/caisr.github.io/articlesImages/gadgets/canvas_map/map.png)
 
 #### 2. 实现地图上闪烁的点
 
@@ -236,7 +236,7 @@ canvas 元素的 with，height 属性`<canvas width=xxx height=xxx>`规定的 ca
 
       目前的效果：
 
-      ![](/articlesImages/gadgets/canvas_map/map2.png)
+      ![](/caisr.github.io/articlesImages/gadgets/canvas_map/map2.png)
 
       上面说过这种闪烁的其实是不断的变化圆的半径和透明度实现的，所以这里还需要一个可以变化的半径
 
@@ -318,7 +318,7 @@ canvas 元素的 with，height 属性`<canvas width=xxx height=xxx>`规定的 ca
 
       效果：
 
-      ![](/articlesImages/gadgets/canvas_map/map1.gif)
+      ![](/caisr.github.io/articlesImages/gadgets/canvas_map/map1.gif)
 
 - ##### 解释下代码：
 
@@ -328,11 +328,11 @@ canvas 元素的 with，height 属性`<canvas width=xxx height=xxx>`规定的 ca
 
       默认情况下在画布上绘制重叠的图形的时候会是这样的效果：
 
-      ![](/articlesImages/gadgets/canvas_map/example.png)
+      ![](/caisr.github.io/articlesImages/gadgets/canvas_map/example.png)
 
       当 globalCompositeOperation 改为'destination-in'时：
 
-      ![](/articlesImages/gadgets/canvas_map/example1.png)
+      ![](/caisr.github.io/articlesImages/gadgets/canvas_map/example1.png)
 
       这里就剩下蓝色块和红色块重叠的部分了，并且显示是已有的图形，而不是新绘制的图形。
 
@@ -349,7 +349,7 @@ canvas 元素的 with，height 属性`<canvas width=xxx height=xxx>`规定的 ca
 
       这里也是让我最不能理解的一点，当相同的透明度不断的进行叠加的时候，理论上是越来越不透明才对，而且 MDN 上的例子也是这样：
 
-      ![](/articlesImages/gadgets/canvas_map/example2.png)
+      ![](/caisr.github.io/articlesImages/gadgets/canvas_map/example2.png)
 
       后来咨询了一下公司的大神，我是这样向我解释的，当你用 80%的透明度画不同颜色的两个方块，然后把它合成一张图片，再给这张图片加上一个 80%的透明度，那么这两个方块的透明度就成了 80% \* 80% = 64%，将这个理论对应到 canvas 中就是：`this.pointContext.globalAlpha = 0.95`，设置画布的全局透明度为 0.95，画出第一个圆，然后再将这个圆保存起来
 
@@ -421,7 +421,7 @@ canvas 元素的 with，height 属性`<canvas width=xxx height=xxx>`规定的 ca
 
   效果：
 
-  ![](/articlesImages/gadgets/canvas_map/map2.gif)
+  ![](/caisr.github.io/articlesImages/gadgets/canvas_map/map2.gif)
 
 #### 4. 实现在曲线上移动的小点
 

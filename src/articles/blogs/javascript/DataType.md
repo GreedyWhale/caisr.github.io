@@ -15,7 +15,7 @@ name: "JSDataType"
 
 例子：
 
-![](/articlesImages/javascript/dataType/image.png)
+![](/caisr.github.io/articlesImages/javascript/dataType/image.png)
 
 #### 3. 函数是可以调用的对象
 
@@ -23,7 +23,7 @@ name: "JSDataType"
 
 例子：
 
-![](/articlesImages/javascript/dataType/image1.png)
+![](/caisr.github.io/articlesImages/javascript/dataType/image1.png)
 
 #### 4. 类数组对象
 
@@ -31,7 +31,7 @@ name: "JSDataType"
 
 例子：
 
-![](/articlesImages/javascript/dataType/image2.png)
+![](/caisr.github.io/articlesImages/javascript/dataType/image2.png)
 
 可以通过以下两种方法将类数组对象变为数组：
 
@@ -40,7 +40,7 @@ name: "JSDataType"
 
 例子：
 
-![](/articlesImages/javascript/dataType/image3.png)
+![](/caisr.github.io/articlesImages/javascript/dataType/image3.png)
 
 #### 5. 0.1 + 0.2 !== 0.3
 
@@ -81,13 +81,13 @@ JavaScript 中：
 - Number.MAX_SAFE_INTEGER，定义了能够呈现的最大整数
 - Number.MIN_SAFE_INTEGER，定义了能够呈现的最小整数
 
-![](/articlesImages/javascript/dataType/image4.png)
+![](/caisr.github.io/articlesImages/javascript/dataType/image4.png)
 
 #### 7. `.`运算符
 
 `.`运算符需要注意的一点是：因为它是一个有效的数字字符，会被优先认为是数字的一部分，然后才是对象的属性访问运算符，这就导致了下面这些情况：
 
-![](/articlesImages/javascript/dataType/image5.png)
+![](/caisr.github.io/articlesImages/javascript/dataType/image5.png)
 
 #### 8. null 和 undefined
 

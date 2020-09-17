@@ -63,7 +63,7 @@ name: "Gulp"
 
      现在的目录结构应该是这样的
 
-     ![](/articlesImages/mini_program/gulp/image.png)
+     ![](/caisr.github.io/articlesImages/mini_program/gulp/image.png)
 
      src 文件 是用来放源代码的
 

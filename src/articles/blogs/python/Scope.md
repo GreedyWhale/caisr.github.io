@@ -28,7 +28,7 @@ say_name()
 print(name)
 ```
 
-![](/articlesImages/python/scope/image.png)
+![](/caisr.github.io/articlesImages/python/scope/image.png)
 
 函数在执行完毕后，会将它内部的变量回收（删除）
 
@@ -45,7 +45,7 @@ say_name()
 print(name)
 ```
 
-![](/articlesImages/python/scope/image1.png)
+![](/caisr.github.io/articlesImages/python/scope/image1.png)
 
 ### 二. E(enclosing)，嵌套作用域
 
@@ -63,7 +63,7 @@ def foo():
 foo()
 ```
 
-![](/articlesImages/python/scope/image2.png)
+![](/caisr.github.io/articlesImages/python/scope/image2.png)
 
 但是，如果在内部函数中直接重新赋值外部函数作用域中的变量，外部函数作用域中的变量是不会改变的，会得到一个新的局部变量。同样的在函数中改变全局作用域的变量，也是这样。
 
@@ -86,11 +86,11 @@ foo()
 print('golbal:', b)
 ```
 
-![](/articlesImages/python/scope/image3.png)
+![](/caisr.github.io/articlesImages/python/scope/image3.png)
 
 如果想要修改原值，那么就要用到 nonlocal 关键字，例子：
 
-![](/articlesImages/python/scope/image4.png)
+![](/caisr.github.io/articlesImages/python/scope/image4.png)
 
 注意，nonlocal 关键字只针对局部变量，如果寻找的变量处于全局作用域中，会报错，，例子：
 
@@ -106,7 +106,7 @@ foo()
 
 ```
 
-![](/articlesImages/python/scope/image5.png)
+![](/caisr.github.io/articlesImages/python/scope/image5.png)
 
 如果 nonloacl 关键字在上一层中找到了变量，那么就会停止寻找，如果没有就继续向上直到全局作用域：
 
@@ -126,7 +126,7 @@ def foo():
 foo()
 ```
 
-![](/articlesImages/python/scope/image6.png)
+![](/caisr.github.io/articlesImages/python/scope/image6.png)
 
 ### 三. G(global)，全局作用域
 
@@ -144,13 +144,13 @@ import b
 print(b.module_name)
 ```
 
-![](/articlesImages/python/scope/image7.png)
+![](/caisr.github.io/articlesImages/python/scope/image7.png)
 
 ### 四. B(built-in)，内置作用域
 
 内置作用域就是 Python 中内置模块中的变量，比如我们可以直接使用 print 方法而不用导入任何模块。
 
-![](/articlesImages/python/scope/image8.png)
+![](/caisr.github.io/articlesImages/python/scope/image8.png)
 
 Python 中寻找变量的规则会按照 LEGB 规则寻找：
 
@@ -158,4 +158,4 @@ Local -> Enclosing -> Global -> Built-in
 
 最后说一点的是，Python 中没有块级作用域，也就是在类似 for 语句中定义的变量就是全局作用域中的变量：
 
-![](/articlesImages/python/scope/image9.png)
+![](/caisr.github.io/articlesImages/python/scope/image9.png)

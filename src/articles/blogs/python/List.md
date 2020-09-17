@@ -27,13 +27,13 @@ print('My favorite language is ' + languages[1]) # My favorite language is Pytho
 
 还可以使用负数来获取列表中的元素，比如-1 就代表列表最后一个元素，-2 就是倒数第二个，以此类推。例子：
 
-![](/articlesImages/python/list/image.png)
+![](/caisr.github.io/articlesImages/python/list/image.png)
 
 ### 1. 修改列表元素
 
 修改列表元素，只需要找到这个元素，重新赋值即可，例子：
 
-![](/articlesImages/python/list/image1.png)
+![](/caisr.github.io/articlesImages/python/list/image1.png)
 
 ### 2. 添加元素
 
@@ -41,19 +41,19 @@ print('My favorite language is ' + languages[1]) # My favorite language is Pytho
 
   append()方法可以将一个元素添加到列表的末尾。例子：
 
-  ![](/articlesImages/python/list/image2.png)
+  ![](/caisr.github.io/articlesImages/python/list/image2.png)
 
 - extend()
 
   extend()方法可以将多个元素添加到列表末尾。例子：
 
-  ![](/articlesImages/python/list/image3.png)
+  ![](/caisr.github.io/articlesImages/python/list/image3.png)
 
 - insert()
 
   insert()方法可以在列表的任何位置添加元素。例子：
 
-  ![](/articlesImages/python/list/image4.png)
+  ![](/caisr.github.io/articlesImages/python/list/image4.png)
 
 ### 3. 删除元素
 
@@ -61,23 +61,23 @@ print('My favorite language is ' + languages[1]) # My favorite language is Pytho
 
   del 语句可以删除列表中的元素，前提是你要知道被删除元素的索引，例子：
 
-  ![](/articlesImages/python/list/image5.png)
+  ![](/caisr.github.io/articlesImages/python/list/image5.png)
 
 - pop()
 
   pop()方法可以将列表中任意位置的元素删除，它会返回被删除的元素，如果不传参数，它会将列表的最后一项删除。例子：
 
-  ![](/articlesImages/python/list/image6.png)
+  ![](/caisr.github.io/articlesImages/python/list/image6.png)
 
 - remove()
 
   当不知道元素的索引时，可以使用 remove()方法根据值删除元素。例子：
 
-  ![](/articlesImages/python/list/image7.png)
+  ![](/caisr.github.io/articlesImages/python/list/image7.png)
 
   需要注意的是 remove()方法只会删除找到的第一个值，也就是列表中如果有重复的元素，只会删除第一个，例子：
 
-  ![](/articlesImages/python/list/image8.png)
+  ![](/caisr.github.io/articlesImages/python/list/image8.png)
 
 ### 4. 列表排序
 
@@ -85,17 +85,17 @@ print('My favorite language is ' + languages[1]) # My favorite language is Pytho
 
   sort()方法会将列表按照首字母顺序或者数字从小到大排序，这个方法会改变原列表，例子：
 
-  ![](/articlesImages/python/list/image9.png)
+  ![](/caisr.github.io/articlesImages/python/list/image9.png)
 
   可以传入 reverse = True 将列表按照字母或者数字从大到小，例子：
 
-  ![](/articlesImages/python/list/image10.png)
+  ![](/caisr.github.io/articlesImages/python/list/image10.png)
 
 - sorted()
 
   sort()方法会改变原列表，sorted()不会，它会返回一个新的列表，例子：
 
-  ![](/articlesImages/python/list/image11.png)
+  ![](/caisr.github.io/articlesImages/python/list/image11.png)
 
   sorted()同样可以接受 reverse 参数
 
@@ -103,17 +103,17 @@ print('My favorite language is ' + languages[1]) # My favorite language is Pytho
 
   reverse()方法可以将列表倒着排序，它会改变原列表，例子：
 
-  ![](/articlesImages/python/list/image12.png)
+  ![](/caisr.github.io/articlesImages/python/list/image12.png)
 
 ### 4. 列表的长度
 
 len()方法可以获得列表的长度。例子：
 
-![](/articlesImages/python/list/image13.png)
+![](/caisr.github.io/articlesImages/python/list/image13.png)
 
 长度是从 1 开始算的，如果获取一个列表中不存在的索引，会报错。例子：
 
-![](/articlesImages/python/list/image14.png)
+![](/caisr.github.io/articlesImages/python/list/image14.png)
 
 ### 5. 元组
 
@@ -154,7 +154,7 @@ print(numbers[1:7])
 
 ```
 
-![](/articlesImages/python/list/image15.png)
+![](/caisr.github.io/articlesImages/python/list/image15.png)
 
 它不会改变原列表。
 
@@ -187,7 +187,7 @@ print(numbers[1:7])
      ```
      全部省略相当于返回整个列表
   索引值也是可以用负数的，例子：
-  ![](/articlesImages/python/list/image16.png)
+  ![](/caisr.github.io/articlesImages/python/list/image16.png)
 
 ### 7. for 语句遍历列表
 
@@ -203,7 +203,7 @@ for animal in animals:
 
 ```
 
-![](/articlesImages/python/list/image17.png)
+![](/caisr.github.io/articlesImages/python/list/image17.png)
 
 Python 中通过缩进判断代码块，也就是说 for 后面缩进的代码都是每次迭代的时候需要执行的代码，注意 for 语句后面是有一个`:`号的。例子：
 
@@ -221,7 +221,7 @@ print('End of traversal')
 
 ```
 
-![](/articlesImages/python/list/image18.png)
+![](/caisr.github.io/articlesImages/python/list/image18.png)
 
 可以看到上面代码中每次迭代都打印了两句话。当遍历结束后会打印出 End of traversal，因为`print('End of traversal')`这一句代码没有缩进，不算是 for 语句的代码块。
 
@@ -241,7 +241,7 @@ print('End of traversal')
 
   ```
 
-  ![](/articlesImages/python/list/image19.png)
+  ![](/caisr.github.io/articlesImages/python/list/image19.png)
 
   它前两个参数就是数字的范围，得到的数字不包括结束的那个参数，用上面的例子说明就是不包括 10。
 
@@ -255,7 +255,7 @@ print('End of traversal')
 
   ```
 
-  ![](/articlesImages/python/list/image20.png)
+  ![](/caisr.github.io/articlesImages/python/list/image20.png)
 
   也就是从 1 开始，每次都加 2。
 
@@ -271,7 +271,7 @@ print('End of traversal')
 
   ```
 
-  ![](/articlesImages/python/list/image21.png)
+  ![](/caisr.github.io/articlesImages/python/list/image21.png)
 
   list()方法还可以将元组变成列表，例子：
 
@@ -283,7 +283,7 @@ print('End of traversal')
 
   ```
 
-  ![](/articlesImages/python/list/image22.png)
+  ![](/caisr.github.io/articlesImages/python/list/image22.png)
 
 - max()、min()和 sum()
 
@@ -292,7 +292,7 @@ print('End of traversal')
   - sum()，sum()会对数字列表中的所有数字进行相加，并算出总和。
     例子：
 
-  ![](/articlesImages/python/list/image23.png)
+  ![](/caisr.github.io/articlesImages/python/list/image23.png)
 
 ### 9. 列表解析
 
@@ -336,7 +336,7 @@ print('student_names:', student_names)
 
 ```
 
-![](/articlesImages/python/list/image24.png)
+![](/caisr.github.io/articlesImages/python/list/image24.png)
 
 这一点和 JavaScript 中的引用类型一样。
 
@@ -356,4 +356,4 @@ print('student_names:', student_names)
 
 ```
 
-![](/articlesImages/python/list/image25.png)
+![](/caisr.github.io/articlesImages/python/list/image25.png)

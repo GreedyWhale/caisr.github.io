@@ -50,17 +50,17 @@ name: "GoogleHelloExtensions"
    ```
 4. 现在项目目录看起来是这样的：
 
-![](/articlesImages/google/hello_extensions/image.png)
+![](/caisr.github.io/articlesImages/google/hello_extensions/image.png)
 
 ### 二. 查看效果
 
 1. 在 Chrome 的地址栏里输入：chrome://extensions
 2. 在页面的左上角开启开发者模式：
-   ![](/articlesImages/google/hello_extensions/image1.png)
+   ![](/caisr.github.io/articlesImages/google/hello_extensions/image1.png)
 3. 开启开发者模式后，页面上就会出现`加载已解压的扩展程序`这个按钮，点击这个按钮选择之前的项目文件夹，就会出现：
-   ![](/articlesImages/google/hello_extensions/image2.png)
+   ![](/caisr.github.io/articlesImages/google/hello_extensions/image2.png)
 4. 在 Chrome 的地址栏左侧可以看到这个扩展程序的图标，点击这个图标，或者用快捷键`Ctrl+Shift+1`，就可以看到 hello.html 这个页面：
-   ![](/articlesImages/google/hello_extensions/image3.png)
+   ![](/caisr.github.io/articlesImages/google/hello_extensions/image3.png)
 
 ### 三. 总结
 

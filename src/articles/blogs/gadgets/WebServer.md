@@ -50,7 +50,7 @@ app.listen(port);
 
 在浏览器中打开`127.0.0.1:3000`
 
-![](/articlesImages/gadgets/web_server/image.png)
+![](/caisr.github.io/articlesImages/gadgets/web_server/image.png)
 
 ### 三.使用 form 上传图片
 
@@ -90,7 +90,7 @@ app.listen(port);
 
 ```
 
-![](/articlesImages/gadgets/web_server/image1.png)
+![](/caisr.github.io/articlesImages/gadgets/web_server/image1.png)
 
 将 index.js 中的接口更新成
 
@@ -104,7 +104,7 @@ app.post("/upload", (req, res) => {
 
 试着上传一下：
 
-![](/articlesImages/gadgets/web_server/image2.png)
+![](/caisr.github.io/articlesImages/gadgets/web_server/image2.png)
 
 ### 四. 将前端发送的图片储存在服务器中
 
@@ -154,17 +154,17 @@ app.listen(port);
 
 改完之后重新启动服务，再重新上传：
 
-![](/articlesImages/gadgets/web_server/image3.png)
+![](/caisr.github.io/articlesImages/gadgets/web_server/image3.png)
 
 可以看到 req.file 中就是上传的文件信息。
 
 同时，你会发现当前目录下，会多一个文件夹叫 uoloads。
 
-![](/articlesImages/gadgets/web_server/image4.png)
+![](/caisr.github.io/articlesImages/gadgets/web_server/image4.png)
 
 那个很长名字的文件，就是刚刚前端传的图片。只要改一下后缀名就可以预览了：
 
-![](/articlesImages/gadgets/web_server/image5.png)
+![](/caisr.github.io/articlesImages/gadgets/web_server/image5.png)
 
 ### 五. 将储存的图片名返回给前端
 
@@ -228,7 +228,7 @@ app.post("/upload", upload.single("avatar"), (req, res) => {
 
 这时候重新发送，会出现一个问题：
 
-![](/articlesImages/gadgets/web_server/image6.png)
+![](/caisr.github.io/articlesImages/gadgets/web_server/image6.png)
 
 由于代码是写在 JS Bin 上的，使用 AJAX 请求不同域名的接口，会出现跨域情况，解决这个问题需要，在 index.js 中加上一个头部，就是报错信息中的`Access-Control-Allow-Origin`：
 
@@ -249,7 +249,7 @@ app.post("/upload", upload.single("avatar"), (req, res) => {
 
 重新发送：
 
-![](/articlesImages/gadgets/web_server/image7.png)
+![](/caisr.github.io/articlesImages/gadgets/web_server/image7.png)
 
 这样成功的上传了图片，并且拿到了上传后的图片名。
 
@@ -419,7 +419,7 @@ upload.addEventListener('submit', (e) => {
 
 结果：
 
-![](/articlesImages/gadgets/web_server/image8.png)
+![](/caisr.github.io/articlesImages/gadgets/web_server/image8.png)
 
 ### 六. 将代码部署到 Heroku
 
@@ -428,7 +428,7 @@ Heroku 是一个支持多种编程语言的云平台即服务。最重要的它�
 1. 注册，过程省略
 2. 选择创建一个新的应用
 
-    ![](/articlesImages/gadgets/web_server/image9.png)
+    ![](/caisr.github.io/articlesImages/gadgets/web_server/image9.png)
 
 3. 在部署的时候，有三个选择，我选择选择 GitHub
 4. 由于选择 GitHub，那么还需要创建一个仓库，把代码放上去。
@@ -448,17 +448,17 @@ Heroku 是一个支持多种编程语言的云平台即服务。最重要的它�
 8. 这是我的[仓库地址](https://github.com/GreedyWhale/node-img-server)
 9. 在 heroku 中选择仓库并且选择分支 master，部署
 
-    ![](/articlesImages/gadgets/web_server/image10.png)
+    ![](/caisr.github.io/articlesImages/gadgets/web_server/image10.png)
 
 10. 预览
 
-    ![](/articlesImages/gadgets/web_server/image11.png)
+    ![](/caisr.github.io/articlesImages/gadgets/web_server/image11.png)
 
 
     这个就是部署好的域名了。
 
 用这个域名试一试
 
-![](/articlesImages/gadgets/web_server/image12.png)
+![](/caisr.github.io/articlesImages/gadgets/web_server/image12.png)
 
 大功告成。可惜的就是 heroku 得科学上网才行。

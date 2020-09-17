@@ -29,7 +29,7 @@ name: "PythonStringAndNumber"
 
   ```
 
-  ![](/articlesImages/python/string_and_number/image.png)
+  ![](/caisr.github.io/articlesImages/python/string_and_number/image.png)
 
 - 拼接
 
@@ -37,7 +37,7 @@ name: "PythonStringAndNumber"
   print('cat' + 'dog')
   ```
 
-  ![](/articlesImages/python/string_and_number/image1.png)
+  ![](/caisr.github.io/articlesImages/python/string_and_number/image1.png)
 
 - 重复
 
@@ -47,7 +47,7 @@ name: "PythonStringAndNumber"
   print('cat' * 20)
   ```
 
-  ![](/articlesImages/python/string_and_number/image2.png)
+  ![](/caisr.github.io/articlesImages/python/string_and_number/image2.png)
 
   但是不能这样：
 
@@ -55,7 +55,7 @@ name: "PythonStringAndNumber"
   print('cat' + 5)
   ```
 
-  ![](/articlesImages/python/string_and_number/image3.png)
+  ![](/caisr.github.io/articlesImages/python/string_and_number/image3.png)
 
 - 字符串的大小写
 
@@ -73,7 +73,7 @@ name: "PythonStringAndNumber"
 
   ```
 
-  ![](/articlesImages/python/string_and_number/image4.png)
+  ![](/caisr.github.io/articlesImages/python/string_and_number/image4.png)
 
   title 会让字符串中的单词首字母大写，lower 就是全部小写，upper 为全部大写
 
@@ -89,7 +89,7 @@ name: "PythonStringAndNumber"
 
   ```
 
-  ![](/articlesImages/python/string_and_number/image5.png)
+  ![](/caisr.github.io/articlesImages/python/string_and_number/image5.png)
 
 - 删除空白
 
@@ -113,7 +113,7 @@ name: "PythonStringAndNumber"
   print(language2.rstrip())
 
   ```
-  ![](/articlesImages/python/string_and_number/image6.png)
+  ![](/caisr.github.io/articlesImages/python/string_and_number/image6.png)
 - 长字符串
 
   Python 中过长的字符串可以用"""或者'''来包裹，例子：
@@ -144,30 +144,30 @@ name: "PythonStringAndNumber"
 
   ```
 
-  ![](/articlesImages/python/string_and_number/image7.png)
+  ![](/caisr.github.io/articlesImages/python/string_and_number/image7.png)
 
 ### 2. 数字
 
 Python 中数字类型分为整数和浮点数，浮点数就是带小数点的数字。
 可以使用 加（+）、减（-）、乘（\*）、除（/）进行运算。除了这 4 种，Python 种还可以进行指数（\*\*）和 取余（%）运算。例子：
 
-![](/articlesImages/python/string_and_number/image8.png)
+![](/caisr.github.io/articlesImages/python/string_and_number/image8.png)
 
 其中 `3**5`就是 3 的 5 次幂。
 
 需要注意的一点，Python3 中整除需要使用 `//` 操作符。例子：
 
-![](/articlesImages/python/string_and_number/image9.png)
+![](/caisr.github.io/articlesImages/python/string_and_number/image9.png)
 
 当一个数特别大的时候 Python 会采用 E 记法。例子：
 
-![](/articlesImages/python/string_and_number/image10.png)
+![](/caisr.github.io/articlesImages/python/string_and_number/image10.png)
 
 E 记法传送门：[科学记数法](https://zh.wikipedia.org/zh-hans/%E7%A7%91%E5%AD%A6%E8%AE%B0%E6%95%B0%E6%B3%95)
 
 在 Python 中 0.1 + 0.2 也是不等于 0.3 的，例子：
 
-![](/articlesImages/python/string_and_number/image11.png)
+![](/caisr.github.io/articlesImages/python/string_and_number/image11.png)
 
 - 自增和自减
 
@@ -195,14 +195,14 @@ E 记法传送门：[科学记数法](https://zh.wikipedia.org/zh-hans/%E7%A7%91
 
   例子：
 
-  ![](/articlesImages/python/string_and_number/image12.png)
+  ![](/caisr.github.io/articlesImages/python/string_and_number/image12.png)
 
 - type()，type 方法可以检测一个值的类型，例子：
 
-  ![](/articlesImages/python/string_and_number/image13.png)
+  ![](/caisr.github.io/articlesImages/python/string_and_number/image13.png)
 
 ### 4. Python 之禅
 
 在 python 的环境中可以用`import this`这句代码获取“Python 之禅”。例子：
 
-![](/articlesImages/python/string_and_number/image14.png)
+![](/caisr.github.io/articlesImages/python/string_and_number/image14.png)

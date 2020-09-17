@@ -57,13 +57,13 @@ print(message)
 
   可用通过内置函数，获得所有的关键字
 
-  ![](/articlesImages/python/variable/image.png)
+  ![](/caisr.github.io/articlesImages/python/variable/image.png)
 
   内置函数
 
   参考官方文档[Built-in Functions](https://docs.python.org/3.7/library/functions.html?highlight=built)
 
-  ![](/articlesImages/python/variable/image1.png)
+  ![](/caisr.github.io/articlesImages/python/variable/image1.png)
 
 - 变量名应该简短又具有描述性（起名真的很难。。），例子：
 
@@ -108,4 +108,4 @@ print(message)
 
 ```
 
-![](/articlesImages/python/variable/image2.png)
+![](/caisr.github.io/articlesImages/python/variable/image2.png)

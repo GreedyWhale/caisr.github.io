@@ -27,13 +27,13 @@ name: "VueNuxt"
 
   输入完上面的命令后会有一些选项：
 
-  ![](/articlesImages/vue/nuxt/image.png)
+  ![](/caisr.github.io/articlesImages/vue/nuxt/image.png)
 
   需要注意的是 choose rendering mode 这一项，它有 Universal 和 SPA 这两种选项，如果选了 SPA 那么构建完成之后，生成包含常见的 meta 和资源链接，但不包含页面内容。
 
   这里坑了我好久，别人的项目中，请求到的 html 都有渲染好的内容在里面，我选了这个模式后就和用 vue-cli 构建的单页面应用一样，只有基本的结构。最后还是在文档中找到原因。
 
-  ![](/articlesImages/vue/nuxt/image1.png)
+  ![](/caisr.github.io/articlesImages/vue/nuxt/image1.png)
 
 - ### 添加 css 预处理器
 
@@ -49,11 +49,11 @@ name: "VueNuxt"
 
   然后在 nuxt.config.js 中找到 axios 这一项，加上 proxy: true 属性
 
-  ![](/articlesImages/vue/nuxt/image2.png)
+  ![](/caisr.github.io/articlesImages/vue/nuxt/image2.png)
 
   然后添加
 
-  ![](/articlesImages/vue/nuxt/image3.png)
+  ![](/caisr.github.io/articlesImages/vue/nuxt/image3.png)
 
   '/guiderank-web'就是要匹配的请求
 
@@ -63,21 +63,21 @@ name: "VueNuxt"
 
   在组件中这样用
 
-  ![](/articlesImages/vue/nuxt/image4.png)
+  ![](/caisr.github.io/articlesImages/vue/nuxt/image4.png)
 
   asyncData 这个是 nuxt 提供的生命周期，文档上写的很详细
 
   结果：
 
-  ![](/articlesImages/vue/nuxt/image5.png)
+  ![](/caisr.github.io/articlesImages/vue/nuxt/image5.png)
 
   成功拿到
 
   不过这个接口的 access-control-allow-origin 是\*，我又去 A 站上随便找了个接口，测试了下，用这个方法是可以拿到的
 
-  ![](/articlesImages/vue/nuxt/image6.png)
+  ![](/caisr.github.io/articlesImages/vue/nuxt/image6.png)
 
-  ![](/articlesImages/vue/nuxt/image7.png)
+  ![](/caisr.github.io/articlesImages/vue/nuxt/image7.png)
 
 - ### 开发页面
 
@@ -87,13 +87,13 @@ name: "VueNuxt"
 
   自己写的一些库，需要通过
 
-  ![](/articlesImages/vue/nuxt/image8.png)
+  ![](/caisr.github.io/articlesImages/vue/nuxt/image8.png)
 
   这种方法引入。
 
   全局的样式文件通过这种方式引入：
 
-  ![](/articlesImages/vue/nuxt/image9.png)
+  ![](/caisr.github.io/articlesImages/vue/nuxt/image9.png)
 
   其他的知识点就需要去看文档了。
 

@@ -2,7 +2,7 @@
  * @Author: MADAO
  * @Date: 2020-08-31 14:35:32
  * @LastEditors: MADAO
- * @LastEditTime: 2020-09-17 12:44:06
+ * @LastEditTime: 2020-09-17 15:03:29
  * @Description: vite 配置
  */
 const mdPlugin = require('vite-plugin-markdown')
@@ -32,5 +32,12 @@ module.exports = {
   },
   plugins: [mdPlugin({
     mode: ['vue']
-  })]
+  })],
+  proxy: {
+    '/caisr.github.io': {
+      target: 'http://localhost:3000/',
+      changeOrigin: true,
+      rewrite: path => path.replace(/^\/caisr.github.io/, '')
+    }
+  }
 }

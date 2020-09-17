@@ -19,11 +19,11 @@ filter(function or None, iterable) --> filter object
 
 例子：
 
-![](/articlesImages/python/array_methods/image.png)
+![](/caisr.github.io/articlesImages/python/array_methods/image.png)
 
 filter 对象是一个迭代器，它由惰性运算的特性。如果想要得到一个 list 类型的函数，的借助 list 函数
 
-![](/articlesImages/python/array_methods/image1.png)
+![](/caisr.github.io/articlesImages/python/array_methods/image1.png)
 
 ### 2. map
 

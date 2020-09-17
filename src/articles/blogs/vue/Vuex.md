@@ -23,7 +23,7 @@ name: "VueAndTSTwo"
 
   使用 vue-cli 搭建的项目，会有一个 store.js 的文件
 
-  ![](/articlesImages/vue/vuex/image.png)
+  ![](/caisr.github.io/articlesImages/vue/vuex/image.png)
 
   ```
   import Vue from "vue";
@@ -136,7 +136,7 @@ name: "VueAndTSTwo"
 
     结果：
 
-    ![](/articlesImages/vue/vuex/image1.png)
+    ![](/caisr.github.io/articlesImages/vue/vuex/image1.png)
 
     mapState 还可以传入一个对象，比如上面例子可以改写成这样
 
@@ -163,7 +163,7 @@ name: "VueAndTSTwo"
 
     结果：
 
-    ![](/articlesImages/vue/vuex/image2.png)
+    ![](/caisr.github.io/articlesImages/vue/vuex/image2.png)
 
     这两种写法都可获得 state 中对应 key 值得数据
 
@@ -326,7 +326,7 @@ name: "VueAndTSTwo"
       };
       ```
 
-      ![](/articlesImages/vue/vuex/image3.png)
+      ![](/caisr.github.io/articlesImages/vue/vuex/image3.png)
 
     同样，getter 也有辅助的函数 mapGetters，它和 mapState 差不多，这里就不继续说了。
 

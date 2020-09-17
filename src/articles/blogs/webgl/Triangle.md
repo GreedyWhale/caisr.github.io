@@ -47,7 +47,7 @@ name: "WebGLTriangle"
 
   - 顶点着色器：顶点着色器操作 3D 空间的坐标并且每个顶点都会调用一次这个函数. 其目的是设置 gl_Position 变量 -- 这是一个特殊的全局内置变量, 它是用来存储当前顶点的位置。例子：
 
-    ![](/articlesImages/webgl/triangle/image.png)
+    ![](/caisr.github.io/articlesImages/webgl/triangle/image.png)
 
     当绘制一个三角形的时候，会有上图这三个顶点，那么顶点着色器会在这三个顶点都执行一次，然后计算顶点的坐标并存起来。
 
@@ -68,17 +68,17 @@ name: "WebGLTriangle"
      - gl.TRIANGLE_FAN：绘制一个三角扇。
      - gl.TRIANGLES: 绘制一系列三角形。每三个点作为顶点。
 
-     ![](/articlesImages/webgl/triangle/image1.png)
+     ![](/caisr.github.io/articlesImages/webgl/triangle/image1.png)
 
   5. 光栅化，光栅化就是根据顶点信息加上图元将绘制一个图形所需要的像素点全部计算出来，交给片元着色器处理。
 
      就像这样：
 
-     ![](/articlesImages/webgl/triangle/image2.png)
+     ![](/caisr.github.io/articlesImages/webgl/triangle/image2.png)
 
   6. 片元着色器会对每一个光栅化得到的每一个像素点进行着色。
 
-     ![](/articlesImages/webgl/triangle/image3.png)
+     ![](/caisr.github.io/articlesImages/webgl/triangle/image3.png)
 
   ```
 
@@ -286,7 +286,7 @@ name: "WebGLTriangle"
 
 - 效果：
 
-  ![](/articlesImages/webgl/triangle/image4.png)
+  ![](/caisr.github.io/articlesImages/webgl/triangle/image4.png)
 
 - 完整代码：
 

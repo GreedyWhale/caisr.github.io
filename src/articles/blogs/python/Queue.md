@@ -67,7 +67,7 @@ name: "PythonQueue"
 
   结果：
 
-  ![](/articlesImages/python/queue/image.png)
+  ![](/caisr.github.io/articlesImages/python/queue/image.png)
 
   拿出的数据的顺序和存放进去数据的顺序是一样的
 
@@ -85,7 +85,7 @@ name: "PythonQueue"
   ```
 
   结果：
-  ![](/articlesImages/python/queue/image1.png)
+  ![](/caisr.github.io/articlesImages/python/queue/image1.png)
 
   越后放进去的数据越先取出来
 
@@ -104,7 +104,7 @@ name: "PythonQueue"
 
   结果：
 
-  ![](/articlesImages/python/queue/image2.png)
+  ![](/caisr.github.io/articlesImages/python/queue/image2.png)
 
   它根据传入的(priority_number,data)格式的数据中的 priority_number 决定优先级的大小，priority_number 越小优先级越高。
 
@@ -160,7 +160,7 @@ name: "PythonQueue"
 
     结果：
 
-    ![](/articlesImages/python/queue/image3.png)
+    ![](/caisr.github.io/articlesImages/python/queue/image3.png)
 
     因为消费者 1 等了一秒才开始处理数据，另一个线程的消费者 2 则是立即处理数据，所以数据当消费者 1 处理数据的时候，队列已经空了，没有数据了，消费者 1 就只能一直等待。
 
@@ -222,7 +222,7 @@ name: "PythonQueue"
 
       结果：
 
-      ![](/articlesImages/python/queue/image4.png)
+      ![](/caisr.github.io/articlesImages/python/queue/image4.png)
 
     - block 为 True 且 timeout 为正数，如果队列满了，会等待 timeout 中传入的秒数，如果超过了 timeout 中传入的秒数，抛出 queue.Full 异常。
 
@@ -245,7 +245,7 @@ name: "PythonQueue"
 
       结果：
 
-      ![](/articlesImages/python/queue/image5.png)
+      ![](/caisr.github.io/articlesImages/python/queue/image5.png)
 
     - block 为 False，队列满了会立即抛出 queue.Full 异常。
 
