@@ -34,7 +34,7 @@ import { cityCodesType } from '/@/types/cityCode'
 
 export default defineComponent({
   name: 'CityPicker',
-  setup (props, context) {
+  setup (_props, context) {
     const store = useStore<Vuex.State>()
     const data = reactive<{
       cityCodeList: cityCodesType;
