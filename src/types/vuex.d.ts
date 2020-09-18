@@ -2,7 +2,7 @@
  * @Author: MADAO
  * @Date: 2020-09-03 10:07:44
  * @LastEditors: MADAO
- * @LastEditTime: 2020-09-15 11:10:35
+ * @LastEditTime: 2020-09-18 11:58:18
  * @Description: Vuex 类型文件
  */
 import { ArticlesItem } from '/@/types/articles'
@@ -13,5 +13,6 @@ declare module Vuex {
     articles: ArticlesItem[];
     articleType: string;
     mode: Mode;
+    cityCode: string;
   }
 }

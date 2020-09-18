@@ -12,5 +12,6 @@
         "src/*"
       ]
     },
+    "lib": ["DOM", "ESNext", "ES6"]
   }
 }

@@ -17,7 +17,13 @@
           <div class="home-pane__weather">
             <div class="home-pane__weather-lives">
               <div class="home-pane__weather-city">
-                <p>{{ data.weather.lives.city }}</p>
+                <p>
+                  {{ data.weather.lives.city }}
+                  <img
+                    src="/@/assets/images/localtion.png"
+                    alt="localtion-icon"
+                    @click="data.visibleCityPicker = true">
+                </p>
                 <p>{{ data.currentDate.toLocaleDateString() }}</p>
               </div>
               <img :src="data.weather.lives.icon" alt="weather-icon">
@@ -76,13 +82,25 @@
         </li>
       </ul>
     </div>
+    <CityPicker
+      v-if="data.visibleCityPicker"
+      @on-cancel="data.visibleCityPicker = false"
+      @on-confirm="data.visibleCityPicker = false" />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, reactive, onMounted } from 'vue'
+import {
+  defineComponent,
+  computed,
+  reactive,
+  onMounted,
+  defineAsyncComponent,
+  watch
+} from 'vue'
 import { getArticlesAttributes } from '/@/composables/articleMethods'
 import { useRouter } from 'vue-router'
+import { useStore } from 'vuex'
 import {
   getChineseNewYear,
   getWeatherIcon,
@@ -90,19 +108,24 @@ import {
   getDaysElapsed
 } from '/@/utils/index'
 import axios from 'axios'
+import { Vuex } from '/@/types/vuex'
 
 export default defineComponent({
   name: 'Home',
+  components: {
+    CityPicker: defineAsyncComponent(() => import('/@/components/CityPicker.vue'))
+  },
   setup () {
     const router = useRouter()
+    const store = useStore<Vuex.State>()
     const data = reactive({
       diffForNetNewYear: '',
-      citycode: '440100',
       weather: {
         lives: {},
         forecasts: []
       },
-      currentDate: new Date()
+      currentDate: new Date(),
+      visibleCityPicker: false
     })
     const currentLife = (() => {
       const currentDate = new Date()
@@ -150,7 +173,7 @@ export default defineComponent({
         axios.get('https://restapi.amap.com/v3/weather/weatherInfo', {
           params: {
             key: '0eac8f8b04cc8b8a84ea14da6c2d6c1a',
-            city: data.citycode,
+            city: store.state.cityCode,
             extensions
           }
         }).then(res => {
@@ -161,6 +184,11 @@ export default defineComponent({
           reject()
         }, () => reject())
       })
+    }
+    const getAllWeather = () => {
+      Promise.all([getWeather(), getWeather('all')]).then(([livesWeather, forecastWeather]: any[]) => {
+        setWeatherData([livesWeather, forecastWeather])
+      }, () => alert('get weather error'))
     }
     const setWeatherData = ([livesWeather, forecastWeather]: any[]) => {
       data.weather = {
@@ -173,12 +201,12 @@ export default defineComponent({
         })))
       }
     }
+    watch(() => store.state.cityCode, () => {
+      getAllWeather()
+    }, { immediate: true })
 
     onMounted(() => {
       getDiffForNetNewYear()
-      Promise.all([getWeather(), getWeather('all')]).then(([livesWeather, forecastWeather]: any[]) => {
-        setWeatherData([livesWeather, forecastWeather])
-      }, () => alert('get weather error'))
     })
 
     return {
@@ -285,6 +313,16 @@ export default defineComponent({
         text-align: center;
         letter-spacing: 2px;
         line-height: 1.5;
+        > p:nth-of-type(1) {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          > img {
+            width: 24px;
+            cursor: pointer;
+            margin-left: 5px;
+          }
+        }
       }
       &-temperature {
         > p:nth-of-type(1) {
