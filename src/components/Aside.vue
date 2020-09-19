@@ -10,7 +10,6 @@
         @click="navClickHandler(item)"
       ></li>
     </ul>
-    <button class="aside-search__button"></button>
   </div>
 </template>
 
@@ -60,7 +59,7 @@ export default defineComponent({
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 0;
+  padding: 20px 0 50px;
   > img {
     display: block;
     width: 80%;
@@ -96,11 +95,6 @@ export default defineComponent({
         }
       }
     }
-  }
-  &-search__button {
-    width: 48px;
-    height: 48px;
-    background: url('../assets/images/search.png') no-repeat center / 100%;
   }
 }
 </style>

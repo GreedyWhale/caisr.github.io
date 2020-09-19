@@ -22,9 +22,10 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@import '../assets/scss/tool.scss';
 .preview-image {
   position: fixed;
-  z-index: 99;
+  @include zIndex(breakThroughTheSky);
   top: 0;
   left: 0;
   width: 100%;

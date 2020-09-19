@@ -109,7 +109,7 @@ export default defineComponent({
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 6;
+  @include zIndex(modal);
   width: 100%;
   height: 100%;
   display: flex;
@@ -122,7 +122,7 @@ export default defineComponent({
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    @include zIndex(wallpaper);
     background: rgba(0,0,0,0.8);
   }
   &__content {
