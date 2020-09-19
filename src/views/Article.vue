@@ -1,5 +1,5 @@
 <template>
-  <div class="article" ref="rootElement" @scroll="onScroll">
+  <div class="article" ref="rootElement" @scroll="onScroll" @click="onClick">
     <article>
       <h1 class="article-title">{{ article.articleAttributes.title }}</h1>
       <component :is="article.articleComponent"></component>
@@ -27,10 +27,12 @@ import { getCurrentArticle } from '/@/composables/articleMethods'
 import { scrollTopTo } from '/@/utils/index'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/shades-of-purple.css'
+import { usePreviewImage } from '/@/plugin/index'
 
 export default defineComponent({
   name: 'Article',
   setup () {
+    const previewImage = usePreviewImage()
     const data = reactive({
       visibleGoTop: false
     })
@@ -70,6 +72,14 @@ export default defineComponent({
     const goTop = () => {
       scrollTopTo(0, 100, (rootElement.value as unknown as HTMLElement))
     }
+
+    const onClick = (event: Event) => {
+      const { tagName } = (event.target as HTMLElement)
+      if (tagName.toUpperCase() === 'IMG') {
+        const url = (event.target as HTMLElement).getAttribute('src')
+        url && previewImage!.show(url)
+      }
+    }
     onMounted(() => {
       initHighLight()
     })
@@ -82,7 +92,8 @@ export default defineComponent({
       article,
       onScroll,
       goTop,
-      data
+      data,
+      onClick
     }
   }
 })
