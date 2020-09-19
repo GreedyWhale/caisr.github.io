@@ -17,7 +17,6 @@
 import { defineComponent, reactive } from 'vue'
 import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
-import { Vuex } from '/@/types/vuex.d.ts'
 import { NavItem } from '/@/types/aside.d.ts'
 
 export default defineComponent({

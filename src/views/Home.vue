@@ -108,7 +108,6 @@ import {
   getDaysElapsed
 } from '/@/utils/index'
 import axios from 'axios'
-import { Vuex } from '/@/types/vuex'
 
 export default defineComponent({
   name: 'Home',

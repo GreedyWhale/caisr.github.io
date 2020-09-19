@@ -28,7 +28,6 @@
 <script lang="ts">
 import { defineComponent, reactive, computed } from 'vue'
 import { useStore } from 'vuex'
-import { Vuex } from '/@/types/vuex'
 import cityCodeList from '/@/assets/json/citycode.ts'
 import { cityCodesType } from '/@/types/cityCode'
 

@@ -8,7 +8,6 @@
 import { ref } from 'vue'
 import { articles } from '/@/utils'
 import { useStore } from 'vuex'
-import { Vuex } from './../types/vuex.d'
 
 export function getArticlesAttributes () {
   const { state: { mode } } = useStore<Vuex.State>()
