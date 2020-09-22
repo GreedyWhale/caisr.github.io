@@ -1,46 +1,44 @@
 <template>
   <div class="home">
     <div class="home-pane">
-      <div>
-        <h1 class="home-pane__title">MADAO'S BLOG</h1>
-        <div class="home-pane__top">
-          <div class="home-pane__time">
-            <div class="home-pane__battery">
-              <div><span :style="batteryStyle"></span></div>
-              <p>Life: {{ currentLife }}%</p>
+      <h1 class="home-pane__title">MADAO'S BLOG</h1>
+      <div class="home-pane__top">
+        <div class="home-pane__time">
+          <div class="home-pane__battery">
+            <div><span :style="batteryStyle"></span></div>
+            <p>Life: {{ currentLife }}%</p>
+          </div>
+          <div class="home-pane__next-year">
+            <h3>Next New Year</h3>
+            <p>{{ data.diffForNetNewYear }}</p>
+          </div>
+        </div>
+        <div class="home-pane__weather">
+          <div class="home-pane__weather-lives">
+            <div class="home-pane__weather-city">
+              <p>
+                {{ data.weather.lives.city }}
+                <img
+                  src="/@/assets/images/localtion.png"
+                  alt="localtion-icon"
+                  @click="data.visibleCityPicker = true">
+              </p>
+              <p>{{ data.currentDate.toLocaleDateString() }}</p>
             </div>
-            <div class="home-pane__next-year">
-              <h3>Next New Year</h3>
-              <p>{{ data.diffForNetNewYear }}</p>
+            <img :src="data.weather.lives.icon" alt="weather-icon">
+            <div class="home-pane__weather-temperature">
+              <p>{{ data.weather.lives.temperature }}</p>
+              <p>{{ data.weather.lives.weather }}</p>
             </div>
           </div>
-          <div class="home-pane__weather">
-            <div class="home-pane__weather-lives">
-              <div class="home-pane__weather-city">
-                <p>
-                  {{ data.weather.lives.city }}
-                  <img
-                    src="/@/assets/images/localtion.png"
-                    alt="localtion-icon"
-                    @click="data.visibleCityPicker = true">
-                </p>
-                <p>{{ data.currentDate.toLocaleDateString() }}</p>
-              </div>
-              <img :src="data.weather.lives.icon" alt="weather-icon">
-              <div class="home-pane__weather-temperature">
-                <p>{{ data.weather.lives.temperature }}</p>
-                <p>{{ data.weather.lives.weather }}</p>
-              </div>
-            </div>
-            <ul class="home-pane__weather-forecast">
-              <li v-for="item in data.weather.forecasts" :key="item.weekEn">
-                <h3>{{ item.weekEn }}</h3>
-                <img :src="item.icon" alt="weather-icon">
-                <p>{{ item.daytemp }}</p>
-                <p>{{ item.nighttemp }}</p>
-              </li>
-            </ul>
-          </div>
+          <ul class="home-pane__weather-forecast">
+            <li v-for="item in data.weather.forecasts" :key="item.weekEn">
+              <h3>{{ item.weekEn }}</h3>
+              <img :src="item.icon" alt="weather-icon">
+              <p>{{ item.daytemp }}</p>
+              <p>{{ item.nighttemp }}</p>
+            </li>
+          </ul>
         </div>
       </div>
       <div class="home-pane__progress">
@@ -247,14 +245,12 @@ export default defineComponent({
       letter-spacing: 5px;
       font-size: 42px;
       line-height: 1.5;
-      margin-bottom: 40px;
       font-family: 'Odachi';
     }
     &__top {
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
-      margin-bottom: 50px;
     }
     &__time {
       flex: 1;
@@ -454,7 +450,7 @@ export default defineComponent({
           font-size: 14px;
           line-height: 1.5;
           &:nth-of-type(1) {
-            margin-top: 30px;
+            margin-top: 15px;
           }
         }
         th, td {
