@@ -8,7 +8,7 @@
       src="/@/assets/images/go_top.png"
       alt="go-top"
       :class="['article-go__top', data.visibleGoTop ? 'active' : '']"
-      @click="goTop"
+      @click.stop="goTop"
     >
   </div>
 </template>
