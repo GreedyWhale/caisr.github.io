@@ -39,7 +39,7 @@ export default {
       },
       hide () {
         if (this.VM) {
-          this.VM.unmount()
+          this.VM.unmount('#plugin-preview-image')
           this.VM = null
           document.body.removeChild(this.wrap)
           this.wrap = null
