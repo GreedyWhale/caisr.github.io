@@ -4,6 +4,7 @@ description: "在Node.js 中有一个内置模块叫http，我们可以用这个
 time: "2019年06月04日 14:00"
 author: "MADAO是不会开花的"
 articleType: "node"
+articleTypeZH: "Node"
 name: "NodeHttp"
 ---
 

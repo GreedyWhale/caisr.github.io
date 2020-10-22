@@ -4,6 +4,7 @@ description: "一些JavaScript中有关数据类型的知识点"
 time: "2018年09月17日 10:30"
 author: "MADAO是不会开花的"
 articleType: "javascript"
+articleTypeZH: "JavaScript"
 name: "JSDataType"
 ---
 

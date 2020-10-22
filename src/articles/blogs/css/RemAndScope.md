@@ -4,6 +4,7 @@ description: "原来css是支持变量的，我居然今天才知道。。"
 time: "2018年09月06日 09:00"
 author: "MADAO是不会开花的"
 articleType: "css"
+articleTypeZH: "CSS"
 name: "RemAndScope"
 ---
 

@@ -4,6 +4,7 @@ description: "this是一个比较难理解的关键字，它在不同情况下�
 time: "2018年09月06日 16:23"
 author: "MADAO是不会开花的"
 articleType: "javascript"
+articleTypeZH: "JavaScript"
 name: "JSThis"
 ---
 

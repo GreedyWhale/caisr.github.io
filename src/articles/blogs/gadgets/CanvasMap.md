@@ -4,6 +4,7 @@ description: "记录下使用canvas实现一款地图动画效果的过程"
 time: "2020年8月14日 18:15"
 author: "MADAO是不会开花的"
 articleType: "gadgets"
+articleTypeZH: "小组件"
 name: "CanvasMap"
 ---
 

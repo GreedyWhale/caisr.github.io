@@ -4,6 +4,7 @@ description: "虽然之前用过webpack，但基本都是边用边查，因为we
 time: "2019年07月06日 15:10"
 author: "MADAO是不会开花的"
 articleType: "webpack"
+articleTypeZH: "webpack"
 name: "WebpackStaticAssets"
 ---
 

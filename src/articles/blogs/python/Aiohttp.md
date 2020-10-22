@@ -4,6 +4,7 @@ description: "上一个笔记总结了asyncio的一些知识点，这次就来�
 time: "2019年02月18日 09:10"
 author: "MADAO是不会开花的"
 articleType: "python"
+articleTypeZH: "Python"
 name: "PythonAiohttp"
 ---
 

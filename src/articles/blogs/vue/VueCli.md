@@ -4,6 +4,7 @@ description: "在使用 webpack 搭建项目失败了之后，还是选择了 Vu
 time: "2018年09月06日 11:00"
 author: "MADAO是不会开花的"
 articleType: "vue"
+articleTypeZH: "Vue"
 name: "VueCli"
 ---
 在使用 webpack 搭建项目失败了之后，还是选择了 vue-cli 来搭建。下面就把使用 vue-cli 搭建项目的步骤记录一下：

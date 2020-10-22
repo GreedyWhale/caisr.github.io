@@ -4,6 +4,7 @@ description: "最近在面试的时候遇到这样一个问题: 为什么 ++[[]]
 time: "2019年07月05日 15:10"
 author: "MADAO是不会开花的"
 articleType: "other"
+articleTypeZH: "面试"
 name: "OtherImplicitConversion"
 ---
 

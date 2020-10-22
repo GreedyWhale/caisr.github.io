@@ -4,6 +4,7 @@ description: "爬虫简单来讲就是，让程序通过一些设置好的规则
 time: "2018年12月28日 09:50"
 author: "MADAO是不会开花的"
 articleType: "python"
+articleTypeZH: "Python"
 name: "PythonCrawler"
 ---
 

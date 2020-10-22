@@ -4,6 +4,7 @@ description: "这次记录一下axios在vue + typescript项目中的遇到的问
 time: "2019年02月26日 9:30"
 author: "MADAO是不会开花的"
 articleType: "vue"
+articleTypeZH: "Vue"
 name: "VueAndTSTwo"
 ---
 

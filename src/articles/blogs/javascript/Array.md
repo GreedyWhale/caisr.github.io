@@ -4,6 +4,7 @@ description: "总结下多维数组转一维数组的方法"
 time: "2019年03月29日 9:10"
 author: "MADAO是不会开花的"
 articleType: "javascript"
+articleTypeZH: "JavaScript"
 name: "JSArray"
 ---
 

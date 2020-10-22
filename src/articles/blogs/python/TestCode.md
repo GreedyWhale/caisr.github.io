@@ -4,6 +4,7 @@ description: "Python标准库中的unittest模块，它提供了代码测试工�
 time: "2018年12月24日 10:32"
 author: "MADAO是不会开花的"
 articleType: "python"
+articleTypeZH: "Python"
 name: "PythonTestCode"
 ---
 

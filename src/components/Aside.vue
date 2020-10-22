@@ -1,30 +1,56 @@
 <template>
   <div class="aside">
     <img src="../assets/images/avatar.jpg" alt="avatar">
-    <button class="aside-menu"></button>
+    <button class="aside-menu" @click.stop="state.visibleSubMenu = !state.visibleSubMenu"></button>
     <ul class="aside-concat__methods">
       <li
-        v-for="item in navs"
+        v-for="item in state.navs"
         :key="item"
         :data-key="item"
         @click="navClickHandler(item)"
       ></li>
     </ul>
   </div>
+  <div class="aside-sub__menu" :data-visible="state.visibleSubMenu">
+    <ul>
+      <li :data-active="articleType === 'all'" @click.stop="changeArticleType(state.articles.all.type)">
+        <p>{{ state.articles.all.name }}</p>
+        <p>{{ state.articles.all.counts }}</p>
+      </li>
+      <template v-for="value in state.articles" :key="value.name">
+        <li
+          v-if="value.type !== 'all'"
+          :data-active="articleType === value.type"
+          @click.stop="changeArticleType(value.type)">
+          <p>{{ value.name }}</p>
+          <p>{{ value.counts }}</p>
+        </li>
+      </template>
+    </ul>
+  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive } from 'vue'
+import { computed, defineComponent, reactive, watch, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
 import { NavItem } from '/@/types/aside.d.ts'
+import { EventBus } from '/@/utils/index'
+import { EVENT_CLICK_ROOT_ELEMENT } from '/@/utils/constant'
+import { getArticlesAttributes } from '/@/composables/articleMethods'
 
 export default defineComponent({
   name: 'Aside',
   setup () {
-    const navs = reactive(['home', 'github', 'switch'])
+    const state = reactive({
+      navs: ['home', 'github', 'switch'],
+      visibleSubMenu: false,
+      articles: {}
+    })
+
     const router = useRouter()
     const store = useStore<Vuex.State>()
+    const articleType = computed(() => store.state.articleType)
 
     const navClickHandler = (type: NavItem) => {
       const handlerMap = {
@@ -39,26 +65,68 @@ export default defineComponent({
 
       handlerMap[type]()
     }
+    const changeArticleType = (type: string) => {
+      store.commit('updateArticleType', type)
+    }
+
+    watch(() => store.state.mode, () => {
+      const articles = getArticlesAttributes(store)
+      const map: {[key: string]: {
+        name: string;
+        counts: number;
+        type: string;
+      }} = {}
+      articles.forEach(value => {
+        map[value.articleType]
+          ? map[value.articleType].counts = map[value.articleType].counts + 1
+          : (map[value.articleType] = {
+            name: value.articleTypeZH,
+            type: value.articleType,
+            counts: 1
+          })
+      })
+      map.all = {
+        name: '全部',
+        type: 'all',
+        counts: articles.length
+      }
+      state.articles = map
+    }, { immediate: true })
+
+    onMounted(() => {
+      EventBus.on(EVENT_CLICK_ROOT_ELEMENT, () => {
+        state.visibleSubMenu && (state.visibleSubMenu = false)
+      })
+    })
 
     return {
-      navs,
-      navClickHandler
+      state,
+      articleType,
+      navClickHandler,
+      changeArticleType
     }
   }
 })
 </script>
 
 <style lang="scss" scoped>
+@import '../assets/scss/tool.scss';
+@keyframes stretch {
+  from { width: 0; }
+  to { width: 100%; }
+}
 .aside {
   flex: none;
   width: 150px;
   height: 100%;
-  background: rgb(22,22,22);
+  background: #161616;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   padding: 20px 0 50px;
+  position: relative;
+  @include zIndex(navigation);
   > img {
     display: block;
     width: 80%;
@@ -90,6 +158,56 @@ export default defineComponent({
             width: 20px;
             height: 20px;
             background: url('../assets/images/#{$nav}.png') no-repeat center / 100%;
+          }
+        }
+      }
+    }
+  }
+  &-sub__menu {
+    position: fixed;
+    @include zIndex(popover);
+    left: -150px;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 300px;
+    background: #1c2b2d;
+    transition: transform 0.5s;
+    color: #e6d5b8;
+    padding: 20px 0;
+    &[data-visible="true"] {
+      transform: translateX(300px);
+    }
+    > ul {
+      overflow-y: auto;
+      height: 100%;
+      > li {
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 30px;
+        font-size: 18px;
+        cursor: pointer;
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 2px;
+          background: #e6d5b8;
+        }
+        &[data-active="true"] {
+          &::after {
+            width: 100%;
+          }
+        }
+        &[data-active="false"] {
+          &:hover {
+            &::after {
+              animation: stretch 0.3s linear forwards;
+            }
           }
         }
       }

@@ -4,6 +4,7 @@ description: "Python中的条件判断"
 time: "2018年12月12日 9:52"
 author: "MADAO是不会开花的"
 articleType: "python"
+articleTypeZH: "Python"
 name: "PythonIf"
 ---
 

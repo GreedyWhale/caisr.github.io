@@ -4,6 +4,7 @@ description: "最近需要开发一个 Chrome 插件，看了一些教程，还�
 time: "2019年12月16日 11:00"
 author: "MADAO是不会开花的"
 articleType: "google"
+articleTypeZH: "Chrome 扩展程序"
 name: "GoogleHelloExtensions"
 ---
 

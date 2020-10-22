@@ -4,6 +4,7 @@ description: "接着上一篇文章中的配置"
 time: "2019年07月10日 19:10"
 author: "MADAO是不会开花的"
 articleType: "webpack"
+articleTypeZH: "webpack"
 name: "WebpackStaticAssets"
 ---
 

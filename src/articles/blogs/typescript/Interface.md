@@ -4,6 +4,7 @@ description: "接口：用来描述对象拥有什么属性或方法，TypeScrip
 time: "2019年09月30日 15:40"
 author: "MADAO是不会开花的"
 articleType: "typescript"
+articleTypeZH: "TypeScript"
 name: "TypeScriptInterface"
 ---
 

@@ -50,19 +50,18 @@
   }
 }
 
-$zIndexLevel: (
-  wallpaper: -1,
-  overlay: 1,
-  tooltip: 2,
-  popover: 3,
-  navigation: 4,
-  affix: 5,
-  modal: 6,
-  breakThroughTheSky: 99
-);
-
 // 管理z-index
 // 参数为$zIndexLevel中的key值
 @mixin zIndex($key) {
+  $zIndexLevel: (
+    wallpaper: -1,
+    overlay: 1,
+    tooltip: 2,
+    popover: 3,
+    navigation: 4,
+    affix: 5,
+    modal: 6,
+    breakThroughTheSky: 99
+  );
   z-index: map-get($zIndexLevel, $key)
 }

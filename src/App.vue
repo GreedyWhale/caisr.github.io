@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" @click="onClick">
     <Aside />
     <router-view />
   </div>
@@ -7,12 +7,19 @@
 
 <script>
 import { defineComponent } from 'vue'
+import { EventBus } from '/@/utils/index'
+import { EVENT_CLICK_ROOT_ELEMENT } from '/@/utils/constant'
 import Aside from './components/Aside.vue'
 
 export default defineComponent({
   name: 'App',
   components: {
     Aside
+  },
+  setup () {
+    const onClick = () => EventBus.emit(EVENT_CLICK_ROOT_ELEMENT)
+
+    return { onClick }
   }
 })
 </script>

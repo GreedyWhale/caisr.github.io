@@ -4,6 +4,7 @@ description: "每次学习框架之前，我都会去看对应框架的官网对
 time: "2019年06月04日 16:00"
 author: "MADAO是不会开花的"
 articleType: "node"
+articleTypeZH: "Node"
 name: "NodeExpress"
 ---
 

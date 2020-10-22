@@ -4,6 +4,7 @@ description: "TypeScript是JavaScript的超集，所以JavaScript中的值的类
 time: "2019年09月28日 10:40"
 author: "MADAO是不会开花的"
 articleType: "typescript"
+articleTypeZH: "TypeScript"
 name: "TypeScriptType"
 ---
 

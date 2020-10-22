@@ -4,6 +4,7 @@ description: "虽然经常用Vue做提供的transition做动画效果，但是�
 time: "2019年03月29日 09:30"
 author: "MADAO是不会开花的"
 articleType: "vue"
+articleTypeZH: "Vue"
 name: "VueTransitions"
 ---
 

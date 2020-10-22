@@ -4,6 +4,7 @@ description: "Python中的迭代器和生成器"
 time: "2019年01月04日 09:11"
 author: "MADAO是不会开花的"
 articleType: "python"
+articleTypeZH: "Python"
 name: "PythonLambda"
 ---
 

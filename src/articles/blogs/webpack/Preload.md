@@ -4,6 +4,7 @@ description: "上一篇总结了一下webpack的代码分割相关的知识，we
 time: "2019年09月18日 16:40"
 author: "MADAO是不会开花的"
 articleType: "webpack"
+articleTypeZH: "webpack"
 name: "WebpackPreload"
 ---
 

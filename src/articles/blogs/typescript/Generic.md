@@ -4,6 +4,7 @@ description: "泛型是我之前没有听过的一个概念，看文档的介绍
 time: "2019年10月02日 19:40"
 author: "MADAO是不会开花的"
 articleType: "typescript"
+articleTypeZH: "TypeScript"
 name: "TypeScriptGeneric"
 ---
 

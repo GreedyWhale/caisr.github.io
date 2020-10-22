@@ -4,6 +4,7 @@ description: "JavaScript代码在执行前会将所有的声明移动到各自�
 time: "2018年09月06日 15:30"
 author: "MADAO是不会开花的"
 articleType: "javascript"
+articleTypeZH: "JavaScript"
 name: "JSHoisting"
 ---
 

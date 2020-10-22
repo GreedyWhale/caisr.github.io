@@ -4,6 +4,7 @@ description: "最近在开发微信小程序的组件库，这里就将我在开
 time: "2019年05月03日 21:00"
 author: "MADAO是不会开花的"
 articleType: "miniprogram"
+articleTypeZH: "微信小程序"
 name: "ThirdPartyComponents"
 ---
 

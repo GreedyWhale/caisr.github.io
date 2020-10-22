@@ -4,6 +4,7 @@ description: "pipenv 就是管理项目依赖的工具，在写前端的时候�
 time: "2018年12月26日 15:50"
 author: "MADAO是不会开花的"
 articleType: "python"
+articleTypeZH: "Python"
 name: "PythonPipenv"
 ---
 

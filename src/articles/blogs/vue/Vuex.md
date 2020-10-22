@@ -4,6 +4,7 @@ description: "很早就听说过Vuex，但是一直没用过。正好做到了�
 time: "2019年02月27日 15:30"
 author: "MADAO是不会开花的"
 articleType: "vue"
+articleTypeZH: "Vue"
 name: "VueAndTSTwo"
 ---
 

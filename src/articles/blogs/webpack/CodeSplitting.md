@@ -4,6 +4,7 @@ description: "webpack中的tree shaking和mode"
 time: "2019年09月01日 10:40"
 author: "MADAO是不会开花的"
 articleType: "webpack"
+articleTypeZH: "webpack"
 name: "WebpackTreeShaking"
 ---
 

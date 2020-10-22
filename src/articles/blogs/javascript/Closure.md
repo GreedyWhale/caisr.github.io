@@ -4,6 +4,7 @@ description: "我觉得在理解闭包之前，先要理解有两点：1. 作用
 time: "2018年09月06日 16:00"
 author: "MADAO是不会开花的"
 articleType: "javascript"
+articleTypeZH: "JavaScript"
 name: "JSClosure"
 ---
 

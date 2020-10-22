@@ -4,6 +4,7 @@ description: "three.js是一个可以使用javascript绘制3d图形的库，它�
 time: "2019年06月09日 09:00"
 author: "MADAO是不会开花的"
 articleType: "threejs"
+articleTypeZH: "three.js"
 name: "ThreejsTriangle"
 ---
 

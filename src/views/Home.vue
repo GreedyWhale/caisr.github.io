@@ -66,8 +66,8 @@
       </div>
     </div>
     <div class="article-list">
-      <ul v-if="articlesAttributes.length" :data-has-remainder="articlesAttributes.length % 3 !== 0">
-        <li v-for="item in articlesAttributes" :key="item.title" @click="toArticleDetail(item.name)">
+      <ul v-if="data.articlesAttributes.length" :data-has-remainder="data.articlesAttributes.length % 3 !== 0">
+        <li v-for="item in data.articlesAttributes" :key="item.title" @click="toArticleDetail(item.name)">
           <div>
             <div class="article-list__icon" :data-type="item.articleType"></div>
             <h2 class="article-list__title">{{ item.title }}</h2>
@@ -115,14 +115,21 @@ export default defineComponent({
   setup () {
     const router = useRouter()
     const store = useStore<Vuex.State>()
-    const data = reactive({
+    const data = reactive<{
+      diffForNetNewYear: string;
+      weather: { lives: {}; forecasts: []; };
+      currentDate: Date;
+      visibleCityPicker: boolean;
+      articlesAttributes: { [key: string]: string; }[];
+    }>({
       diffForNetNewYear: '',
       weather: {
         lives: {},
         forecasts: []
       },
       currentDate: new Date(),
-      visibleCityPicker: false
+      visibleCityPicker: false,
+      articlesAttributes: []
     })
     const currentLife = (() => {
       const currentDate = new Date()
@@ -141,7 +148,7 @@ export default defineComponent({
       }
       return style
     })
-    const articlesAttributes = getArticlesAttributes()
+
     const { days, daysElapsed, dayRatio } = getDaysElapsed()
 
     const getDiffForNetNewYear = () => {
@@ -201,13 +208,16 @@ export default defineComponent({
     watch(() => store.state.cityCode, () => {
       getAllWeather()
     }, { immediate: true })
+    watch(() => store.state.articleType, () => {
+      data.articlesAttributes = getArticlesAttributes(store)
+      console.log(data.articlesAttributes)
+    }, { immediate: true })
 
     onMounted(() => {
       getDiffForNetNewYear()
     })
 
     return {
-      articlesAttributes,
       toArticleDetail,
       currentLife,
       batteryStyle,

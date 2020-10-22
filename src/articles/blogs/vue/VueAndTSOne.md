@@ -4,6 +4,7 @@ description: "最近在用 vue + typescript 写一个项目，由于是第一次
 time: "2019年02月25日 10:30"
 author: "MADAO是不会开花的"
 articleType: "vue"
+articleTypeZH: "Vue"
 name: "VueAndTSOne"
 ---
 

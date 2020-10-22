@@ -4,6 +4,7 @@ description: "Three.js 添加光源和阴影的笔记"
 time: "2019年06月14日 09:00"
 author: "MADAO是不会开花的"
 articleType: "threejs"
+articleTypeZH: "three.js"
 name: "ThreejsLightAndShadow"
 ---
 

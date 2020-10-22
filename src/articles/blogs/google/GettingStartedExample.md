@@ -4,6 +4,7 @@ description: "继续跟着官方文档学习"
 time: "2019年12月16日 14:00"
 author: "MADAO是不会开花的"
 articleType: "google"
+articleTypeZH: "Chrome 扩展程序"
 name: "GoogleGettingStartedExample"
 ---
 

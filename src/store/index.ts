@@ -10,8 +10,8 @@ import { createStore } from 'vuex'
 export default createStore<Vuex.State>({
   state: {
     articleMenu: JSON.parse(JSON.stringify(GLOBAL_ARTICLES)),
-    articleType: '',
-    mode: 'blogs', // 'blogs' - 博客，'notes' - '读书笔记'
+    articleType: 'all',
+    mode: 'blogs', // 'blogs' - 技术博客，'notes' - '读书笔记'
     cityCode: '440100'
   },
 
