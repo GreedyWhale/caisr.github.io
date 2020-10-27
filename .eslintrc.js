@@ -32,8 +32,5 @@ module.exports = {
     'prefer-promise-reject-errors': 'off',
     'vue/no-template-key': 'off',
     'vue/require-v-for-key': 'off'
-  },
-  globals: {
-    GLOBAL_ARTICLES: 'readonly'
   }
 }

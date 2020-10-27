@@ -7,7 +7,6 @@
  */
 const mdPlugin = require('vite-plugin-markdown')
 const path = require('path')
-const { getEntries } = require('./build')
 
 module.exports = {
   base: '/caisr.github.io/',
@@ -15,11 +14,7 @@ module.exports = {
   alias: {
     '/@/': path.resolve(__dirname, 'src')
   },
-  define: {
-    GLOBAL_ARTICLES: getEntries()
-  },
   rollupOutputOptions: {
-    format: 'file',
     manualChunks: (id) => {
       switch (true) {
       case id.includes('.md'):

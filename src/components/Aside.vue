@@ -13,25 +13,42 @@
   </div>
   <div class="aside-sub__menu" :data-visible="state.visibleSubMenu">
     <ul>
-      <li :data-active="articleType === 'all'" @click.stop="changeArticleType(state.articles.all.type)">
-        <p>{{ state.articles.all.name }}</p>
-        <p>{{ state.articles.all.counts }}</p>
-      </li>
-      <template v-for="value in state.articles" :key="value.name">
-        <li
-          v-if="value.type !== 'all'"
-          :data-active="articleType === value.type"
-          @click.stop="changeArticleType(value.type)">
-          <p>{{ value.name }}</p>
-          <p>{{ value.counts }}</p>
+      <template v-if="isArticlePage">
+        <router-link
+          custom
+          v-for="item in state.articles"
+          :key="item.name" :to="`/article/${item.name}`"
+          v-slot="{ isActive, navigate }">
+          <li
+            @click="navigate"
+            :data-active="isActive"
+            :class="{ active: isActive }"
+            data-is-article-list="true">
+            {{ item.title }}
+          </li>
+        </router-link>
+      </template>
+      <template v-else>
+        <li :data-active="articleType === 'all'" @click.stop="changeArticleType(state.articles.all.type)">
+          <p>{{ state.articles.all.name }}</p>
+          <p>{{ state.articles.all.counts }}</p>
         </li>
+        <template v-for="value in state.articles" :key="value.name">
+          <li
+            v-if="value.type !== 'all'"
+            :data-active="articleType === value.type"
+            @click.stop="changeArticleType(value.type)">
+            <p>{{ value.name }}</p>
+            <p>{{ value.counts }}</p>
+          </li>
+        </template>
       </template>
     </ul>
   </div>
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, reactive, watch, onMounted } from 'vue'
+import { computed, defineComponent, reactive, watch, onMounted, ComputedRef } from 'vue'
 import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
 import { NavItem } from '/@/types/aside.d.ts'
@@ -51,6 +68,7 @@ export default defineComponent({
     const router = useRouter()
     const store = useStore<Vuex.State>()
     const articleType = computed(() => store.state.articleType)
+    const isArticlePage = computed(() => router.currentRoute.value.name === 'Article')
 
     const navClickHandler = (type: NavItem) => {
       const handlerMap = {
@@ -69,7 +87,14 @@ export default defineComponent({
       store.commit('updateArticleType', type)
     }
 
-    watch(() => store.state.mode, () => {
+    watch(() => [store.state.mode, isArticlePage], (value) => {
+      console.log(isArticlePage.value)
+      if ((value[1] as ComputedRef<boolean>).value) {
+        changeArticleType('all')
+        const articles = getArticlesAttributes(store)
+        state.articles = articles
+        return
+      }
       const articles = getArticlesAttributes(store)
       const map: {[key: string]: {
         name: string;
@@ -91,8 +116,7 @@ export default defineComponent({
         counts: articles.length
       }
       state.articles = map
-    }, { immediate: true })
-
+    }, { immediate: true, deep: true })
     onMounted(() => {
       EventBus.on(EVENT_CLICK_ROOT_ELEMENT, () => {
         state.visibleSubMenu && (state.visibleSubMenu = false)
@@ -102,6 +126,7 @@ export default defineComponent({
     return {
       state,
       articleType,
+      isArticlePage,
       navClickHandler,
       changeArticleType
     }
@@ -198,7 +223,7 @@ export default defineComponent({
           height: 2px;
           background: #e6d5b8;
         }
-        &[data-active="true"] {
+        &[data-active="true"], &.active {
           &::after {
             width: 100%;
           }
@@ -209,6 +234,11 @@ export default defineComponent({
               animation: stretch 0.3s linear forwards;
             }
           }
+        }
+        &[data-is-article-list="true"] {
+          line-height: 1.5;
+          font-size: 14px;
+          margin-bottom: 0.5em;
         }
       }
     }

@@ -13,32 +13,35 @@
             <p>{{ data.diffForNetNewYear }}</p>
           </div>
         </div>
-        <div class="home-pane__weather" v-if="data.weather.lives.city">
-          <div class="home-pane__weather-lives">
-            <div class="home-pane__weather-city">
-              <p>
-                {{ data.weather.lives.city }}
-                <img
-                  src="/@/assets/images/localtion.png"
-                  alt="localtion-icon"
-                  @click="data.visibleCityPicker = true">
-              </p>
-              <p>{{ data.currentDate.toLocaleDateString() }}</p>
+        <div class="home-pane__weather">
+          <template v-if="data.weather.lives.city">
+            <div class="home-pane__weather-lives">
+              <div class="home-pane__weather-city">
+                <p>
+                  {{ data.weather.lives.city }}
+                  <img
+                    src="/@/assets/images/localtion.png"
+                    alt="localtion-icon"
+                    @click="data.visibleCityPicker = true">
+                </p>
+                <p>{{ data.currentDate.toLocaleDateString() }}</p>
+              </div>
+              <img :src="data.weather.lives.icon" alt="weather-icon">
+              <div class="home-pane__weather-temperature">
+                <p>{{ data.weather.lives.temperature }}</p>
+                <p>{{ data.weather.lives.weather }}</p>
+              </div>
             </div>
-            <img :src="data.weather.lives.icon" alt="weather-icon">
-            <div class="home-pane__weather-temperature">
-              <p>{{ data.weather.lives.temperature }}</p>
-              <p>{{ data.weather.lives.weather }}</p>
-            </div>
-          </div>
-          <ul class="home-pane__weather-forecast">
-            <li v-for="item in data.weather.forecasts" :key="item.weekEn">
-              <h3>{{ item.weekEn }}</h3>
-              <img :src="item.icon" alt="weather-icon">
-              <p>{{ item.daytemp }}</p>
-              <p>{{ item.nighttemp }}</p>
-            </li>
-          </ul>
+            <ul class="home-pane__weather-forecast">
+              <li v-for="item in data.weather.forecasts" :key="item.weekEn">
+                <h3>{{ item.weekEn }}</h3>
+                <img :src="item.icon" alt="weather-icon">
+                <p>{{ item.daytemp }}</p>
+                <p>{{ item.nighttemp }}</p>
+              </li>
+            </ul>
+          </template>
+          <div class="home-pane__weather-loading" v-else></div>
         </div>
       </div>
       <div class="home-pane__progress">
@@ -232,6 +235,11 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import '../assets/scss/tool.scss';
 @import '../assets/scss/var.scss';
+@keyframes loading {
+  0% { transform: rotate(0deg) }
+  50% { transform: rotate(180deg) }
+  100% { transform: rotate(360deg) }
+}
 
 @include fontFace('Odachi', '../assets/fonts');
 .home {
@@ -241,7 +249,7 @@ export default defineComponent({
   background: rgb(26,26,28);
   display: flex;
   align-items: flex-start;
-  background: url('../assets/images/bg.jpeg') no-repeat center/ 100%;
+  background: url('../assets/images/bg.jpeg') no-repeat center/ 100% 100%;
   &-pane {
     width: 40%;
     min-width: 600px;
@@ -307,6 +315,15 @@ export default defineComponent({
     }
     &__weather {
       flex: 1;
+      min-height: 215px;
+      position: relative;
+      &-loading {
+        margin: 107px auto 0;
+        width: 45px;
+        height: 45px;
+        background: url('../assets/images/loading.png') no-repeat center / 100%;
+        animation: loading 1s linear infinite;
+      }
       &-lives {
         display: flex;
         align-items: center;

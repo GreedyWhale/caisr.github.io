@@ -9,7 +9,6 @@
 declare module Vuex {
   export type Mode = 'blogs' | 'notes';
   export interface State {
-    articleMenu: string;
     articleType: string;
     mode: Mode;
     cityCode: string;

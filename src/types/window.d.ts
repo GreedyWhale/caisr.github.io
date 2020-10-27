@@ -6,10 +6,6 @@
  * @Description: 全局变量类型文件
  */
 declare global {
-  interface Window {
-    GLOBAL_ARTICLES: {
-      javascript: string[]
-    }
-  }
+  interface Window {}
 }
 export {};
