@@ -19,6 +19,7 @@ module.exports = {
     GLOBAL_ARTICLES: getEntries()
   },
   rollupOutputOptions: {
+    format: 'file',
     manualChunks: (id) => {
       switch (true) {
       case id.includes('.md'):

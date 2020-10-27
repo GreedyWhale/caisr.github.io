@@ -33,6 +33,13 @@ export default defineComponent({
   name: 'Article',
   setup () {
     const previewImage = usePreviewImage()
+    const oldArticle: {
+      name: string;
+      article: any;
+    } = {
+      name: '',
+      article: null
+    }
     const data = reactive({
       visibleGoTop: false
     })
@@ -40,12 +47,17 @@ export default defineComponent({
     const article = computed(() => {
       // 获取文章组件
       const { params: { name } } = useRoute()
+      if (name === oldArticle.name) {
+        return oldArticle.article
+      }
       const {
         VueComponent: articleComponent,
         attributes: articleAttributes
       } = getCurrentArticle((name as string))
-
-      return { articleComponent, articleAttributes }
+      const article = { articleComponent, articleAttributes }
+      oldArticle.name = (name as string)
+      oldArticle.article = article
+      return article
     })
 
     // 初始化hljs

@@ -13,7 +13,7 @@
             <p>{{ data.diffForNetNewYear }}</p>
           </div>
         </div>
-        <div class="home-pane__weather">
+        <div class="home-pane__weather" v-if="data.weather.lives.city">
           <div class="home-pane__weather-lives">
             <div class="home-pane__weather-city">
               <p>
@@ -210,7 +210,6 @@ export default defineComponent({
     }, { immediate: true })
     watch(() => store.state.articleType, () => {
       data.articlesAttributes = getArticlesAttributes(store)
-      console.log(data.articlesAttributes)
     }, { immediate: true })
 
     onMounted(() => {
@@ -232,6 +231,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import '../assets/scss/tool.scss';
+@import '../assets/scss/var.scss';
 
 @include fontFace('Odachi', '../assets/fonts');
 .home {
@@ -241,6 +241,7 @@ export default defineComponent({
   background: rgb(26,26,28);
   display: flex;
   align-items: flex-start;
+  background: url('../assets/images/bg.jpeg') no-repeat center/ 100%;
   &-pane {
     width: 40%;
     min-width: 600px;
@@ -396,13 +397,14 @@ export default defineComponent({
           margin-right: 10px;
         }
       }
+      $tableColor: rgb(95, 95, 95);
       > table {
         width: 100%;
         border-spacing: 0;
         color: #c4bebe;
         thead th {
-          border-top: 1px solid rgb(95, 95, 95);
-          border-bottom: 1px solid  rgb(95, 95, 95);
+          border-top: 1px solid $tableColor;
+          border-bottom: 1px solid  $tableColor;
           font-weight: normal;
           font-size: 16px;
           > p {
@@ -417,7 +419,7 @@ export default defineComponent({
           }
           &:nth-of-type(1) {
             width: 30%;
-            border-right: 1px solid rgb(95, 95, 95);
+            border-right: 1px solid $tableColor;
             > p {
               &::before {
                 background: url('../assets/images/years.png') no-repeat center / 100%;
@@ -436,7 +438,7 @@ export default defineComponent({
         tbody td {
           vertical-align: top;
           &:nth-of-type(1) {
-            border-right: 1px solid rgb(95, 95, 95);
+            border-right: 1px solid $tableColor;
             text-decoration: underline;
           }
         }
@@ -484,7 +486,7 @@ export default defineComponent({
       overflow: hidden;
       > li {
         flex: 0 0 32%;
-        border: 2px solid rgb(40, 40, 40);
+        border: 2px solid #e0ece4;
         border-radius: 8px;
         padding: 20px;
         color: #fff;
@@ -526,8 +528,7 @@ export default defineComponent({
       background-repeat: no-repeat;
       background-size: 100%;
       background-position: center;
-      $types: 'javascript', 'css', 'miniprogram', 'vue', 'gadgets', 'python', 'webgl', 'node', 'threejs', 'other', 'webpack', 'typescript', 'google';
-      @each $type in $types {
+      @each $type in $articleTypes {
         &[data-type="#{$type}"] {
           background-image: url('../assets/images/#{$type}.png');
         }

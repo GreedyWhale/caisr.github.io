@@ -79,75 +79,112 @@ import * as TSGeneric from '/@/articles/blogs/typescript/Generic.md'
 import * as GoogleHelloExtensions from '/@/articles/blogs/google/HelloExtensions.md'
 import * as GoogleGettingStartedExample from '/@/articles/blogs/google/GettingStartedExample.md'
 
-const blogs = [
-  CSSREMScope,
+import * as ReactFunctionalProgramming from '/@/articles/blogs/react/functionalProgramming.md'
+
+const cssArticles = [CSSREMScope]
+const jsArticles = [
   JSScope,
-  VueCli,
-  VueComponentTest,
-  JSHoisting,
   JSClosure,
-  JSThis,
-  JSObject,
-  JSPrototype,
+  JSCurrying,
   JSDataType,
   JSFunction,
-  JSCurrying,
+  JSHoisting,
+  JSObject,
+  JSPrototype,
+  JSScope,
+  JSThis,
   JSThisAndProto,
-  MINAGulp,
+  JSArray
+]
+const miniprogramArticles = [MINAGulp, ThirdPartyComponents]
+const vueArticles = [
+  VueCli,
+  VueComponentTest,
   VueNuxt,
-  Calendar,
-  PythonSetup,
-  PythonVariable,
-  PythonStringAndNumber,
-  PythonList,
-  PythonIf,
-  PythonInputAndWhile,
-  PythonFunction,
-  PythonClass,
-  PythonFileAndError,
-  PythonDecodeAndEncode,
-  PythonDataStore,
-  PythonTestCode,
-  PythonPipenv,
-  PythonCrawler,
-  PythonSendEmail,
-  PythonScope,
-  PythonLambda,
-  PythonArrayMethods,
-  PythonClosure,
-  PythonDecorator,
-  PythonThreading,
-  PythonQueue,
-  PythonRegexp,
-  PythonTime,
-  PythonDownloadImages,
-  PythonMultiprocessing,
-  PythonAsyncio,
-  PythonAiohttp,
   VueAndTSOne,
   VueAndTSTwo,
   Vuex,
-  VueTransitions,
-  JSArray,
+  VueTransitions
+]
+const gadgetsArticles = [
+  Calendar,
   WebServer,
-  ThirdPartyComponents,
-  WebGLTriangle,
-  NodeHttp,
-  NodeExpress,
-  ThreejsTriangle,
-  ThreejsLightAndShadow,
-  OtherImplicitConversion,
-  WebpackStaticAssets,
-  WebpackES6,
-  WebpackTreeShaking,
-  WebpackCodeSplitting,
-  WebpackPreload,
-  TSType,
-  TSInterface,
-  TSGeneric,
-  GoogleHelloExtensions,
-  GoogleGettingStartedExample,
   CanvasMap
 ]
+const webglArticles = [WebGLTriangle]
+const pythonArticles = [
+  PythonAiohttp,
+  PythonArrayMethods,
+  PythonClass,
+  PythonClosure,
+  PythonCrawler,
+  PythonDataStore,
+  PythonDecodeAndEncode,
+  PythonDecorator,
+  PythonDownloadImages,
+  PythonFileAndError,
+  PythonFunction,
+  PythonIf,
+  PythonInputAndWhile,
+  PythonLambda,
+  PythonList,
+  PythonMultiprocessing,
+  PythonPipenv,
+  PythonQueue,
+  PythonRegexp,
+  PythonScope,
+  PythonSendEmail,
+  PythonSetup,
+  PythonStringAndNumber,
+  PythonTestCode,
+  PythonThreading,
+  PythonTime,
+  PythonVariable,
+  PythonAsyncio
+]
+const nodeArticles = [
+  NodeHttp,
+  NodeExpress
+]
+const threejsArticles = [
+  ThreejsTriangle,
+  ThreejsLightAndShadow
+]
+const otherArticles = [OtherImplicitConversion]
+const webpackArticles = [
+  WebpackCodeSplitting,
+  WebpackES6,
+  WebpackPreload,
+  WebpackStaticAssets,
+  WebpackTreeShaking
+]
+const typescriptArticles = [
+  TSType,
+  TSGeneric,
+  TSInterface
+]
+const googleArticles = [
+  GoogleHelloExtensions,
+  GoogleGettingStartedExample
+]
 
+const reactArticles = [ReactFunctionalProgramming]
+
+const blogs = [
+  ...cssArticles,
+  ...jsArticles,
+  ...miniprogramArticles,
+  ...vueArticles,
+  ...gadgetsArticles,
+  ...webglArticles,
+  ...pythonArticles,
+  ...nodeArticles,
+  ...nodeArticles,
+  ...threejsArticles,
+  ...otherArticles,
+  ...webpackArticles,
+  ...googleArticles,
+  ...typescriptArticles,
+  ...reactArticles
+]
 export default blogs
