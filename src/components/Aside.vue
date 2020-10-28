@@ -76,7 +76,7 @@ export default defineComponent({
         github: () => window.open('https://github.com/GreedyWhale'),
         switch: () => {
           const { state: { mode } } = store
-          const value = mode === 'blogs' ? 'notes' : 'blogs'
+          const value = mode === 'blog' ? 'notes' : 'blog'
           store.commit('updateMode', value)
         }
       }
@@ -88,7 +88,6 @@ export default defineComponent({
     }
 
     watch(() => [store.state.mode, isArticlePage], (value) => {
-      console.log(isArticlePage.value)
       if ((value[1] as ComputedRef<boolean>).value) {
         changeArticleType('all')
         const articles = getArticlesAttributes(store)

@@ -6,7 +6,7 @@
  * @Description: 所有文章组件
  */
 
-import blogs from './blogs'
+import blog from './blog'
 
 const formatTime = (timeStr: string): string => {
   const reg = /[年月日]+/g
@@ -17,11 +17,11 @@ const formatTime = (timeStr: string): string => {
 const sortHandler = (a: any, b: any) => {
   return new Date(formatTime(b.attributes.time)).getTime() - new Date(formatTime(a.attributes.time)).getTime()
 }
-blogs.sort(sortHandler)
+blog.sort(sortHandler)
 
 const articles = {
-  blogs,
-  notes: blogs
+  blog,
+  notes: blog
 }
 
 export default articles

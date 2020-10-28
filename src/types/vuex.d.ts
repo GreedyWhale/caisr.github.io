@@ -7,7 +7,7 @@
  */
 
 declare module Vuex {
-  export type Mode = 'blogs' | 'notes';
+  export type Mode = 'blog' | 'notes';
   export interface State {
     articleType: string;
     mode: Mode;
