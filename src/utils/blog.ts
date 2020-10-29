@@ -79,7 +79,8 @@ import * as TSGeneric from '/@/articles/blog/typescript/Generic.md'
 import * as GoogleHelloExtensions from '/@/articles/blog/google/HelloExtensions.md'
 import * as GoogleGettingStartedExample from '/@/articles/blog/google/GettingStartedExample.md'
 
-import * as ReactFunctionalProgramming from '/@/articles/blog/react/functionalProgramming.md'
+import * as ReactFunctionalProgramming from '/@/articles/blog/react/FunctionalProgramming.md'
+import * as ReactUseState from '/@/articles/blog/react/useState.md'
 
 const cssArticles = [CSSREMScope]
 const jsArticles = [
@@ -168,7 +169,10 @@ const googleArticles = [
   GoogleGettingStartedExample
 ]
 
-const reactArticles = [ReactFunctionalProgramming]
+const reactArticles = [
+  ReactFunctionalProgramming,
+  ReactUseState
+]
 
 const blog = [
   ...cssArticles,
