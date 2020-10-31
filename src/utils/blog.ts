@@ -80,7 +80,8 @@ import * as GoogleHelloExtensions from '/@/articles/blog/google/HelloExtensions.
 import * as GoogleGettingStartedExample from '/@/articles/blog/google/GettingStartedExample.md'
 
 import * as ReactFunctionalProgramming from '/@/articles/blog/react/FunctionalProgramming.md'
-import * as ReactUseState from '/@/articles/blog/react/useState.md'
+import * as ReactUseState from '/@/articles/blog/react/UseState.md'
+import * as ReactHooks from '/@/articles/blog/react/Hooks.md'
 
 const cssArticles = [CSSREMScope]
 const jsArticles = [
@@ -171,7 +172,8 @@ const googleArticles = [
 
 const reactArticles = [
   ReactFunctionalProgramming,
-  ReactUseState
+  ReactUseState,
+  ReactHooks
 ]
 
 const blog = [
