@@ -15,7 +15,7 @@
     "type": "git"
   },
   "homepage": "https://github.com/GreedyWhale/caisr.github.io",
-  "license": "UNLICENSED",
+  "license": "AGPL-3.0 License",
   "scripts": {
     "dev": "cross-env NODE_ENV=development vite",
     "build": "cross-env NODE_ENV=production vite build",
