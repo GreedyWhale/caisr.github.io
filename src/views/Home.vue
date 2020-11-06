@@ -10,30 +10,30 @@
           </div>
           <div class="home-pane__next-year">
             <h3>Next New Year</h3>
-            <p>{{ data.diffForNetNewYear }}</p>
+            <p>{{ date.diffForNetNewYear }}</p>
           </div>
         </div>
         <div class="home-pane__weather">
-          <template v-if="data.weather.lives.city">
+          <template v-if="weather.lives.city">
             <div class="home-pane__weather-lives">
               <div class="home-pane__weather-city">
                 <p>
-                  {{ data.weather.lives.city }}
+                  {{ weather.lives.city }}
                   <img
                     src="/@/assets/images/localtion.png"
                     alt="localtion-icon"
-                    @click="data.visibleCityPicker = true">
+                    @click="state.visibleCityPicker = true">
                 </p>
-                <p>{{ data.currentDate.toLocaleDateString() }}</p>
+                <p>{{ date.currentDate.toLocaleDateString() }}</p>
               </div>
-              <img :src="data.weather.lives.icon" alt="weather-icon">
+              <img :src="weather.lives.icon" alt="weather-icon">
               <div class="home-pane__weather-temperature">
-                <p>{{ data.weather.lives.temperature }}</p>
-                <p>{{ data.weather.lives.weather }}</p>
+                <p>{{ weather.lives.temperature }}</p>
+                <p>{{ weather.lives.weather }}</p>
               </div>
             </div>
             <ul class="home-pane__weather-forecast">
-              <li v-for="item in data.weather.forecasts" :key="item.weekEn">
+              <li v-for="item in weather.forecasts" :key="item.weekEn">
                 <h3>{{ item.weekEn }}</h3>
                 <img :src="item.icon" alt="weather-icon">
                 <p>{{ item.daytemp }}</p>
@@ -45,7 +45,7 @@
         </div>
       </div>
       <div class="home-pane__progress">
-        <h3>{{ data.currentDate.getFullYear() }}年时间进度</h3>
+        <h3>{{ date.currentDate.getFullYear() }}年时间进度</h3>
         <table>
           <thead>
             <tr>
@@ -55,13 +55,13 @@
           </thead>
           <tbody>
             <tr>
-              <td>{{ data.currentDate.getFullYear() }}年</td>
+              <td>{{ date.currentDate.getFullYear() }}年</td>
               <td>
                 <ul>
-                  <li v-for="item in days" :key="item" :data-active="item > daysElapsed"></li>
+                  <li v-for="item in date.days" :key="item" :data-active="item > date.daysElapsed"></li>
                 </ul>
-                <p>{{ data.currentDate.getFullYear() }}年已过去{{ daysElapsed }}天</p>
-                <p>约占全年的 {{ dayRatio }}%</p>
+                <p>{{ date.currentDate.getFullYear() }}年已过去{{ date.daysElapsed }}天</p>
+                <p>约占全年的 {{ date.dayRatio }}%</p>
               </td>
             </tr>
           </tbody>
@@ -69,24 +69,24 @@
       </div>
     </div>
     <div class="article-list">
-      <ul v-if="data.articlesAttributes.length" :data-has-remainder="data.articlesAttributes.length % 3 !== 0">
-        <li v-for="item in data.articlesAttributes" :key="item.title" @click="toArticleDetail(item.name)">
+      <ul v-if="state.articles.length" :data-has-remainder="state.articles.length % 3 !== 0">
+        <li v-for="item in state.articles" :key="item.title" @click="toArticleDetail(item.attributes.name)">
           <div>
-            <div class="article-list__icon" :data-type="item.articleType"></div>
-            <h2 class="article-list__title">{{ item.title }}</h2>
-            <p class="article-list__desc">{{ item.description }}</p>
+            <div class="article-list__icon" :data-type="item.attributes.articleType"></div>
+            <h2 class="article-list__title">{{ item.attributes.title }}</h2>
+            <p class="article-list__desc">{{ item.attributes.description }}</p>
           </div>
           <div class="article-list__meta">
-            <p>发布时间：{{ item.time }}</p>
-            <p>作者：{{ item.author }}</p>
+            <p>发布时间：{{ item.attributes.time }}</p>
+            <p>作者：{{ item.attributes.author }}</p>
           </div>
         </li>
       </ul>
     </div>
     <CityPicker
-      v-if="data.visibleCityPicker"
-      @on-cancel="data.visibleCityPicker = false"
-      @on-confirm="data.visibleCityPicker = false" />
+      v-if="state.visibleCityPicker"
+      @on-cancel="state.visibleCityPicker = false"
+      @on-confirm="state.visibleCityPicker = false" />
   </div>
 </template>
 
@@ -95,20 +95,16 @@ import {
   defineComponent,
   computed,
   reactive,
-  onMounted,
   defineAsyncComponent,
   watch
 } from 'vue'
-import { getArticlesAttributes } from '/@/composables/articleMethods'
+
+import useDate from '/@/composables/useDate'
+import useWeather from '/@/composables/useWeather'
+import useArticle from '/@/composables/useArticle'
+
 import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
-import {
-  getChineseNewYear,
-  getWeatherIcon,
-  getWeekEnglishName,
-  getDaysElapsed
-} from '/@/utils/index'
-import axios from 'axios'
 
 export default defineComponent({
   name: 'Home',
@@ -118,21 +114,12 @@ export default defineComponent({
   setup () {
     const router = useRouter()
     const store = useStore<Vuex.State>()
-    const data = reactive<{
-      diffForNetNewYear: string;
-      weather: { lives: {}; forecasts: []; };
-      currentDate: Date;
-      visibleCityPicker: boolean;
-      articlesAttributes: { [key: string]: string; }[];
-    }>({
-      diffForNetNewYear: '',
-      weather: {
-        lives: {},
-        forecasts: []
-      },
-      currentDate: new Date(),
+    const { date } = useDate()
+    const { weather } = useWeather()
+    const { filterWithArticleType } = useArticle()
+    const state = reactive({
       visibleCityPicker: false,
-      articlesAttributes: []
+      articles: []
     })
     const currentLife = (() => {
       const currentDate = new Date()
@@ -151,82 +138,20 @@ export default defineComponent({
       }
       return style
     })
-
-    const { days, daysElapsed, dayRatio } = getDaysElapsed()
-
-    const getDiffForNetNewYear = () => {
-      const currentDate = new Date()
-      const currentgetMilliseconds = currentDate.getTime()
-      const newYear = new Date(getChineseNewYear(currentDate.getFullYear() + 1)).getTime()
-      const diff = newYear - currentgetMilliseconds
-      // 秒数
-      const seconds = Math.floor(diff / 1000)
-      // 分钟数
-      const minutes = Math.floor(seconds / 60)
-      // 小时数
-      const hours = Math.floor(minutes / 60)
-      // 天数
-      const days = Math.floor(hours / 24)
-      // 周数
-      const weeks = Math.floor(days / 7)
-      data.diffForNetNewYear = `${weeks}w ${days % 7}d ${hours % 24}h ${minutes % 60}m ${seconds % 60}s`
-      setTimeout(() => getDiffForNetNewYear(), 1000)
-    }
     const toArticleDetail = (name: string) => {
       router.push(`/article/${name}`)
     }
-    const getWeather = (extensions: 'all' | 'base' = 'base') => {
-      return new Promise((resolve, reject) => {
-        axios.get('https://restapi.amap.com/v3/weather/weatherInfo', {
-          params: {
-            key: '0eac8f8b04cc8b8a84ea14da6c2d6c1a',
-            city: store.state.cityCode,
-            extensions
-          }
-        }).then(res => {
-          if (res.data.status === '1') {
-            resolve(res.data)
-            return
-          }
-          reject()
-        }, () => reject())
-      })
-    }
-    const getAllWeather = () => {
-      Promise.all([getWeather(), getWeather('all')]).then(([livesWeather, forecastWeather]: any[]) => {
-        setWeatherData([livesWeather, forecastWeather])
-      }, () => alert('get weather error'))
-    }
-    const setWeatherData = ([livesWeather, forecastWeather]: any[]) => {
-      data.weather = {
-        lives: Object.assign({}, livesWeather.lives[0], {
-          icon: getWeatherIcon(livesWeather.lives[0].weather)
-        }),
-        forecasts: forecastWeather.forecasts[0].casts.map((value: any) => (Object.assign({}, value, {
-          icon: getWeatherIcon(new Date().getHours() >= 18 ? value.nightweather : value.dayweather),
-          weekEn: getWeekEnglishName(value.week).enShort
-        })))
-      }
-    }
-    watch(() => store.state.cityCode, () => {
-      getAllWeather()
-    }, { immediate: true })
     watch(() => store.state.articleType, () => {
-      data.articlesAttributes = getArticlesAttributes(store)
+      (state.articles as any[]) = filterWithArticleType()
     }, { immediate: true })
-
-    onMounted(() => {
-      getDiffForNetNewYear()
-    })
 
     return {
       toArticleDetail,
       currentLife,
       batteryStyle,
-      data,
-      days,
-      daysElapsed,
-      dayRatio
+      state,
+      date,
+      weather
     }
   }
 })

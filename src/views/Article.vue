@@ -23,15 +23,16 @@ import {
   reactive
 } from 'vue'
 import { useRoute } from 'vue-router'
-import { getCurrentArticle } from '/@/composables/articleMethods'
 import { scrollTopTo } from '/@/utils/index'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/shades-of-purple.css'
 import { usePreviewImage } from '/@/plugin/index'
+import useArticle from '/@/composables/useArticle'
 
 export default defineComponent({
   name: 'Article',
   setup () {
+    const { getCurrentArticle } = useArticle()
     const previewImage = usePreviewImage()
     const oldArticle: {
       name: string;
@@ -54,10 +55,10 @@ export default defineComponent({
         VueComponent: articleComponent,
         attributes: articleAttributes
       } = getCurrentArticle((name as string))
-      const article = { articleComponent, articleAttributes }
+      const newArticle = { articleComponent, articleAttributes }
       oldArticle.name = (name as string)
-      oldArticle.article = article
-      return article
+      oldArticle.article = newArticle
+      return newArticle
     })
 
     // 初始化hljs

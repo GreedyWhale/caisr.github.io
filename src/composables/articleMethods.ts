@@ -16,10 +16,10 @@ export function getArticlesAttributes (store?: Store<Vuex.State>) {
 }
 
 export function getCurrentArticleList (store?: Store<Vuex.State>) {
-  const { state: { articleType, mode } } = store || useStore<Vuex.State>()
-  let articleList = articles[mode]
+  const { state: { articleType } } = store || useStore<Vuex.State>()
+  let articleList = articles
   if (articleType !== 'all') {
-    articleList = articles[mode].filter(value => {
+    articleList = articles.filter(value => {
       return value.attributes.articleType === articleType
     })
   }

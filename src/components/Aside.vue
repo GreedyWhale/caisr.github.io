@@ -54,17 +54,17 @@ import { useStore } from 'vuex'
 import { NavItem } from '/@/types/aside.d.ts'
 import { EventBus } from '/@/utils/index'
 import { EVENT_CLICK_ROOT_ELEMENT } from '/@/utils/constant'
-import { getArticlesAttributes } from '/@/composables/articleMethods'
+import useArticle from '/@/composables/useArticle'
 
 export default defineComponent({
   name: 'Aside',
   setup () {
     const state = reactive({
-      navs: ['home', 'github', 'switch'],
+      navs: ['home', 'github', 'back'],
       visibleSubMenu: false,
       articles: {}
     })
-
+    const { filterWithArticleType } = useArticle()
     const router = useRouter()
     const store = useStore<Vuex.State>()
     const articleType = computed(() => store.state.articleType)
@@ -74,11 +74,7 @@ export default defineComponent({
       const handlerMap = {
         home: () => router.push('/'),
         github: () => window.open('https://github.com/GreedyWhale'),
-        switch: () => {
-          const { state: { mode } } = store
-          const value = mode === 'blog' ? 'notes' : 'blog'
-          store.commit('updateMode', value)
-        }
+        switch: () => { router.go(-1) }
       }
 
       handlerMap[type]()
@@ -87,25 +83,26 @@ export default defineComponent({
       store.commit('updateArticleType', type)
     }
 
-    watch(() => [store.state.mode, isArticlePage], (value) => {
-      if ((value[1] as ComputedRef<boolean>).value) {
+    watch(() => [isArticlePage], (value) => {
+      if ((value[0] as ComputedRef<boolean>).value) {
         changeArticleType('all')
-        const articles = getArticlesAttributes(store)
-        state.articles = articles
+        const articles = filterWithArticleType()
+        state.articles = articles.map(value => value.attributes)
         return
       }
-      const articles = getArticlesAttributes(store)
+      const articles = filterWithArticleType()
       const map: {[key: string]: {
         name: string;
         counts: number;
         type: string;
       }} = {}
+
       articles.forEach(value => {
-        map[value.articleType]
-          ? map[value.articleType].counts = map[value.articleType].counts + 1
-          : (map[value.articleType] = {
-            name: value.articleTypeZH,
-            type: value.articleType,
+        map[value.attributes.articleType]
+          ? map[value.attributes.articleType].counts = map[value.attributes.articleType].counts + 1
+          : (map[value.attributes.articleType] = {
+            name: value.attributes.articleTypeZH,
+            type: value.attributes.articleType,
             counts: 1
           })
       })
@@ -174,7 +171,7 @@ export default defineComponent({
       &:not(:last-child) {
         margin-bottom: 15px;
       }
-      $navs: 'home', 'github', 'switch';
+      $navs: 'home', 'github', 'back';
       @each $nav in $navs {
         &[data-key="#{$nav}"] {
           &::after {

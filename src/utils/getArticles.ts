@@ -19,9 +19,4 @@ const sortHandler = (a: any, b: any) => {
 }
 blog.sort(sortHandler)
 
-const articles = {
-  blog,
-  notes: blog
-}
-
-export default articles
+export default blog
