@@ -5,6 +5,6 @@
  * @LastEditTime: 2020-09-15 11:19:29
  * @Description: Aside.vue 类型文件
  */
-export type NavItem = 'home' | 'github' | 'switch';
+export type NavItem = 'home' | 'github' | 'back';
 
 export type Navs = Record<NavItem, Function>

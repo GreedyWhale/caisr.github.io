@@ -74,7 +74,7 @@ export default defineComponent({
       const handlerMap = {
         home: () => router.push('/'),
         github: () => window.open('https://github.com/GreedyWhale'),
-        switch: () => { router.go(-1) }
+        back: () => { router.go(-1) }
       }
 
       handlerMap[type]()
