@@ -7,6 +7,7 @@
  */
 const mdPlugin = require('vite-plugin-markdown')
 const path = require('path')
+const { manualChunks } = require('./packageMethod')
 
 module.exports = {
   base: '/caisr.github.io/',
@@ -15,16 +16,7 @@ module.exports = {
     '/@/': path.resolve(__dirname, 'src')
   },
   rollupOutputOptions: {
-    manualChunks: (id) => {
-      switch (true) {
-      case id.includes('.md'):
-        return 'article_vendor'
-      case id.includes('highlight.js'):
-        return 'highlight'
-      default:
-        break
-      }
-    }
+    manualChunks: (id) => manualChunks(id)
   },
   plugins: [mdPlugin({
     mode: ['vue']

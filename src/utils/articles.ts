@@ -83,8 +83,8 @@ import * as ReactFunctionalProgramming from '/@/articles/react/FunctionalProgram
 import * as ReactUseState from '/@/articles/react/UseState.md'
 import * as ReactHooks from '/@/articles/react/Hooks.md'
 
-const cssArticles = [CSSREMScope]
-const jsArticles = [
+const articles = [
+  CSSREMScope,
   JSScope,
   JSClosure,
   JSCurrying,
@@ -96,25 +96,20 @@ const jsArticles = [
   JSScope,
   JSThis,
   JSThisAndProto,
-  JSArray
-]
-const miniprogramArticles = [MINAGulp, ThirdPartyComponents]
-const vueArticles = [
+  JSArray,
+  MINAGulp,
+  ThirdPartyComponents,
   VueCli,
   VueComponentTest,
   VueNuxt,
   VueAndTSOne,
   VueAndTSTwo,
   Vuex,
-  VueTransitions
-]
-const gadgetsArticles = [
+  VueTransitions,
   Calendar,
   WebServer,
-  CanvasMap
-]
-const webglArticles = [WebGLTriangle]
-const pythonArticles = [
+  CanvasMap,
+  WebGLTriangle,
   PythonAiohttp,
   PythonArrayMethods,
   PythonClass,
@@ -142,56 +137,25 @@ const pythonArticles = [
   PythonThreading,
   PythonTime,
   PythonVariable,
-  PythonAsyncio
-]
-const nodeArticles = [
+  PythonAsyncio,
   NodeHttp,
-  NodeExpress
-]
-const threejsArticles = [
+  NodeExpress,
   ThreejsTriangle,
-  ThreejsLightAndShadow
-]
-const otherArticles = [OtherImplicitConversion]
-const webpackArticles = [
+  ThreejsLightAndShadow,
+  OtherImplicitConversion,
   WebpackCodeSplitting,
   WebpackES6,
   WebpackPreload,
   WebpackStaticAssets,
-  WebpackTreeShaking
-]
-const typescriptArticles = [
+  WebpackTreeShaking,
   TSType,
   TSGeneric,
-  TSInterface
-]
-const googleArticles = [
+  TSInterface,
   GoogleHelloExtensions,
-  GoogleGettingStartedExample
-]
-
-const reactArticles = [
+  GoogleGettingStartedExample,
   ReactFunctionalProgramming,
   ReactUseState,
   ReactHooks
-]
-
-const articles = [
-  ...cssArticles,
-  ...jsArticles,
-  ...miniprogramArticles,
-  ...vueArticles,
-  ...gadgetsArticles,
-  ...webglArticles,
-  ...pythonArticles,
-  ...nodeArticles,
-  ...nodeArticles,
-  ...threejsArticles,
-  ...otherArticles,
-  ...webpackArticles,
-  ...googleArticles,
-  ...typescriptArticles,
-  ...reactArticles
 ]
 // https://github.com/vitejs/vite/issues/77
 export default articles
