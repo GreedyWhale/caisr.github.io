@@ -176,7 +176,7 @@ const reactArticles = [
   ReactHooks
 ]
 
-const blog = [
+const articles = [
   ...cssArticles,
   ...jsArticles,
   ...miniprogramArticles,
@@ -193,4 +193,5 @@ const blog = [
   ...typescriptArticles,
   ...reactArticles
 ]
-export default blog
+// https://github.com/vitejs/vite/issues/77
+export default articles
