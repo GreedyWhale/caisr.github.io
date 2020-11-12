@@ -54,7 +54,7 @@ canvas 元素的 with，height 属性`<canvas width=xxx height=xxx>`规定的 ca
       backContext: null,
       ratio: 2,
 
-      // 做数值转换的原因是，绘制出的图形太迷糊了，所以使用2倍图
+      // 做数值转换的原因是，绘制出的图形太模糊了，所以使用2倍图
       numericalConversion(number) {
         return number * this.ratio;
       },
