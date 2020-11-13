@@ -5,7 +5,7 @@ time: "2018年12月11日 14:30"
 author: "MADAO是不会开花的"
 articleType: "python"
 articleTypeZH: "Python"
-name: "PythonList"
+name: "List"
 ---
 
 列表是由一系列按特定顺序排列的元素组成，Python 中用`[]`表示列表。例子:

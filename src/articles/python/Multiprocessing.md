@@ -5,7 +5,7 @@ time: "2019年01月22日 09:10"
 author: "MADAO是不会开花的"
 articleType: "python"
 articleTypeZH: "Python"
-name: "PythonMultiprocessing"
+name: "Multiprocessing"
 ---
 
 - ### 什么是 GIL

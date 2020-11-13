@@ -5,7 +5,7 @@ time: "2018年12月26日 15:50"
 author: "MADAO是不会开花的"
 articleType: "python"
 articleTypeZH: "Python"
-name: "PythonPipenv"
+name: "Pipenv"
 ---
 
 先把官方文档放在这里[pipenv](https://pipenv.readthedocs.io/en/latest/)

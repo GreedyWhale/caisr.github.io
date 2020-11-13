@@ -5,7 +5,7 @@ time: "2019年01月04日 09:11"
 author: "MADAO是不会开花的"
 articleType: "python"
 articleTypeZH: "Python"
-name: "PythonLambda"
+name: "Lambda"
 ---
 
 lambda 表达式，简单来说就是匿名函数。它可以简化函数的写法，例子：

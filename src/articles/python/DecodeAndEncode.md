@@ -5,7 +5,7 @@ time: "2018年12月21日 13:55"
 author: "MADAO是不会开花的"
 articleType: "python"
 articleTypeZH: "Python"
-name: "PythonDecodeAndEncode"
+name: "DecodeAndEncode"
 ---
 
 我们需要一个字典让计算机能读懂我们的语言，这个字典就叫做 - 编码表

@@ -5,7 +5,7 @@ time: "2018年09月13日 09:00"
 author: "MADAO是不会开花的"
 articleType: "javascript"
 articleTypeZH: "JavaScript"
-name: "JSPrototype"
+name: "Prototype"
 ---
 
 - ### 构造函数

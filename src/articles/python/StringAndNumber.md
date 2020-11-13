@@ -5,7 +5,7 @@ time: "2018年12月11日 9:30"
 author: "MADAO是不会开花的"
 articleType: "python"
 articleTypeZH: "Python"
-name: "PythonStringAndNumber"
+name: "StringAndNumber"
 ---
 
 ### 1. 字符串

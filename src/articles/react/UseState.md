@@ -5,7 +5,7 @@ time: "2020年10月29日 12:08"
 author: "MADAO是不会开花的"
 articleType: "react"
 articleTypeZH: "React"
-name: "ReactUseState"
+name: "UseState"
 ---
 
 ### Hook 简介

@@ -5,7 +5,7 @@ time: "2019年06月09日 09:00"
 author: "MADAO是不会开花的"
 articleType: "threejs"
 articleTypeZH: "three.js"
-name: "ThreejsTriangle"
+name: "Triangle"
 ---
 
 three.js 是一个可以使用 javascript 绘制 3d 图形的库，它对 WebGL 的 api 进行封装，使开发更加方便，就像 jQuery 对 DOM 的 api 进行封装一样。接下来就记录一下在小游戏中绘制一个

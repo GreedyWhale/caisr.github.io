@@ -5,7 +5,7 @@ time: "2019年10月02日 19:40"
 author: "MADAO是不会开花的"
 articleType: "typescript"
 articleTypeZH: "TypeScript"
-name: "TypeScriptGeneric"
+name: "Generic"
 ---
 
 泛型是我之前没有听过的一个概念，看文档的介绍也是迷迷糊糊的，但是看了文档的例子基本是明白了，下面就总结下我对泛型的理解。

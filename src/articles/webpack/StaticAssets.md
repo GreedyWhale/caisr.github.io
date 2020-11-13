@@ -5,7 +5,7 @@ time: "2019年07月06日 15:10"
 author: "MADAO是不会开花的"
 articleType: "webpack"
 articleTypeZH: "webpack"
-name: "WebpackStaticAssets"
+name: "StaticAssets"
 ---
 
 虽然之前用过 webpack，但基本都是边用边查，因为 webpack 的配置项实在是太多了，还是自己总结下，以后用到了也有个参考。

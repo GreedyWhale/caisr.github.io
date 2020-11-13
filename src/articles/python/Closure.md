@@ -5,7 +5,7 @@ time: "2019年01月08日 21:19"
 author: "MADAO是不会开花的"
 articleType: "python"
 articleTypeZH: "Python"
-name: "PythonClosure"
+name: "Closure"
 ---
 
 Python 的闭包和 JavaScript 中的闭包很像，形式都是一个函数的返回值为另一个函数，返回出来的这个函数引用了它外层函数的变量。例子：

@@ -5,7 +5,7 @@ time: "2018年12月10日 21:30"
 author: "MADAO是不会开花的"
 articleType: "python"
 articleTypeZH: "Python"
-name: "PythonVariable"
+name: "Variable"
 ---
 
 在 Python 中，如果希望程序记住某个值，以便以后使用，所要做的就是给这个值起一个名字，使用的时候只要使用这个名字，就可以得到之前保存的值。这个名字就叫做变量。

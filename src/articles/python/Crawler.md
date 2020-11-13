@@ -5,7 +5,7 @@ time: "2018年12月28日 09:50"
 author: "MADAO是不会开花的"
 articleType: "python"
 articleTypeZH: "Python"
-name: "PythonCrawler"
+name: "Crawler"
 ---
 
 爬虫简单来讲就是，让程序通过一些设置好的规则去网页上查找我们想要的内容，我还没有爬过有验证码，登录等一系列需要鉴权的网站。所以这里仅仅记录一下我自己写的最简单的爬虫实现。

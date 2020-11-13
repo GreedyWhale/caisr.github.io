@@ -5,7 +5,7 @@ time: "2018年12月14日 15:20"
 author: "MADAO是不会开花的"
 articleType: "python"
 articleTypeZH: "Python"
-name: "PythonInputAndWhile"
+name: "InputAndWhile"
 ---
 
 - input()

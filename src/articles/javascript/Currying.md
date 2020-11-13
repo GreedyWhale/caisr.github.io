@@ -5,7 +5,7 @@ time: "2018年10月02日 17:15"
 author: "MADAO是不会开花的"
 articleType: "javascript"
 articleTypeZH: "JavaScript"
-name: "JSCurrying"
+name: "Currying"
 ---
 
 今天开始学习饥人谷方方老师的 JS 深入浅出，总结下之前不知道的知识点。

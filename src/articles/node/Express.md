@@ -5,7 +5,7 @@ time: "2019年06月04日 16:00"
 author: "MADAO是不会开花的"
 articleType: "node"
 articleTypeZH: "Node"
-name: "NodeExpress"
+name: "Express"
 ---
 
 每次学习框架之前，我都会去看对应框架的官网对该框架是如何描述的，让人沮丧的是从来没有真正看懂过。所以这次还是一样，直接用，边用边理解吧。

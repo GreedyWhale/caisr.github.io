@@ -5,7 +5,7 @@ time: "2018年10月17日 10:45"
 author: "MADAO是不会开花的"
 articleType: "vue"
 articleTypeZH: "Vue"
-name: "VueNuxt"
+name: "Nuxt"
 ---
 
 最近工作中有用到服务端渲染，一边学一边写了一个小 demo，这里记录下过程：

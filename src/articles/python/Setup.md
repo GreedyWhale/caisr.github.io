@@ -5,7 +5,7 @@ time: "2018年12月10日 19:40"
 author: "MADAO是不会开花的"
 articleType: "python"
 articleTypeZH: "Python"
-name: "PythonSetup"
+name: "Setup"
 ---
 
 系统：macOS

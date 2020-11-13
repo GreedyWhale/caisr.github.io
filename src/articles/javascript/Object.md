@@ -5,7 +5,7 @@ time: "2018年09月06日 16:40"
 author: "MADAO是不会开花的"
 articleType: "javascript"
 articleTypeZH: "JavaScript"
-name: "JSObject"
+name: "Object"
 ---
 
 - ### 类型

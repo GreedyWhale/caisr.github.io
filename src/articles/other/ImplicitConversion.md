@@ -5,7 +5,7 @@ time: "2019年07月05日 15:10"
 author: "MADAO是不会开花的"
 articleType: "other"
 articleTypeZH: "面试"
-name: "OtherImplicitConversion"
+name: "ImplicitConversion"
 ---
 
 最近在面试的时候遇到这样一个问题: **为什么 ++[[]][+[]]+[+[]] = 10？**，纳尼？为什么会有这样的代码，工作中写出来这样的代码怕是要被人打死，然后搜索了一下，居然还真有挺多人遇到的，大概看了一下要解释清楚不是那么容易的，所以用自己能理解的方式总结一下，以后再遇到也好吹一吹。

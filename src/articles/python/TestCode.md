@@ -5,7 +5,7 @@ time: "2018年12月24日 10:32"
 author: "MADAO是不会开花的"
 articleType: "python"
 articleTypeZH: "Python"
-name: "PythonTestCode"
+name: "TestCode"
 ---
 
 Python 标准库中的 unittest 模块，它提供了代码测试工具。

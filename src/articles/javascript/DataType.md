@@ -5,7 +5,7 @@ time: "2018年09月17日 10:30"
 author: "MADAO是不会开花的"
 articleType: "javascript"
 articleTypeZH: "JavaScript"
-name: "JSDataType"
+name: "DataType"
 ---
 
 #### 1. typeof null === 'object'

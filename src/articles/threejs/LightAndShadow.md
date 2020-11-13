@@ -5,7 +5,7 @@ time: "2019年06月14日 09:00"
 author: "MADAO是不会开花的"
 articleType: "threejs"
 articleTypeZH: "three.js"
-name: "ThreejsLightAndShadow"
+name: "LightAndShadow"
 ---
 
 ### 一. 修改物体材质

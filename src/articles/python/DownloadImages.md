@@ -5,7 +5,7 @@ time: "2019年01月19日 10:30"
 author: "MADAO是不会开花的"
 articleType: "python"
 articleTypeZH: "Python"
-name: "PythonDownloadImages"
+name: "DownloadImages"
 ---
 
 ### 一. requests.Session()

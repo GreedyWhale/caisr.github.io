@@ -5,7 +5,7 @@ time: "2018年12月17日 18:05"
 author: "MADAO是不会开花的"
 articleType: "python"
 articleTypeZH: "Python"
-name: "PythonFunction"
+name: "Function"
 ---
 
 函数可以理解为带名字的代码块，用于完成具体的任务。当出现两次或两次以上的重复代码块的时候，就需要考虑将这些代码块封装成函数，当然不重复出现的代码块也可以写成函数。

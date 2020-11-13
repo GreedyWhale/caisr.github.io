@@ -5,7 +5,7 @@ time: "2018年12月19日 9:23"
 author: "MADAO是不会开花的"
 articleType: "python"
 articleTypeZH: "Python"
-name: "PythonFileAndError"
+name: "FileAndError"
 ---
 
 ### 1. 文件读写

@@ -5,7 +5,7 @@ time: "2019年01月16日 16:00"
 author: "MADAO是不会开花的"
 articleType: "python"
 articleTypeZH: "Python"
-name: "PythonRegexp"
+name: "Regexp"
 ---
 
 Python 中正则表达式相关的都在 re 模块中。简单整理一下常见的语法和方法

@@ -5,7 +5,7 @@ time: "2019年01月15日 10:28"
 author: "MADAO是不会开花的"
 articleType: "python"
 articleTypeZH: "Python"
-name: "PythonQueue"
+name: "Queue"
 ---
 
 - ### 生产者和消费者模型

@@ -5,7 +5,7 @@ time: "2019年09月28日 10:40"
 author: "MADAO是不会开花的"
 articleType: "typescript"
 articleTypeZH: "TypeScript"
-name: "TypeScriptType"
+name: "Type"
 ---
 
 TypeScript 是 JavaScript 的超集，所以 JavaScript 中的值的类型 TypeScript 都有，除了 JavaScript 中的 7 种类型，TypeScript 还额外的提供了 tuple，any，void，never，enum，在 TypeScript 中基础类型有：

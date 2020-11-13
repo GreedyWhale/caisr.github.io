@@ -5,7 +5,7 @@ time: "2020年10月31日 17:10"
 author: "MADAO是不会开花的"
 articleType: "react"
 articleTypeZH: "React"
-name: "ReactHooks"
+name: "Hooks"
 ---
 
 上一篇总结了一下 useState 原理，除了 useState，React 还提供了其他的 Hook 给开发者使用，这一篇就总结一下其他内置的 Hook，然后就愉快的开始造轮子了！

@@ -5,7 +5,7 @@ time: "2019年09月18日 16:40"
 author: "MADAO是不会开花的"
 articleType: "webpack"
 articleTypeZH: "webpack"
-name: "WebpackPreload"
+name: "Preload"
 ---
 
 上一篇总结了一下 webpack 的代码分割相关的知识，webpack 可以对同步引入的模块和异步引入的模块进行分割，将同步引入的第三方模块进行分割打包到一起，可以利用浏览器的缓存提高页面再次打开的速度，有助于提高页面首次打开的速度，当异步引入的模块是通过满足某些条件的时候再进行加载的时候，有助于提高页面首次打开的速度，就是 webpack 文档上说的懒加载。

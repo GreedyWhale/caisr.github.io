@@ -5,7 +5,7 @@ time: "2019年02月27日 15:30"
 author: "MADAO是不会开花的"
 articleType: "vue"
 articleTypeZH: "Vue"
-name: "VueAndTSTwo"
+name: "Vuex"
 ---
 
 很早就听说过 vuex，但是一直没用过。正好做到了登录这一块，趁着这个机会掌握它。

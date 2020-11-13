@@ -5,7 +5,7 @@ time: "2019年01月07日 15:33"
 author: "MADAO是不会开花的"
 articleType: "python"
 articleTypeZH: "Python"
-name: "PythonArrayMethods"
+name: "ArrayMethods"
 ---
 
 ### 1. filter

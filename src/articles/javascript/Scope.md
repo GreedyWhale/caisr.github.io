@@ -5,7 +5,7 @@ time: "2018年09月06日 10:00"
 author: "MADAO是不会开花的"
 articleType: "javascript"
 articleTypeZH: "JavaScript"
-name: "JSScope"
+name: "Scope"
 ---
 
 你一定会对下面这些知识点感到熟悉，因为网络上有很多相似的文章，没错，这些知识都是从《你不知道的 JavaScript（上卷）》中获取的，为啥还要写一遍，因为我记性不好，算是一个读书笔记吧。

@@ -5,7 +5,7 @@ time: "2020年10月27日 12:11"
 author: "MADAO是不会开花的"
 articleType: "react"
 articleTypeZH: "React"
-name: "ReactFunctionalProgramming"
+name: "FunctionalProgramming"
 ---
 
 这是一篇学习笔记，学习的课程是饥人谷方应杭老师的 React 造轮子课程，虽然很早就买了课，但是一直没看，今年也快要结束了，感觉什么也没干，所以 flag 立起来，今年结束之前看完所有买的课程。

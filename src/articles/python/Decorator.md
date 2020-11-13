@@ -5,7 +5,7 @@ time: "2019年01月08日 23:00"
 author: "MADAO是不会开花的"
 articleType: "python"
 articleTypeZH: "Python"
-name: "PythonDecorator"
+name: "Decorator"
 ---
 
 有时候我们希望给一个函数新增一些功能，但是又不想对原有函数进行修改，那么这时候就用到了装饰器或者说是装饰模式。

@@ -5,7 +5,7 @@ time: "2019年06月04日 14:00"
 author: "MADAO是不会开花的"
 articleType: "node"
 articleTypeZH: "Node"
-name: "NodeHttp"
+name: "Http"
 ---
 
 在 Node.js 中有一个内置模块叫 http，我们可以用这个模块快速的开发一个 http 服务。

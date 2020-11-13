@@ -5,7 +5,7 @@ time: "2019年07月11日 09:15"
 author: "MADAO是不会开花的"
 articleType: "webpack"
 articleTypeZH: "webpack"
-name: "WebpackTreeShaking"
+name: "TreeShaking"
 ---
 
 ### 一. Tree Shaking

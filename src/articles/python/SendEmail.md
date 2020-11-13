@@ -5,7 +5,7 @@ time: "2018年12月29日 16:50"
 author: "MADAO是不会开花的"
 articleType: "python"
 articleTypeZH: "Python"
-name: "PythonSendEmail"
+name: "SendEmail"
 ---
 
 电子邮件的传输协议是 SMTP，Python 内置了对 SMTP 协议的支持，对应的模块是 smtplib 和 email 模块。

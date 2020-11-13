@@ -70,7 +70,10 @@
     </div>
     <div class="article-list">
       <ul v-if="state.articles.length" :data-has-remainder="state.articles.length % 3 !== 0">
-        <li v-for="item in state.articles" :key="item.title" @click="toArticleDetail(item.attributes.name)">
+        <li
+          v-for="item in state.articles"
+          :key="item.title"
+          @click="toArticleDetail(item.attributes.articleType, item.attributes.name)">
           <div>
             <div class="article-list__icon" :data-type="item.attributes.articleType"></div>
             <h2 class="article-list__title">{{ item.attributes.title }}</h2>
@@ -138,8 +141,8 @@ export default defineComponent({
       }
       return style
     })
-    const toArticleDetail = (name: string) => {
-      router.push(`/article/${name}`)
+    const toArticleDetail = (articleType: string, name: string) => {
+      router.push(`/article/${articleType}/${name}`)
     }
     watch(() => store.state.articleType, () => {
       (state.articles as any[]) = filterWithArticleType()

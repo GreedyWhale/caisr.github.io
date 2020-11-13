@@ -5,7 +5,7 @@ time: "2018年09月06日 15:30"
 author: "MADAO是不会开花的"
 articleType: "javascript"
 articleTypeZH: "JavaScript"
-name: "JSHoisting"
+name: "Hoisting"
 ---
 
 > JavaScript 代码在执行前会将所有的声明移动到各自作用域的最顶端，这个过程叫做提升。

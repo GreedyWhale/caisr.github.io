@@ -5,7 +5,7 @@ time: "2019年01月11日 09:00"
 author: "MADAO是不会开花的"
 articleType: "python"
 articleTypeZH: "Python"
-name: "PythonThreading"
+name: "Threading"
 ---
 
 - ### 区分进程和线程

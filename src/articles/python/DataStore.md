@@ -5,7 +5,7 @@ time: "2018年12月21日 14:55"
 author: "MADAO是不会开花的"
 articleType: "python"
 articleTypeZH: "Python"
-name: "PythonDecodeAndEncode"
+name: "DecodeAndEncode"
 ---
 
 这里介绍一下，Python 中使用 JSON 格式存储数据。

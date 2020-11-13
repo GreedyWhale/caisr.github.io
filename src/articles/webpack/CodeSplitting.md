@@ -5,7 +5,7 @@ time: "2019年09月01日 10:40"
 author: "MADAO是不会开花的"
 articleType: "webpack"
 articleTypeZH: "webpack"
-name: "WebpackTreeShaking"
+name: "TreeShaking"
 ---
 
 ### 一. 什么是 Code Splitting

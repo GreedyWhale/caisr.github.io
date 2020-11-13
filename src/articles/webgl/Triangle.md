@@ -5,7 +5,7 @@ time: "2019年06月02日 09:00"
 author: "MADAO是不会开花的"
 articleType: "webgl"
 articleTypeZH: "WebGL"
-name: "WebGLTriangle"
+name: "Triangle"
 ---
 
 ### 一. 基本概念

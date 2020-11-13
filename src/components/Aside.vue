@@ -17,7 +17,7 @@
         <router-link
           custom
           v-for="item in state.articles"
-          :key="item.name" :to="`/article/${item.name}`"
+          :key="item.name" :to="`/article/${item.articleType}/${item.name}`"
           v-slot="{ isActive, navigate }">
           <li
             @click="navigate"

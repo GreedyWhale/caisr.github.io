@@ -5,7 +5,7 @@ time: "2019年01月03日 10:32"
 author: "MADAO是不会开花的"
 articleType: "python"
 articleTypeZH: "Python"
-name: "PythonScope"
+name: "Scope"
 ---
 
 Python 有局部作用域和全局作用域。还可以细分为这四种情况：

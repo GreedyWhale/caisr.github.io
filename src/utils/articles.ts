@@ -12,8 +12,8 @@ import * as JSArray from '/@/articles/javascript/Array.md'
 
 import * as CSSREMScope from '/@/articles/css/RemAndScope.md'
 
-import * as MINAGulp from '/@/articles/miniprogram/Gulp.md'
-import * as ThirdPartyComponents from '/@/articles/miniprogram/ThirdPartyComponents.md'
+import * as MINIGulp from '/@/articles/miniprogram/Gulp.md'
+import * as MINIThirdPartyComponents from '/@/articles/miniprogram/ThirdPartyComponents.md'
 
 import * as VueCli from '/@/articles/vue/VueCli.md'
 import * as VueNuxt from '/@/articles/vue/Nuxt.md'
@@ -97,8 +97,8 @@ const articles = [
   JSThis,
   JSThisAndProto,
   JSArray,
-  MINAGulp,
-  ThirdPartyComponents,
+  MINIGulp,
+  MINIThirdPartyComponents,
   VueCli,
   VueComponentTest,
   VueNuxt,
@@ -157,5 +157,6 @@ const articles = [
   ReactUseState,
   ReactHooks
 ]
+
 // https://github.com/vitejs/vite/issues/77
 export default articles

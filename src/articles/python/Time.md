@@ -5,7 +5,7 @@ time: "2019年01月17日 09:00"
 author: "MADAO是不会开花的"
 articleType: "python"
 articleTypeZH: "Python"
-name: "PythonTime"
+name: "Time"
 ---
 
 - ### time 模块

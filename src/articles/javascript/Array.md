@@ -5,7 +5,7 @@ time: "2019年03月29日 9:10"
 author: "MADAO是不会开花的"
 articleType: "javascript"
 articleTypeZH: "JavaScript"
-name: "JSArray"
+name: "Array"
 ---
 
 ### 1. 多维数组变为一维数组：

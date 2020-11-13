@@ -5,7 +5,7 @@ time: "2019年02月18日 09:10"
 author: "MADAO是不会开花的"
 articleType: "python"
 articleTypeZH: "Python"
-name: "PythonAiohttp"
+name: "Aiohttp"
 ---
 
 上一个笔记总结了 asyncio 的一些知识点，这次就来应用一下。如果使用协程的方式来写爬虫，网络相关的请求就要将 requests 库替换成 aiohttp 这个库。
