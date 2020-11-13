@@ -192,9 +192,9 @@ export default defineComponent({
     bottom: 0;
     height: 100%;
     width: 300px;
-    background: #1c2b2d;
+    background: #222831;
     transition: transform 0.5s;
-    color: #e6d5b8;
+    color: #dae1e7;
     padding: 20px 0;
     &[data-visible="true"] {
       transform: translateX(300px);
@@ -217,7 +217,7 @@ export default defineComponent({
           bottom: 0;
           left: 0;
           height: 2px;
-          background: #e6d5b8;
+          background: #dae1e7;
         }
         &[data-active="true"], &.active {
           &::after {

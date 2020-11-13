@@ -76,8 +76,8 @@
           @click="toArticleDetail(item.attributes.articleType, item.attributes.name)">
           <div>
             <div class="article-list__icon" :data-type="item.attributes.articleType"></div>
-            <h2 class="article-list__title">{{ item.attributes.title }}</h2>
-            <p class="article-list__desc">{{ item.attributes.description }}</p>
+            <h2 class="article-list__title" :title="item.attributes.title">{{ item.attributes.title }}</h2>
+            <p class="article-list__desc" :title="item.attributes.description">{{ item.attributes.description }}</p>
           </div>
           <div class="article-list__meta">
             <p>发布时间：{{ item.attributes.time }}</p>
@@ -458,6 +458,7 @@ export default defineComponent({
       margin-bottom: 20px;
       font-weight: 600;
       line-height: 1.5;
+      @include multipleEllipsis(2);
     }
     &__desc {
       @include multipleEllipsis(2);
@@ -482,6 +483,7 @@ export default defineComponent({
     &__meta > p {
       color: #909090;
       margin-bottom: 5px;
+      line-height: 1.5;
     }
   }
 }
