@@ -7,6 +7,7 @@
  */
 
 import articles from './articles'
+import { Article } from '/@/types/articles'
 
 const formatTime = (timeStr: string): string => {
   const reg = /[年月日]+/g
@@ -14,8 +15,8 @@ const formatTime = (timeStr: string): string => {
   return `${date[0].replace(reg, '-').slice(0, -1)} ${date[1]}`
 }
 
-const sortHandler = (a: any, b: any) => {
-  return new Date(formatTime(b.attributes.time)).getTime() - new Date(formatTime(a.attributes.time)).getTime()
+const sortHandler = (a: Article, b: Article) => {
+  return new Date(formatTime(b.time)).getTime() - new Date(formatTime(a.time)).getTime()
 }
 
 const sortedArticles = articles.map((value) => value).sort(sortHandler)

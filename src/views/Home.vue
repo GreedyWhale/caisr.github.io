@@ -73,15 +73,15 @@
         <li
           v-for="item in state.articles"
           :key="item.title"
-          @click="toArticleDetail(item.attributes.articleType, item.attributes.name)">
+          @click="toArticleDetail(item.category, item.name)">
           <div>
-            <div class="article-list__icon" :data-type="item.attributes.articleType"></div>
-            <h2 class="article-list__title" :title="item.attributes.title">{{ item.attributes.title }}</h2>
-            <p class="article-list__desc" :title="item.attributes.description">{{ item.attributes.description }}</p>
+            <div class="article-list__icon" :data-type="item.category"></div>
+            <h2 class="article-list__title" :title="item.title">{{ item.title }}</h2>
+            <p class="article-list__desc" :title="item.description">{{ item.description }}</p>
           </div>
           <div class="article-list__meta">
-            <p>发布时间：{{ item.attributes.time }}</p>
-            <p>作者：{{ item.attributes.author }}</p>
+            <p>发布时间：{{ item.time }}</p>
+            <p>作者：{{ item.author }}</p>
           </div>
         </li>
       </ul>
@@ -119,7 +119,7 @@ export default defineComponent({
     const store = useStore<Vuex.State>()
     const { date } = useDate()
     const { weather } = useWeather()
-    const { filterWithArticleType } = useArticle()
+    const { filterWithArticleCategory } = useArticle()
     const state = reactive({
       visibleCityPicker: false,
       articles: []
@@ -141,11 +141,11 @@ export default defineComponent({
       }
       return style
     })
-    const toArticleDetail = (articleType: string, name: string) => {
-      router.push(`/article/${articleType}/${name}`)
+    const toArticleDetail = (articleCategory: string, name: string) => {
+      router.push(`/article/${articleCategory}/${name}`)
     }
-    watch(() => store.state.articleType, () => {
-      (state.articles as any[]) = filterWithArticleType()
+    watch(() => store.state.articleCategory, () => {
+      (state.articles as any[]) = filterWithArticleCategory()
     }, { immediate: true })
 
     return {
@@ -474,7 +474,7 @@ export default defineComponent({
       background-repeat: no-repeat;
       background-size: 100%;
       background-position: center;
-      @each $type in $articleTypes {
+      @each $type in $articleCategory {
         &[data-type="#{$type}"] {
           background-image: url('../assets/images/#{$type}.png');
         }

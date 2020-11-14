@@ -10,6 +10,9 @@ module.exports = {
     browser: true,
     es2020: true
   },
+  globals: {
+    ENV: 'readonly'
+  },
   extends: [
     'plugin:vue/essential',
     'standard'

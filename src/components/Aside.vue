@@ -17,7 +17,7 @@
         <router-link
           custom
           v-for="item in state.articles"
-          :key="item.name" :to="`/article/${item.articleType}/${item.name}`"
+          :key="item.name" :to="`/article/${item.category}/${item.name}`"
           v-slot="{ isActive, navigate }">
           <li
             @click="navigate"
@@ -29,15 +29,15 @@
         </router-link>
       </template>
       <template v-else>
-        <li :data-active="articleType === 'all'" @click.stop="changeArticleType(state.articles.all.type)">
+        <li :data-active="articleCategory === 'all'" @click.stop="changeArticleCategory(state.articles.all.type)">
           <p>{{ state.articles.all.name }}</p>
           <p>{{ state.articles.all.counts }}</p>
         </li>
         <template v-for="value in state.articles" :key="value.name">
           <li
             v-if="value.type !== 'all'"
-            :data-active="articleType === value.type"
-            @click.stop="changeArticleType(value.type)">
+            :data-active="articleCategory === value.type"
+            @click.stop="changeArticleCategory(value.type)">
             <p>{{ value.name }}</p>
             <p>{{ value.counts }}</p>
           </li>
@@ -64,10 +64,10 @@ export default defineComponent({
       visibleSubMenu: false,
       articles: {}
     })
-    const { filterWithArticleType } = useArticle()
+    const { filterWithArticleCategory } = useArticle()
     const router = useRouter()
     const store = useStore<Vuex.State>()
-    const articleType = computed(() => store.state.articleType)
+    const articleCategory = computed(() => store.state.articleCategory)
     const isArticlePage = computed(() => router.currentRoute.value.name === 'Article')
 
     const navClickHandler = (type: NavItem) => {
@@ -79,18 +79,17 @@ export default defineComponent({
 
       handlerMap[type]()
     }
-    const changeArticleType = (type: string) => {
-      store.commit('updateArticleType', type)
+    const changeArticleCategory = (type: string) => {
+      store.commit('updateArticleCategory', type)
     }
 
     watch(() => [isArticlePage], (value) => {
       if ((value[0] as ComputedRef<boolean>).value) {
-        changeArticleType('all')
-        const articles = filterWithArticleType()
-        state.articles = articles.map(value => value.attributes)
+        changeArticleCategory('all')
+        state.articles = filterWithArticleCategory()
         return
       }
-      const articles = filterWithArticleType()
+      const articles = filterWithArticleCategory()
       const map: {[key: string]: {
         name: string;
         counts: number;
@@ -98,11 +97,11 @@ export default defineComponent({
       }} = {}
 
       articles.forEach(value => {
-        map[value.attributes.articleType]
-          ? map[value.attributes.articleType].counts = map[value.attributes.articleType].counts + 1
-          : (map[value.attributes.articleType] = {
-            name: value.attributes.articleTypeZH,
-            type: value.attributes.articleType,
+        map[value.category]
+          ? map[value.category].counts = map[value.category].counts + 1
+          : (map[value.category] = {
+            name: value.categoryZH,
+            type: value.category,
             counts: 1
           })
       })
@@ -121,10 +120,10 @@ export default defineComponent({
 
     return {
       state,
-      articleType,
+      articleCategory,
       isArticlePage,
       navClickHandler,
-      changeArticleType
+      changeArticleCategory
     }
   }
 })

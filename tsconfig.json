@@ -1,16 +1,13 @@
 {
   "include": ["src/**/*"],
   "compilerOptions": {
-    "noImplicitAny": true,
+    "strict": true,
     "isolatedModules": true,
-    "strictNullChecks": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "baseUrl": ".",
     "paths": {
-      "/@/*": [
-        "src/*"
-      ]
+      "/@/*": ["src/*"]
     },
     "lib": ["DOM", "ESNext", "ES6"]
   }

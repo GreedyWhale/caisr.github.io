@@ -1,8 +1,9 @@
 <template>
   <div class="article" ref="rootElement" @scroll="onScroll" @click="onClick">
     <article>
-      <h1 class="article-title">{{ article.articleAttributes.title }}</h1>
-      <component :is="article.articleComponent"></component>
+      <h1 class="article-title">{{ articleMarkDownRef.articleAttributes.title }}</h1>
+      <div v-html="articleMarkDownRef.html"></div>
+      <!-- <component :is="article.articleComponent"></component> -->
     </article>
     <img
       src="/@/assets/images/go_top.png"
@@ -19,10 +20,8 @@ import {
   onMounted,
   onUpdated,
   ref,
-  computed,
   reactive
 } from 'vue'
-import { useRoute } from 'vue-router'
 import { scrollTopTo } from '/@/utils/index'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/shades-of-purple.css'
@@ -32,41 +31,18 @@ import useArticle from '/@/composables/useArticle'
 export default defineComponent({
   name: 'Article',
   setup () {
-    const { getCurrentArticle } = useArticle()
+    const { articleMarkDownRef } = useArticle()
     const previewImage = usePreviewImage()
-    const oldArticle: {
-      name: string;
-      article: any;
-    } = {
-      name: '',
-      article: null
-    }
     const data = reactive({
       visibleGoTop: false
-    })
-
-    const article = computed(() => {
-      // 获取文章组件
-      const { params: { name } } = useRoute()
-      if (name === oldArticle.name) {
-        return oldArticle.article
-      }
-      const {
-        VueComponent: articleComponent,
-        attributes: articleAttributes
-      } = getCurrentArticle((name as string))
-      const newArticle = { articleComponent, articleAttributes }
-      oldArticle.name = (name as string)
-      oldArticle.article = newArticle
-      return newArticle
     })
 
     // 初始化hljs
     const rootElement = ref(null)
     const initHighLight = () => {
       const elements = (rootElement.value as unknown as HTMLElement).querySelectorAll('pre code')
-      Array.from(elements).forEach((el: HTMLElement) => {
-        hljs.highlightBlock(el)
+      Array.from(elements).forEach((el) => {
+        hljs.highlightBlock((el as HTMLElement))
       })
     }
     let scrollTimer = -1
@@ -102,7 +78,7 @@ export default defineComponent({
 
     return {
       rootElement,
-      article,
+      articleMarkDownRef,
       onScroll,
       goTop,
       data,

@@ -9,13 +9,13 @@ import { createStore } from 'vuex'
 
 export default createStore<Vuex.State>({
   state: {
-    articleType: 'all',
+    articleCategory: 'all',
     cityCode: '440100'
   },
 
   mutations: {
-    updateArticleType (state, value: string) {
-      state.articleType = value
+    updateArticleCategory (state, value: string) {
+      state.articleCategory = value
     },
     updateCityCode (state, value: string) {
       state.cityCode = value

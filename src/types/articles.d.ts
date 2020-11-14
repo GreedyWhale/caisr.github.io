@@ -11,7 +11,8 @@
   description: string;
   time: string;
   author: string;
-  articleType: string;
+  category: string;
+  categoryZH: string;
   name: string;
 }
 

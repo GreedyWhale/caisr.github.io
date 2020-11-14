@@ -1,43 +1,69 @@
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { articles } from '/@/utils'
 import { useStore } from 'vuex'
+import { useRoute } from 'vue-router'
+import axios from 'axios'
+import * as marked from 'marked'
 
 export default function useArticle () {
   const articlesRef = ref(articles)
+  const articleMarkDownRef = ref({
+    html: '',
+    articleAttributes: {}
+  })
+
+  const {
+    name,
+    params: { articleName, category }
+  } = useRoute()
   const store = useStore<Vuex.State>()
 
-  const filterWithArticleType = () => {
-    const { state: { articleType } } = store
-    if (articleType !== 'all') {
+  const filterWithArticleCategory = () => {
+    const { state: { articleCategory } } = store
+    if (articleCategory !== 'all') {
       return articlesRef.value.filter(value => {
-        return value.attributes.articleType === articleType
+        return value.category === articleCategory
       })
     }
     return articlesRef.value
   }
 
-  const getCurrentArticle = (name: string): {
-    VueComponent: any;
-    attributes: { [key: string]: string }
-  } => {
-    const currentArticleList = filterWithArticleType()
-    let result = {
-      VueComponent: null,
-      attributes: {}
-    }
-    currentArticleList.some(value => {
-      if (value.attributes.name === name) {
-        result = value
-        return true
-      }
-      return false
-    })
-    return result
+  const getCurrentArticleInfo = (name: string) => {
+    const articles = filterWithArticleCategory()
+    const article = articles.filter(value => value.name === name)[0]
+    return article || {}
   }
 
+  const setCurrentArticle = (category: string, name: string) => {
+    if (name !== 'Article') {
+      return ''
+    }
+    if (!category || !articleName) {
+      alert('获取文章失败，请重试')
+      return
+    }
+    const path = window.ENV === 'development' ? '' : '/caisr.github.io'
+
+    axios.get<string>(`${path}/database/articles/${category}/${articleName}.md`)
+      .then((res) => {
+        articleMarkDownRef.value = {
+          // @ts-ignore
+          html: marked.default(res.data),
+          articleAttributes: getCurrentArticleInfo((articleName as string))
+        }
+      }).catch((err) => {
+        console.log(err)
+        alert('获取文章失败，请重试')
+      })
+  }
+
+  onMounted(() => {
+    setCurrentArticle((category as string), (name as string))
+  })
   return {
     articlesRef,
-    filterWithArticleType,
-    getCurrentArticle
+    articleMarkDownRef,
+    filterWithArticleCategory,
+    setCurrentArticle
   }
 }

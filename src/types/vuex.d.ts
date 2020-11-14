@@ -8,7 +8,7 @@
 
 declare module Vuex {
   export interface State {
-    articleType: string;
+    articleCategory: string;
     cityCode: string;
   }
 }

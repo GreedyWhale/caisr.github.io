@@ -6,6 +6,8 @@
  * @Description: 全局变量类型文件
  */
 declare global {
-  interface Window {}
+  interface Window {
+    ENV: string;
+  }
 }
 export {};
