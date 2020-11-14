@@ -1,4 +1,4 @@
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, computed, watch } from 'vue'
 import { articles } from '/@/utils'
 import { useStore } from 'vuex'
 import { useRoute } from 'vue-router'
@@ -11,11 +11,14 @@ export default function useArticle () {
     html: '',
     articleAttributes: {}
   })
+  const route = useRoute()
+  const lastArticleName = ref('')
+  const lastCategory = ref('')
+  const isArticlePage = computed(() => route.name === 'Article')
+  const articleName = computed(() => route.params.articleName)
 
-  const {
-    name,
-    params: { articleName, category }
-  } = useRoute()
+  const articleCategory = computed(() => route.params.category)
+
   const store = useStore<Vuex.State>()
 
   const filterWithArticleCategory = () => {
@@ -34,10 +37,11 @@ export default function useArticle () {
     return article || {}
   }
 
-  const setCurrentArticle = (category: string, name: string) => {
-    if (name !== 'Article') {
+  const setCurrentArticle = () => {
+    if (!isArticlePage.value) {
       return ''
     }
+    const { params: { category, articleName } } = route
     if (!category || !articleName) {
       alert('获取文章失败，请重试')
       return
@@ -56,9 +60,15 @@ export default function useArticle () {
         alert('获取文章失败，请重试')
       })
   }
-
+  watch(() => [articleName, articleCategory], (value) => {
+    if ((value[0].value !== lastArticleName.value) || (value[1].value !== lastCategory.value)) {
+      lastArticleName.value = (value[0].value as string)
+      lastCategory.value = (value[1].value as string)
+      setCurrentArticle()
+    }
+  }, { deep: true })
   onMounted(() => {
-    setCurrentArticle((category as string), (name as string))
+    setCurrentArticle()
   })
   return {
     articlesRef,

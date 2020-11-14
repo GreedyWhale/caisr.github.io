@@ -69,12 +69,8 @@ export default defineComponent({
         url && previewImage!.show(url)
       }
     }
-    onMounted(() => {
-      initHighLight()
-    })
-    onUpdated(() => {
-      initHighLight()
-    })
+    onMounted(() => { initHighLight() })
+    onUpdated(() => { initHighLight() })
 
     return {
       rootElement,
