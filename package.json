@@ -8,17 +8,19 @@
   },
   "bugs": {
     "email": "madaocai@gmail.com",
-    "url": "https://github.com/GreedyWhale/caisr.github.io/issues"
+    "url": "https://github.com/GreedyWhale/madao.github.io/issues"
   },
   "repository": {
-    "url": "https://github.com/GreedyWhale/caisr.github.io",
+    "url": "https://github.com/GreedyWhale/madao.github.io",
     "type": "git"
   },
-  "homepage": "https://github.com/GreedyWhale/caisr.github.io",
+  "homepage": "https://github.com/GreedyWhale/madao.github.io",
   "license": "AGPL-3.0 License",
   "scripts": {
     "dev": "cross-env NODE_ENV=development vite",
-    "build": "cross-env NODE_ENV=production vite build"
+    "build": "cross-env NODE_ENV=production vite build",
+    "deploy": "NODE_DEBUG=gh-pages node deploy.js",
+    "dist": "run-s build deploy"
   },
   "dependencies": {
     "axios": "^0.21.0",
@@ -46,6 +48,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "eslint-plugin-vue": "^6.2.2",
+    "gh-pages": "^3.1.0",
     "npm-run-all": "^4.1.5",
     "sass": "^1.26.10",
     "typescript": "^4.0.2",

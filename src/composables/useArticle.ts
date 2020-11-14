@@ -42,7 +42,7 @@ export default function useArticle () {
       alert('获取文章失败，请重试')
       return
     }
-    const path = window.ENV === 'development' ? '' : '/caisr.github.io'
+    const path = window.ENV === 'development' ? '' : '/madao.github.io'
 
     axios.get<string>(`${path}/database/articles/${category}/${articleName}.md`)
       .then((res) => {

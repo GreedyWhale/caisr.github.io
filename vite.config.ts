@@ -8,7 +8,7 @@
 const path = require('path')
 
 module.exports = {
-  base: '/caisr.github.io/',
+  base: '/madao.github.io/',
   assetsDir: 'assets',
   alias: {
     '/@/': path.resolve(__dirname, 'src')
@@ -27,10 +27,10 @@ module.exports = {
     }
   },
   proxy: {
-    '/caisr.github.io': {
+    '/madao.github.io': {
       target: 'http://localhost:3000/',
       changeOrigin: true,
-      rewrite: path => path.replace(/^\/caisr.github.io/, '')
+      rewrite: path => path.replace(/^\/madao.github.io/, '')
     }
   }
 }
