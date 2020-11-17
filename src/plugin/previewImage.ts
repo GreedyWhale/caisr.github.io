@@ -9,22 +9,18 @@
 import { App, createApp, inject } from 'vue'
 import PreviewImage from '/@/components/PreviewImage.vue'
 import { EventBus } from '/@/utils/index'
+import { PreviewImageInstance } from '/@/types/plugins/previewImage'
 
 const key = Symbol('PreviewImageKey')
 /* eslint-disable */
 export const usePreviewImage = () => {
-  return inject<{
-    VM: App;
-    show:(path: string) => void;
-    hide: () => void;
-    warp: Element | null;
-  }>(key)
+  return inject<PreviewImageInstance>(key)
 }
 /* eslint-enable */
 
 export default {
   install: (app: App) => {
-    const previewImage = {
+    const previewImage: PreviewImageInstance = {
       VM: null,
       wrap: null,
       show (path: string) {
@@ -38,7 +34,7 @@ export default {
         this.VM.mount('#plugin-preview-image')
       },
       hide () {
-        if (this.VM) {
+        if (this.VM && this.wrap) {
           this.VM.unmount('#plugin-preview-image')
           this.VM = null
           document.body.removeChild(this.wrap)

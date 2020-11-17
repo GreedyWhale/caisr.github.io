@@ -1,9 +1,11 @@
 <template>
   <div class="article" ref="rootElement" @scroll="onScroll" @click="onClick">
     <article>
-      <h1 class="article-title">{{ articleMarkDownRef.articleAttributes.title }}</h1>
+      <h1 class="article-title">
+        <img src="../assets/images/back.png" alt="go-back" @click.stop="goBack">
+        {{ articleMarkDownRef.articleAttributes.title }}
+      </h1>
       <div v-html="articleMarkDownRef.html"></div>
-      <!-- <component :is="article.articleComponent"></component> -->
     </article>
     <img
       src="/@/assets/images/go_top.png"
@@ -22,6 +24,7 @@ import {
   ref,
   reactive
 } from 'vue'
+import { useRouter } from 'vue-router'
 import { scrollTopTo } from '/@/utils/index'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/shades-of-purple.css'
@@ -31,8 +34,10 @@ import useArticle from '/@/composables/useArticle'
 export default defineComponent({
   name: 'Article',
   setup () {
+    const router = useRouter()
     const { articleMarkDownRef } = useArticle()
     const previewImage = usePreviewImage()
+
     const data = reactive({
       visibleGoTop: false
     })
@@ -69,6 +74,7 @@ export default defineComponent({
         url && previewImage!.show(url)
       }
     }
+    const goBack = () => router.go(-1)
     onMounted(() => { initHighLight() })
     onUpdated(() => { initHighLight() })
 
@@ -78,7 +84,8 @@ export default defineComponent({
       onScroll,
       goTop,
       data,
-      onClick
+      onClick,
+      goBack
     }
   }
 })
@@ -92,10 +99,10 @@ export default defineComponent({
   overflow-y: auto;
   height: 100vh;
   @include scrollBar;
-  background: #F6F5F0;
+  background: #222233;
   font-size: 16px;
   padding: 3em;
-  color: #555;
+  color: #bfbfbf;
   flex: 1;
   > article {
     width: 50em;
@@ -103,7 +110,16 @@ export default defineComponent({
   }
   &-title {
     font-size: 32px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #bfbfbf;
     margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    > img {
+      width: 48px;
+      margin: 0 20px 0 0 !important;
+      cursor: pointer;
+    }
   }
   &-go__top {
     position: fixed;
@@ -123,6 +139,6 @@ export default defineComponent({
 <style lang="scss">
 code {
   color: #ff502c;
-  background: #fff5f5;
+  background: #0b3144;
 }
 </style>

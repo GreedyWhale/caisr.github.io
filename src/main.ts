@@ -9,7 +9,7 @@ import { createApp } from 'vue'
 import router from './router/index'
 import store from './store/index'
 import App from './App.vue'
-import previewImage from './plugin/previewImage'
+import { previewImage, toast } from './plugin/index'
 import './index.scss'
 import 'normalize.css'
 import './assets/scss/reset.scss'
@@ -18,4 +18,5 @@ createApp(App)
   .use(router)
   .use(store)
   .use(previewImage)
+  .use(toast)
   .mount('#app')

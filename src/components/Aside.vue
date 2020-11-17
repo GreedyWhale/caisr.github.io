@@ -7,6 +7,7 @@
         v-for="item in state.navs"
         :key="item"
         :data-key="item"
+        :class="{email: item === 'email'}"
         @click="navClickHandler(item)"
       ></li>
     </ul>
@@ -48,33 +49,63 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, reactive, watch, onMounted, ComputedRef } from 'vue'
+import {
+  computed,
+  defineComponent,
+  reactive,
+  watch,
+  onMounted,
+  ComputedRef
+} from 'vue'
 import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
 import { NavItem } from '/@/types/aside.d.ts'
 import { EventBus } from '/@/utils/index'
 import { EVENT_CLICK_ROOT_ELEMENT } from '/@/utils/constant'
 import useArticle from '/@/composables/useArticle'
+import { useToast } from '/@/plugin/index'
+import Clipboard from 'clipboard'
 
 export default defineComponent({
   name: 'Aside',
   setup () {
+    const toast = useToast()
+
     const state = reactive({
-      navs: ['home', 'github', 'back'],
+      navs: ['home', 'github', 'email'],
       visibleSubMenu: false,
       articles: {}
     })
-    const { filterWithArticleCategory } = useArticle()
+    const { filterWithArticleCategory, isArticlePage } = useArticle()
     const router = useRouter()
     const store = useStore<Vuex.State>()
     const articleCategory = computed(() => store.state.articleCategory)
-    const isArticlePage = computed(() => router.currentRoute.value.name === 'Article')
 
     const navClickHandler = (type: NavItem) => {
       const handlerMap = {
         home: () => router.push('/'),
         github: () => window.open('https://github.com/GreedyWhale'),
-        back: () => { router.go(-1) }
+        email: () => {
+          const email = 'madaocai@gmail.com'
+          const clipboard = new Clipboard('.email', {
+            text: () => email
+          })
+          clipboard.on('success', () => {
+            toast?.show({
+              title: '复制成功',
+              message: '邮箱地址已复制到剪切板',
+              theme: 'success'
+            })
+          })
+          clipboard.on('error', () => {
+            toast?.show({
+              title: '复制失败',
+              message: `邮箱地址复制失败，请手动复制: ${email}`,
+              theme: 'error',
+              delay: -1
+            })
+          })
+        }
       }
 
       handlerMap[type]()
@@ -170,7 +201,7 @@ export default defineComponent({
       &:not(:last-child) {
         margin-bottom: 15px;
       }
-      $navs: 'home', 'github', 'back';
+      $navs: 'home', 'github', 'email';
       @each $nav in $navs {
         &[data-key="#{$nav}"] {
           &::after {

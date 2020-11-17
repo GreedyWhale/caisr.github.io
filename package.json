@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "axios": "^0.21.0",
+    "clipboard": "^2.0.6",
     "date-chinese": "^1.0.7",
     "highlight.js": "^10.1.2",
     "marked": "^1.2.3",
@@ -34,6 +35,7 @@
     "vuex": "4.0.0-beta.4"
   },
   "devDependencies": {
+    "@types/clipboard": "^2.0.1",
     "@types/highlight.js": "^9.12.4",
     "@types/marked": "^1.1.0",
     "@typescript-eslint/eslint-plugin": "^3.10.0",
