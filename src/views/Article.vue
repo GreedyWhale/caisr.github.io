@@ -1,16 +1,19 @@
 <template>
   <div class="article" ref="rootElement" @scroll="onScroll" @click="onClick">
-    <article>
+    <article v-if="articleMarkDownRef.html">
       <h1 class="article-title">
         <img src="../assets/images/back.png" alt="go-back" @click.stop="goBack">
         {{ articleMarkDownRef.articleAttributes.title }}
       </h1>
       <div v-html="articleMarkDownRef.html"></div>
     </article>
+    <div class="article-loading" v-else>
+      <BaseLoading/>
+    </div>
     <img
       src="/@/assets/images/go_top.png"
       alt="go-top"
-      :class="['article-go__top', data.visibleGoTop ? 'active' : '']"
+      :class="['article-go__top', visibleGoTop ? 'active' : '']"
       @click.stop="goTop"
     >
   </div>
@@ -22,7 +25,7 @@ import {
   onMounted,
   onUpdated,
   ref,
-  reactive
+  defineAsyncComponent
 } from 'vue'
 import { useRouter } from 'vue-router'
 import { scrollTopTo } from '/@/utils/index'
@@ -30,15 +33,19 @@ import hljs from 'highlight.js'
 import 'highlight.js/styles/shades-of-purple.css'
 import { usePreviewImage } from '/@/plugin/index'
 import useArticle from '/@/composables/useArticle'
+import useFeature from '/@/composables/useFeature'
 
 export default defineComponent({
   name: 'Article',
+  components: {
+    BaseLoading: defineAsyncComponent(() => import('/@/components/BaseLoading.vue'))
+  },
   setup () {
     const router = useRouter()
     const { articleMarkDownRef } = useArticle()
     const previewImage = usePreviewImage()
 
-    const data = reactive({
+    const { visibleGoTop } = useFeature({
       visibleGoTop: false
     })
 
@@ -55,10 +62,10 @@ export default defineComponent({
       clearTimeout(scrollTimer)
       scrollTimer = window.setTimeout(() => {
         const { scrollTop } = (event.target as HTMLElement)
-        if (scrollTop > 300 && !data.visibleGoTop) {
-          data.visibleGoTop = true
-        } else if (data.visibleGoTop && scrollTop < 300) {
-          data.visibleGoTop = false
+        if (scrollTop > 300 && !visibleGoTop.value) {
+          visibleGoTop.value = true
+        } else if (visibleGoTop && scrollTop < 300) {
+          visibleGoTop.value = false
         }
       })
     }
@@ -75,6 +82,7 @@ export default defineComponent({
       }
     }
     const goBack = () => router.go(-1)
+
     onMounted(() => { initHighLight() })
     onUpdated(() => { initHighLight() })
 
@@ -83,7 +91,7 @@ export default defineComponent({
       articleMarkDownRef,
       onScroll,
       goTop,
-      data,
+      visibleGoTop,
       onClick,
       goBack
     }
@@ -132,6 +140,13 @@ export default defineComponent({
     &.active {
       transform: translateX(-20px);
     }
+  }
+  &-loading {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   @include markdown;
 }

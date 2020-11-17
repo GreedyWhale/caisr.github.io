@@ -41,7 +41,9 @@
               </li>
             </ul>
           </template>
-          <div class="home-pane__weather-loading" v-else></div>
+          <div class="home-pane__weather-loading" v-else>
+            <BaseLoading />
+          </div>
         </div>
       </div>
       <div class="home-pane__progress">
@@ -112,7 +114,8 @@ import { useStore } from 'vuex'
 export default defineComponent({
   name: 'Home',
   components: {
-    CityPicker: defineAsyncComponent(() => import('/@/components/CityPicker.vue'))
+    CityPicker: defineAsyncComponent(() => import('/@/components/CityPicker.vue')),
+    BaseLoading: defineAsyncComponent(() => import('/@/components/BaseLoading.vue'))
   },
   setup () {
     const router = useRouter()
@@ -163,12 +166,6 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import '../assets/scss/tool.scss';
 @import '../assets/scss/var.scss';
-@keyframes loading {
-  0% { transform: rotate(0deg) }
-  50% { transform: rotate(180deg) }
-  100% { transform: rotate(360deg) }
-}
-
 @include fontFace('Odachi', '../assets/fonts');
 .home {
   flex: 1;
@@ -246,11 +243,7 @@ export default defineComponent({
       min-height: 215px;
       position: relative;
       &-loading {
-        margin: 107px auto 0;
-        width: 45px;
-        height: 45px;
-        background: url('../assets/images/loading.png') no-repeat center / 100%;
-        animation: loading 1s linear infinite;
+        margin: 40px auto 0;
       }
       &-lives {
         display: flex;
