@@ -2,12 +2,12 @@
  * @Author: MADAO
  * @Date: 2020-08-31 14:35:32
  * @LastEditors: MADAO
- * @LastEditTime: 2020-09-17 15:03:29
+ * @LastEditTime: 2020-11-19 11:03:39
  * @Description: vite 配置
  */
-const path = require('path')
+import path from 'path'
 
-module.exports = {
+export default {
   base: '/madao.github.io/',
   assetsDir: 'assets',
   alias: {
