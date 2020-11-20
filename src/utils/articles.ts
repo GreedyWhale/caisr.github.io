@@ -655,6 +655,15 @@ const map = [
     category: 'node',
     categoryZH: 'Node',
     name: 'Basis'
+  },
+  {
+    title: 'Node学记笔记 - file 模块',
+    description: '通过实现一个命令行工具来理解file 模块',
+    time: '2020年11月19日 11:05',
+    author: 'MADAO是不会开花的',
+    category: 'node',
+    categoryZH: 'Node',
+    name: 'File'
   }
 ]
 
