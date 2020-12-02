@@ -673,6 +673,15 @@ const map = [
     category: 'node',
     categoryZH: 'Node',
     name: 'Http2'
+  },
+  {
+    title: 'Node学记笔记 - HTTP（三）',
+    description: 'Node.js中关于HTTP模块的一些知识点',
+    time: '2020年12月1日 15:53',
+    author: 'MADAO是不会开花的',
+    category: 'node',
+    categoryZH: 'Node',
+    name: 'Request'
   }
 ]
 
