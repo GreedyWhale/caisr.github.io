@@ -307,11 +307,10 @@ dst 字段就是翻译的结果，但是中文显示的是 unicode 编码接下�
 
 3. 修改 TypeScript 告诉你的错误
 
-    当项目存在tsconfig.json后，TypeScript按照配置文件中的配置去检测代码，类似这样：
+   当项目存在 tsconfig.json 后，TypeScript 按照配置文件中的配置去检测代码，类似这样：
 
-    ![](/madao.github.io/database/images/articles/node/request/image8.png)
+   ![](/madao.github.io/database/images/articles/node/request/image8.png)
 
-    需要消除这些红线后再发布
-
+   需要消除这些红线后再发布
 
 [源码](https://github.com/GreedyWhale/node-fy-cli)
