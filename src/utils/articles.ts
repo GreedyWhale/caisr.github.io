@@ -691,6 +691,15 @@ const map = [
     category: 'node',
     categoryZH: 'Node',
     name: 'Database'
+  },
+  {
+    title: 'Node学记笔记 - 数据库（二）',
+    description: '今天学习数据库中表的设计',
+    time: '2020年12月12日 12:31',
+    author: 'MADAO是不会开花的',
+    category: 'node',
+    categoryZH: 'Node',
+    name: 'Database2'
   }
 ]
 
