@@ -2,7 +2,7 @@
  * @Author: MADAO
  * @Date: 2020-08-31 14:35:32
  * @LastEditors: MADAO
- * @LastEditTime: 2020-11-19 11:03:39
+ * @LastEditTime: 2021-01-06 17:38:22
  * @Description: vite 配置
  */
 import path from 'path'
