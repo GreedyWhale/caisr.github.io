@@ -1,3 +1,10 @@
+/*
+ * @Description: 日期相关hook
+ * @Author: MADAO
+ * @Date: 2021-01-06 12:18:35
+ * @LastEditors: MADAO
+ * @LastEditTime: 2021-01-08 17:15:15
+ */
 import { ref, onMounted } from 'vue'
 import {
   getChineseNewYear,
@@ -15,9 +22,15 @@ export default function useDate () {
   })
   const getDiffForNetNewYear = () => {
     const currentDate = new Date()
-    const currentgetMilliseconds = currentDate.getTime()
-    const newYear = new Date(getChineseNewYear(currentDate.getFullYear() + 1)).getTime()
-    const diff = newYear - currentgetMilliseconds
+    const currentMilliseconds = currentDate.getTime()
+    let year = currentDate.getFullYear()
+    const currentNewYear = new Date(getChineseNewYear(year)).getTime()
+
+    if (currentMilliseconds > currentNewYear) {
+      year += 1
+    }
+    const newYear = new Date(getChineseNewYear(year)).getTime()
+    const diff = newYear - currentMilliseconds
     // 秒数
     const seconds = Math.floor(diff / 1000)
     // 分钟数
