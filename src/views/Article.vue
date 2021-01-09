@@ -30,7 +30,7 @@ import {
 import { useRouter } from 'vue-router'
 import { scrollTopTo } from '/@/utils/index'
 import hljs from 'highlight.js'
-import 'highlight.js/styles/shades-of-purple.css'
+import 'highlight.js/styles/night-owl.css'
 import { usePreviewImage } from '/@/plugin/index'
 import useArticle from '/@/composables/useArticle'
 import useFeature from '/@/composables/useFeature'
