@@ -107,7 +107,7 @@ export default defineComponent({
   overflow-y: auto;
   height: 100vh;
   @include scrollBar;
-  background: #222233;
+  background: #0d1117;
   font-size: 16px;
   padding: 3em;
   color: #bfbfbf;
