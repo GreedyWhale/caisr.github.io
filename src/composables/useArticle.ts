@@ -3,7 +3,7 @@
  * @Author: MADAO
  * @Date: 2021-01-06 12:18:35
  * @LastEditors: MADAO
- * @LastEditTime: 2021-01-12 14:33:42
+ * @LastEditTime: 2021-01-12 15:20:30
  */
 import { onMounted, ref, computed, watch } from 'vue'
 import { articles } from '/@/utils'
@@ -54,7 +54,7 @@ export default function useArticle () {
       return
     }
 
-    const path = window.ENV === 'development' ? '' : '/madao.github.io'
+    const path = ENV === 'development' ? '' : '/madao.github.io'
 
     axios.get<string>(`${path}/database/articles/${category}/${articleName}.md`)
       .then((res) => {
