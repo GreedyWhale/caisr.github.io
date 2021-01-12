@@ -1,3 +1,10 @@
+/*
+ * @Description: 文章相关hooks
+ * @Author: MADAO
+ * @Date: 2021-01-06 12:18:35
+ * @LastEditors: MADAO
+ * @LastEditTime: 2021-01-12 14:33:42
+ */
 import { onMounted, ref, computed, watch } from 'vue'
 import { articles } from '/@/utils'
 import { useStore } from 'vuex'
@@ -53,7 +60,7 @@ export default function useArticle () {
       .then((res) => {
         articleMarkDownRef.value = {
           // @ts-ignore
-          html: marked.default(res.data),
+          html: marked(res.data),
           articleAttributes: getCurrentArticleInfo((articleName as string))
         }
       }).catch((err) => {
