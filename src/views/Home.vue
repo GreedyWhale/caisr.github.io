@@ -171,10 +171,9 @@ export default defineComponent({
   flex: 1;
   height: 100%;
   overflow: hidden;
-  background: rgb(26,26,28);
   display: flex;
   align-items: flex-start;
-  background: url('../assets/images/bg.jpeg') no-repeat center/ 100% 100%;
+  background: url('../assets/images/bg.jpeg') no-repeat center/ 100% 100%, rgb(26,26,28);
   &-pane {
     width: 40%;
     min-width: 600px;
