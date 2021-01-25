@@ -3,7 +3,7 @@
  * @Author: MADAO
  * @Date: 2021-01-06 12:18:35
  * @LastEditors: MADAO
- * @LastEditTime: 2021-01-12 15:20:30
+ * @LastEditTime: 2021-01-25 16:15:56
  */
 import { onMounted, ref, computed, watch } from 'vue'
 import { articles } from '/@/utils'
@@ -59,8 +59,7 @@ export default function useArticle () {
     axios.get<string>(`${path}/database/articles/${category}/${articleName}.md`)
       .then((res) => {
         articleMarkDownRef.value = {
-          // @ts-ignore
-          html: marked(res.data),
+          html: marked.parse(res.data),
           articleAttributes: getCurrentArticleInfo((articleName as string))
         }
       }).catch((err) => {

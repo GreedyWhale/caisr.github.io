@@ -39,12 +39,12 @@
   $newPath: '#{$path}/#{$name}/#{$name}';
   @font-face {
     font-family: $name;
-    src: url('#{$newPath}.eot');
+    src: url('#{$newPath}.eot?#font-spider');
     src:
       url('#{$newPath}.eot?#font-spider') format('embedded-opentype'),
-      url('#{$newPath}.woff2') format('woff2'),
-      url('#{$newPath}.woff') format('woff'),
-      url('#{$newPath}.ttf') format('truetype');
+      url('#{$newPath}.woff2?#font-spider') format('woff2'),
+      url('#{$newPath}.woff?#font-spider') format('woff'),
+      url('#{$newPath}.ttf?#font-spider') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
