@@ -69,5 +69,8 @@
   }
   ::v-deep() strong {
     color: #fff;
+    padding: 2px 3px;
+    background: darkorange;
+    border-radius: 4px;
   }
 }

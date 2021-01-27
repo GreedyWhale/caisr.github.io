@@ -3,7 +3,7 @@
  * @Author: MADAO
  * @Date: 2021-01-06 12:18:35
  * @LastEditors: MADAO
- * @LastEditTime: 2021-01-25 16:15:56
+ * @LastEditTime: 2021-01-26 15:55:03
  */
 import { onMounted, ref, computed, watch } from 'vue'
 import { articles } from '/@/utils'
@@ -11,6 +11,7 @@ import { useStore } from 'vuex'
 import { useRoute } from 'vue-router'
 import axios from 'axios'
 import * as marked from 'marked'
+import { useToast } from '/@/plugin/index'
 
 export default function useArticle () {
   const articlesRef = ref(articles)
@@ -19,6 +20,7 @@ export default function useArticle () {
     articleAttributes: {}
   })
   const route = useRoute()
+  const toast = useToast()
   const lastArticleName = ref('')
   const lastCategory = ref('')
   const isArticlePage = computed(() => route.name === 'Article')
@@ -27,6 +29,15 @@ export default function useArticle () {
   const articleCategory = computed(() => route.params.category)
 
   const store = useStore<Vuex.State>()
+
+  const showErrorMessage = () => {
+    toast?.show({
+      title: '出错了',
+      message: '获取文章信息失败，请重试',
+      theme: 'error',
+      delay: -1
+    })
+  }
 
   const filterWithArticleCategory = () => {
     const { state: { articleCategory } } = store
@@ -50,7 +61,7 @@ export default function useArticle () {
     }
     const { params: { category, articleName } } = route
     if (!category || !articleName) {
-      alert('获取文章失败，请重试')
+      showErrorMessage()
       return
     }
 
@@ -64,7 +75,7 @@ export default function useArticle () {
         }
       }).catch((err) => {
         console.log(err)
-        alert('获取文章失败，请重试')
+        showErrorMessage()
       })
   }
   watch(() => [articleName, articleCategory], (value) => {

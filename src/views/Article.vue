@@ -153,7 +153,7 @@ export default defineComponent({
 </style>
 <style lang="scss">
 code {
-  color: #ff502c;
+  color: #46b875;
   background: #0b3144;
 }
 </style>
