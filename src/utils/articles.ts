@@ -736,6 +736,15 @@ const map = [
     category: 'node',
     categoryZH: 'Node',
     name: 'Koa'
+  },
+  {
+    title: 'Node学记笔记 - Next',
+    description: '学习Next.js，然后重构我的博客',
+    time: '2021年02月07日 14:18',
+    author: 'MADAO是不会开花的',
+    category: 'node',
+    categoryZH: 'Node',
+    name: 'Next'
   }
 ]
 
