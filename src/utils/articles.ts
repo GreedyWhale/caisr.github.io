@@ -745,6 +745,15 @@ const map = [
     category: 'node',
     categoryZH: 'Node',
     name: 'Next'
+  },
+  {
+    title: 'Node学记笔记 - TypeORM',
+    description: '今天学习TypeORM',
+    time: '2021年02月22日 09:46',
+    author: 'MADAO是不会开花的',
+    category: 'node',
+    categoryZH: 'Node',
+    name: 'TypeORM'
   }
 ]
 
