@@ -1,7 +1,9 @@
 {
   "cSpell.words": [
     "frontmatter",
+    "postgres",
     "proto",
+    "typeorm",
     "vite"
   ]
 }

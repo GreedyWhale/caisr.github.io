@@ -754,6 +754,15 @@ const map = [
     category: 'node',
     categoryZH: 'Node',
     name: 'TypeORM'
+  },
+  {
+    title: '搭建个人博客系列（一） - 数据库设计',
+    description: '了解完数据库，Web框架，Node基础知识后，终于要开始写项目了',
+    time: '2021年02月27日 14:52',
+    author: 'MADAO是不会开花的',
+    category: 'blog',
+    categoryZH: '博客系统',
+    name: 'DatabaseDesign'
   }
 ]
 
