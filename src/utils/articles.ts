@@ -763,6 +763,24 @@ const map = [
     category: 'blog',
     categoryZH: '博客系统',
     name: 'DatabaseDesign'
+  },
+  {
+    title: '搭建个人博客系列（二）- 数据渲染',
+    description: '将数据库的数据渲染在页面上',
+    time: '2021年03月10日 21:03',
+    author: 'MADAO是不会开花的',
+    category: 'blog',
+    categoryZH: '博客系统',
+    name: 'DataRendering'
+  },
+  {
+    title: '搭建个人博客系列（三）- 注册',
+    description: '实现注册逻辑',
+    time: '2021年03月11日 09:00',
+    author: 'MADAO是不会开花的',
+    category: 'blog',
+    categoryZH: '博客系统',
+    name: 'SignUp'
   }
 ]
 
