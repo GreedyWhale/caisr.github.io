@@ -790,6 +790,15 @@ const map = [
     category: 'blog',
     categoryZH: '博客系统',
     name: 'SignIn'
+  },
+  {
+    title: '搭建个人博客系列（五）- 博客的增删改查',
+    description: '实现博客的增删改查',
+    time: '2021年03月19日 15:30',
+    author: 'MADAO是不会开花的',
+    category: 'blog',
+    categoryZH: '博客系统',
+    name: 'BlogCRUD'
   }
 ]
 
